@@ -18,8 +18,8 @@ public class EncryptServiceImpl implements EncryptService{
     }
 
     @Override
-    public boolean verifyPassword(String originalPassword, String hashPassword) {
-        return false;
+    public boolean verifyPassword(String originalPassword, String sendedPassword) {
+        return originalPassword.matches(sendedPassword);
     }
 
     @Override

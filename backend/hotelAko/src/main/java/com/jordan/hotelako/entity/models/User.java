@@ -68,9 +68,7 @@ public class User implements Serializable {
     }
 
     public void setPassword(String password) {
-        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-        String encodedPw=bCryptPasswordEncoder.encode(password);
-        this.password = encodedPw;
+        this.password = password;
     }
 
     public int getStatus() {
