@@ -25,6 +25,8 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public void post(User appUser) {
+        String encryptedPW = new EncryptServiceImpl().encryptPassword(appUser.getPassword());
+        appUser.setPassword(encryptedPW);
         userDao.save(appUser);
     }
 
