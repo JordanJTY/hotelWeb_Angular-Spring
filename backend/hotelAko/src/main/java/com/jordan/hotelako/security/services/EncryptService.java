@@ -1,4 +1,4 @@
-package com.jordan.hotelako.entity.services;
+package com.jordan.hotelako.security.services;
 
 import com.jordan.hotelako.entity.models.User;
 

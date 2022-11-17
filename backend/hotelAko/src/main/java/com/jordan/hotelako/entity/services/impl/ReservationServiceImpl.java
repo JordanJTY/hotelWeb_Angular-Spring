@@ -1,7 +1,8 @@
-package com.jordan.hotelako.entity.services;
+package com.jordan.hotelako.entity.services.impl;
 
 import com.jordan.hotelako.entity.dao.IReservationDao;
 import com.jordan.hotelako.entity.models.Reservation;
+import com.jordan.hotelako.entity.services.IReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

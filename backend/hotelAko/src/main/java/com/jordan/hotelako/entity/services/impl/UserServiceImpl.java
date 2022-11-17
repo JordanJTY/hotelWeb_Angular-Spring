@@ -1,7 +1,9 @@
-package com.jordan.hotelako.entity.services;
+package com.jordan.hotelako.entity.services.impl;
 
 import com.jordan.hotelako.entity.dao.IUserDao;
 import com.jordan.hotelako.entity.models.User;
+import com.jordan.hotelako.entity.services.IUserService;
+import com.jordan.hotelako.security.services.EncryptServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,6 +36,8 @@ public class UserServiceImpl implements IUserService {
     public void put(User appUser, long id) {
         userDao.findById(id).ifPresent((x) -> {
             appUser.setId(id);
+            String encryptedPW = new EncryptServiceImpl().encryptPassword(appUser.getPassword());
+            appUser.setPassword(encryptedPW);
             userDao.save(appUser);
         });
     }
