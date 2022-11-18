@@ -1,13 +1,14 @@
-package com.jordan.hotelako.security.services;
+package com.jordan.hotelako.security.services.impl;
 
 import com.jordan.hotelako.entity.dao.IUserDao;
 import com.jordan.hotelako.entity.models.User;
+import com.jordan.hotelako.security.services.EncryptService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EncryptServiceImpl implements EncryptService{
+public class EncryptServiceImpl implements EncryptService {
 
     @Autowired
     private IUserDao userDao;

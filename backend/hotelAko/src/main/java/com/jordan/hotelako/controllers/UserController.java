@@ -4,6 +4,7 @@ package com.jordan.hotelako.controllers;
 import com.jordan.hotelako.entity.models.User;
 import com.jordan.hotelako.entity.services.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +23,7 @@ public class UserController {
     IUserService userService;
 
     @GetMapping("/user")
+    @PreAuthorize("hasRole('ADMIN')")
     public List<User> getAllUsers() {
         return userService.getAll();
     }
