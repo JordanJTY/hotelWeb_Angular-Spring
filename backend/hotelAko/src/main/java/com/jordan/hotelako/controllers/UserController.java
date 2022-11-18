@@ -18,12 +18,12 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(value = "*")
+@PreAuthorize("hasRole('ADMIN')")
 public class UserController {
     @Autowired
     IUserService userService;
 
     @GetMapping("/user")
-    @PreAuthorize("hasRole('ADMIN')")
     public List<User> getAllUsers() {
         return userService.getAll();
     }
