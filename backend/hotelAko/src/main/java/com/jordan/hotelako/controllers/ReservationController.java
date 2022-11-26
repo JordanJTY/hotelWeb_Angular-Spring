@@ -1,8 +1,6 @@
 package com.jordan.hotelako.controllers;
 
-import com.jordan.hotelako.entity.models.Apartment;
 import com.jordan.hotelako.entity.models.Reservation;
-import com.jordan.hotelako.entity.services.IApartmentService;
 import com.jordan.hotelako.entity.services.IReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -31,7 +29,7 @@ public class ReservationController {
     }
 
     @PutMapping("/reservation/{id}")
-    public void put( @PathVariable(value = "id") Long id, Reservation reservation) {
+    public void put(@PathVariable(value = "id") Long id, Reservation reservation) {
         reservationService.put(reservation, id);
     }
 

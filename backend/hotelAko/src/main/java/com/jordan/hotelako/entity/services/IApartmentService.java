@@ -1,7 +1,6 @@
 package com.jordan.hotelako.entity.services;
 
 import com.jordan.hotelako.entity.models.Apartment;
-import com.jordan.hotelako.entity.models.User;
 
 import java.util.List;
 

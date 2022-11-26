@@ -31,7 +31,9 @@ public class Reservation implements Serializable {
         this.endDate = endDate;
     }
 
-    public Reservation(){ super(); }
+    public Reservation() {
+        super();
+    }
 
     public long getId() {
         return id;

@@ -33,7 +33,7 @@ public class User implements Serializable {
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private Date dateBirth;
     @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(  name = "user_roles",
+    @JoinTable(name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
@@ -49,7 +49,7 @@ public class User implements Serializable {
         this.dateBirth = dateBirth;
     }
 
-    public User (){
+    public User() {
         super();
     }
 
@@ -84,6 +84,7 @@ public class User implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
+
     public Date getDateBirth() {
         return dateBirth;
     }

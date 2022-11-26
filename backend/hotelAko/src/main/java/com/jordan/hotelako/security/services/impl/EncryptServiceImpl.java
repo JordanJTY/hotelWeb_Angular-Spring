@@ -24,7 +24,7 @@ public class EncryptServiceImpl implements EncryptService {
     }
 
     @Override
-    public User saveUser(User newUser){
+    public User saveUser(User newUser) {
         return this.userDao.save(newUser);
     }
 }

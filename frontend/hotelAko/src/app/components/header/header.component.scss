@@ -1,0 +1,20 @@
+.header{
+    top: 0;
+    background-color: #69747C;
+    position: sticky;
+    z-index: 1;
+}
+
+.header-right {
+    float: right;
+}
+
+#logo{
+    width: 5em;
+    margin: 2em .2em 2em 2em;
+}
+
+#userImg{
+    width: 4em;
+    margin: .7em 1.5em 0em .2em;
+}

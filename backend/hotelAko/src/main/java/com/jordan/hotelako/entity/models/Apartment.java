@@ -1,12 +1,18 @@
 package com.jordan.hotelako.entity.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
 @Entity
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Apartment implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -15,24 +21,35 @@ public class Apartment implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String type;
+
+    private String nameImg;
+
+    private String typeImg;
+
+    @Column(name = "image", unique = false, nullable = false, length = 100000)
+    private byte[] image;
     private String description;
     private float price;
     private int amount;
-    private String filename;
+
     @JsonIgnore
     @OneToMany(mappedBy = "apartment")
     private List<Reservation> reservations;
 
-    public Apartment(String type, String description, float price, int amount, String filename) {
-        super();
-        this.type = type;
-        this.description = description;
-        this.price = price;
-        this.amount = amount;
-        this.filename = filename;
-    }
-
-    public Apartment(){ super(); }
+//    public Apartment(String type, String nameImg, String typeImg, byte[] image, String description, float price, int amount) {
+//        super();
+//        this.type = type;
+//        this.nameImg = nameImg;
+//        this.typeImg = typeImg;
+//        this.image = image;
+//        this.description = description;
+//        this.price = price;
+//        this.amount = amount;
+//    }
+//
+//    public Apartment() {
+//        super();
+//    }
 
     public long getId() {
         return id;
@@ -74,11 +91,27 @@ public class Apartment implements Serializable {
         this.amount = amount;
     }
 
-    public String getFilename() {
-        return filename;
+    public String getNameImg() {
+        return nameImg;
     }
 
-    public void setFilename(String filename) {
-        this.filename = filename;
+    public void setNameImg(String nameImg) {
+        this.nameImg = nameImg;
+    }
+
+    public String getTypeImg() {
+        return typeImg;
+    }
+
+    public void setTypeImg(String typeImg) {
+        this.typeImg = typeImg;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 }
