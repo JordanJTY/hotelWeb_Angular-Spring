@@ -1,6 +1,14 @@
-<div class="header">
-    <img id="logo" href="" src="assets/images/logo.png" />
-    <div class="header-right">
-        <img id="userImg" href="" src="assets/images/withinLogin.png" />
-    </div>
-</div>
+<header class="header">
+    <nav class="navbar">
+        <img id="logo" href="" src="assets/images/logo.png" />
+
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="#" class="nav-link">Iniciar sesion</a> </li>
+            <li class="nav-item"><a href="#" class="nav-link">Ayuda</a></li>
+        </ul>
+
+        <button id="btn" (click)="setActive()">
+            <img id="userImg" src="assets/images/withinLogin.png" />
+        </button>
+    </nav>
+</header>
