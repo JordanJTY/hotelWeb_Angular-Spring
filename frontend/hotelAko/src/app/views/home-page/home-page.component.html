@@ -1,4 +1,4 @@
 <app-header></app-header>
-<div class="container" *ngFor="let a of apartment">
-    <app-apartment-card [type]="a.type" [description]="a.description" [image]="a.image" [typeImg]="a.typeImg"></app-apartment-card>
+<div class="container" >
+    <app-apartment-card *ngFor="let a of apartment" [type]="a.type" [description]="a.description" [image]="a.image" [typeImg]="a.typeImg"></app-apartment-card>
 </div>
