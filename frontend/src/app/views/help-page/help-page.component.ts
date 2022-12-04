@@ -23,7 +23,7 @@ export class HelpPageComponent {
       },
       {
         image: 'infoAdditionalIcon',
-        title: 'additional information',
+        title: 'Additional information',
         href: 'https://github.com/JordanJTY/hotelWeb_Angular-Spring'
       },
       {

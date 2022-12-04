@@ -1,0 +1,25 @@
+<div class="content">
+    <div class="contact-wrapper animated bounceInUp">
+        <div class="form-container">
+            <img src="assets/images/logo.png" alt="akohotel.png">
+            <form [formGroup]="loginForm" (ngSubmit)="submit()">
+                <input type="text" formControlName="name" placeholder="Full name">
+                <input type="password" formControlName="password" placeholder="Password">
+                <div class="alert-danger"
+                    *ngIf="password?.invalid && (password?.dirty || password?.touched) && name?.invalid && (name?.dirty || name?.touched)">
+                    Name or password are incorrect.
+                </div>
+                <div class="recover-pw">
+                    <a href="recover-password">
+                        <p>Forgot password?</p>
+                    </a>
+                </div>
+                <button type="submit" class="btn-send" [disabled]="!loginForm.valid">Send</button>
+                <div class="contact-info">
+                    <p>Don't have an account?</p>
+                </div>
+                <button type="button" class="btn-register">Register</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -17,6 +17,10 @@ import { InfoPageComponent } from './views/info-page/info-page.component';
 import { ContactPageComponent } from './views/contact-page/contact-page.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginPageComponent } from './views/login-page/login-page.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -30,6 +34,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     InfoPageComponent,
     ContactPageComponent,
     ContactFormComponent,
+    LoginPageComponent,
+    LoginFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +44,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatCardModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
