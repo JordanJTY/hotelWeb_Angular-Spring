@@ -19,7 +19,7 @@ export class HelpPageComponent {
       {
         image: 'infoAplicactionIcon',
         title: 'Information of application',
-        href: ''
+        href: 'info'
       },
       {
         image: 'infoAdditionalIcon',

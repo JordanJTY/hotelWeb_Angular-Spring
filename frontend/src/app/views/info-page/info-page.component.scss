@@ -1,0 +1,44 @@
+.background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-color: #69747C;
+}
+
+.info {
+    width: 300px;
+    height: 200px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+
+img {
+    width: 13em;
+    margin: .75em 0;
+}
+
+h3 {
+    color: white;
+    font-weight: 200;
+}
+
+p {
+    margin: .5em 0 0 0;
+    color: white;
+    opacity: 50%;
+}
+
+h4 {
+    color: white;
+    opacity: 50%;
+    font-weight: 200;
+    font-size: large;
+}

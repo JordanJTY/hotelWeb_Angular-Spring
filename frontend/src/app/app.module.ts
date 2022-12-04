@@ -13,6 +13,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { SliderComponent } from './components/slider/slider.component';
 import { HelpPageComponent } from './views/help-page/help-page.component';
 import { HelpCardComponent } from './components/help-card/help-card.component';
+import { InfoPageComponent } from './views/info-page/info-page.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HelpCardComponent } from './components/help-card/help-card.component';
     SliderComponent,
     HelpPageComponent,
     HelpCardComponent,
+    InfoPageComponent,
   ],
   imports: [
     BrowserModule,
