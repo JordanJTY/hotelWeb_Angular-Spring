@@ -13,17 +13,17 @@ export class HelpPageComponent {
     this.data = [
       {
         image: 'docTerms',
-        title: 'Terms and policy of privacy',
+        title: 'Terms and Privacy Policy',
         href: ''
       },
       {
         image: 'infoAplicactionIcon',
-        title: 'Information of application',
+        title: 'Application information',
         href: 'info'
       },
       {
         image: 'infoAdditionalIcon',
-        title: 'Additional information ',
+        title: 'additional information',
         href: 'https://github.com/JordanJTY/hotelWeb_Angular-Spring'
       },
       {
