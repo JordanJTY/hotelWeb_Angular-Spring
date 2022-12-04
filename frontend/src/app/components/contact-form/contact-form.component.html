@@ -1,0 +1,49 @@
+<div class="content">
+    <div class="contact-wrapper animated bounceInUp">
+        <div class="form-container">
+            <img src="assets/images/logo.png" alt="akohotel.png">
+            <form [formGroup]="contactForm" (ngSubmit)="submit()">
+                <input type="text" formControlName="name" placeholder="Full name">
+                <div class="alert-danger" *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+                    <div class="container-error-message" *ngIf="name?.errors?.['required']">
+                        Name required.
+                    </div>
+                    <div class="container-error-message" *ngIf="name?.errors?.['minlength']">
+                        Name must have more than 5 characters.
+                    </div>
+                </div>
+                <input type="text" formControlName="email" placeholder="Email">
+                <div class="alert-danger" *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+                    <div class="container-error-message" *ngIf="email?.errors?.['required']">
+                        Email required.
+                    </div>
+                    <div class="container-error-message" *ngIf="email?.errors?.['minlength']">
+                        Email must have more then 5 characters.
+                    </div>
+                    <div class="container-error-message"
+                        *ngIf="(email?.dirty || email?.touched) && email?.invalid && email?.errors?.['pattern']">
+                        Must be a email.
+                    </div>
+                </div>
+                <textarea formControlName="message" placeholder="Message" rows="5"></textarea>
+                <div class="alert-danger" *ngIf="message?.invalid && (message?.dirty || message?.touched)">
+                    <div class="container-error-message" *ngIf="message?.errors?.['required']">
+                        Message required
+                    </div>
+                    <div class="container-error-message" *ngIf="message?.errors?.['minlength']">
+                        Message must have more than 10 characters.
+                    </div>
+                </div>
+                <button type="submit" class="btn-send" [disabled]="!contactForm.valid">Send</button>
+            </form>
+        </div>
+        <div class="contact-info">
+            <ul>
+                <li><i class="fas fa-map-marker-alt"></i>Av. José Sánchez Peñate</li>
+                <li><i class="fas fa-phone"></i>+34 727 70 22 64</li>
+                <li><i class="fas fa-envelope-open-text"></i>hotelako@gmail.com</li>
+            </ul>
+        </div>
+    </div>
+
+</div>

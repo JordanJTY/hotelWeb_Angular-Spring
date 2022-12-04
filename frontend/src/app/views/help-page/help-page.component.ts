@@ -29,7 +29,7 @@ export class HelpPageComponent {
       {
         image: 'contacticon',
         title: 'Contact',
-        href: ''
+        href: 'contact'
       },
     ]
   }

@@ -14,6 +14,9 @@ import { SliderComponent } from './components/slider/slider.component';
 import { HelpPageComponent } from './views/help-page/help-page.component';
 import { HelpCardComponent } from './components/help-card/help-card.component';
 import { InfoPageComponent } from './views/info-page/info-page.component';
+import { ContactPageComponent } from './views/contact-page/contact-page.component';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,8 @@ import { InfoPageComponent } from './views/info-page/info-page.component';
     HelpPageComponent,
     HelpCardComponent,
     InfoPageComponent,
+    ContactPageComponent,
+    ContactFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +37,8 @@ import { InfoPageComponent } from './views/info-page/info-page.component';
     NoopAnimationsModule,
     MatCardModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
