@@ -7,7 +7,7 @@ import { Apartment } from '../models/apartment';
 })
 export class ApartmentService {
 
-  endpoint: string = "http://localhost:8080/apartment"
+  endpoint: string = "http://"+window.location.hostname+":8080/apartment"
 
   constructor(private http: HttpClient) { }
 

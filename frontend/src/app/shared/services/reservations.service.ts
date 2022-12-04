@@ -6,7 +6,7 @@ import { Reservations } from '../models/reservations';
   providedIn: 'root'
 })
 export class ReservationsService {
-  endpoint: string = "http://localhost:8080/reservation"
+  endpoint: string = "http://"+window.location.hostname+":8080/reservation"
 
   constructor(private http: HttpClient) { }
 

@@ -1,0 +1,5 @@
+<app-header></app-header>
+<div class="container">
+    <app-help-card *ngFor="let d of data" [image]="d.image" [title]="d.title" [href]="d.href"></app-help-card>
+    <app-help-card image="deleteIcon" title="Eliminar cuenta" (click)="deleteAccount()"></app-help-card>
+</div>

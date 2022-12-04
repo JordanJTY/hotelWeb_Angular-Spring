@@ -11,6 +11,8 @@ import { ApartmentCardComponent } from './components/apartment-card/apartment-ca
 import { HomePageComponent } from './views/home-page/home-page.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { SliderComponent } from './components/slider/slider.component';
+import { HelpPageComponent } from './views/help-page/help-page.component';
+import { HelpCardComponent } from './components/help-card/help-card.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { SliderComponent } from './components/slider/slider.component';
     ApartmentCardComponent,
     HomePageComponent,
     SliderComponent,
+    HelpPageComponent,
+    HelpCardComponent,
   ],
   imports: [
     BrowserModule,
