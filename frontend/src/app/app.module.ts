@@ -21,6 +21,8 @@ import { LoginPageComponent } from './views/login-page/login-page.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { RecoverPasswordPageComponent } from './views/recover-password-page/recover-password-page.component';
+import { RecoverPasswordFormComponent } from './components/recover-password-form/recover-password-form.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { MatIconModule } from '@angular/material/icon';
     ContactFormComponent,
     LoginPageComponent,
     LoginFormComponent,
+    RecoverPasswordPageComponent,
+    RecoverPasswordFormComponent,
   ],
   imports: [
     BrowserModule,

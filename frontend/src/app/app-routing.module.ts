@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RecoverPasswordFormComponent } from './components/recover-password-form/recover-password-form.component';
 import { ContactPageComponent } from './views/contact-page/contact-page.component';
 import { HelpPageComponent } from './views/help-page/help-page.component';
 import { HomePageComponent } from './views/home-page/home-page.component';
 import { InfoPageComponent } from './views/info-page/info-page.component';
 import { LoginPageComponent } from './views/login-page/login-page.component';
+import { RecoverPasswordPageComponent } from './views/recover-password-page/recover-password-page.component';
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
@@ -12,6 +14,7 @@ const routes: Routes = [
   { path: 'info', component: InfoPageComponent},
   { path: 'contact', component: ContactPageComponent},
   { path: 'login', component: LoginPageComponent},
+  { path: 'recover-password', component: RecoverPasswordPageComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' }
   // { path: '**', component: PageNotFoundComponent }
 ];
