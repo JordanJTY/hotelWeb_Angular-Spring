@@ -6,11 +6,13 @@
 
         <ul class="nav-menu">
             <li class="nav-item"><a href="login" class="nav-link">Iniciar sesion</a> </li>
+            <li *ngxPermissionsOnly="['ROLE_ADMIN', 'ROLE_USER']" class="nav-item"><a href="home" class="nav-link">Cerrar sesión</a> </li>
             <li class="nav-item"><a href="help" class="nav-link">Ayuda</a></li>
         </ul>
 
         <button id="btn" (click)="setActive()">
             <img id="userImg" src="assets/images/withinLogin.png" />
+            <img *ngxPermissionsOnly="['ROLE_ADMIN']" id="userImg" src="assets/images/logo.png" />
         </button>
     </nav>
 </header>

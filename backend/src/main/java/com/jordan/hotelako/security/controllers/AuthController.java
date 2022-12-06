@@ -21,6 +21,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Base64;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -47,9 +48,13 @@ public class AuthController {
 
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
+        byte[] decodingPW = Base64.getDecoder().decode(loginRequest.getPassword());
+        String decodedPw = new String(decodingPW);
+        byte[] decodingName = Base64.getDecoder().decode(loginRequest.getUsername());
+        String decodedName = new String(decodingName);
 
         Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
+                new UsernamePasswordAuthenticationToken(decodedName, decodedPw));
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = jwtUtils.generateJwtToken(authentication);
@@ -69,7 +74,11 @@ public class AuthController {
 
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
-        if (userRepository.existsByUsername(signUpRequest.getUsername())) {
+        byte[] decodingPW = Base64.getDecoder().decode(signUpRequest.getPassword());
+        String decodedPw = new String(decodingPW);
+        byte[] decodingName = Base64.getDecoder().decode(signUpRequest.getUsername());
+        String decodedName = new String(decodingName);
+        if (userRepository.existsByUsername(decodedName)) {
             return ResponseEntity
                     .badRequest()
                     .body(new MessageResponse("Error: Username is already taken!"));
@@ -82,9 +91,9 @@ public class AuthController {
         }
 
         // Create new user's account
-        User user = new User(signUpRequest.getUsername(),
+        User user = new User(decodedName,
                 signUpRequest.getEmail(),
-                encoder.encode(signUpRequest.getPassword()),
+                encoder.encode(decodedPw),
                 signUpRequest.getDateBirth());
 
         Set<String> strRoles = signUpRequest.getRole();
