@@ -18,12 +18,14 @@ const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
   { path: 'register', component: RegisterPageComponent },
   { path: 'recover-password', component: RecoverPasswordPageComponent },
+  // { path: 'reservations', component: RecoverPasswordPageComponent },
+  // { path: 'allReservations', component: RecoverPasswordPageComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
   // { path: '**', component: PageNotFoundComponent, canActivate: [AuthGuard],
   //   data: {
   //     role: 'ROLE_USER'
   // } },
-  
+
 ];
 
 @NgModule({

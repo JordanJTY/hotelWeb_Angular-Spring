@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { User } from 'src/app/shared/models/user';
+import { StorageService } from 'src/app/shared/services/storage.service';
 import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class RecoverPasswordFormComponent {
   public loginForm: FormGroup;
   match: boolean
 
-  constructor(private formBuilder: FormBuilder, private userService: UserService) {
+  constructor(private formBuilder: FormBuilder, private userService: UserService, private storage: StorageService) {
     this.loginForm = this.createForm();
     this.match = false;
   }
@@ -35,9 +36,19 @@ export class RecoverPasswordFormComponent {
 
   submit() {
     if (this.loginForm.valid && (this.newPassword?.value == this.password?.value)) {
-      // const formUser: User = { username: btoa(this.name?.value), password: btoa(this.password?.value), dateBirth: this.dateBirth?.value, email: this.email?.value };
-      // this.userService.putUser(formUser,)
-      // window.location.href = 'login';
+      var userData: User = { id: 0, email: '', username: '', password: '', dateBirth: new Date('') };;
+      let data = this.userService.getAllUser()
+      data.forEach(info => {
+        for (let x = 0; x < info.length; x++) {
+          if (info[x].username.toUpperCase() === this.name?.value.toUpperCase()) {
+            console.log('he llegado')
+            userData = info[x];
+            const formUser: User = { username: btoa(this.name?.value), password: btoa(this.password?.value), dateBirth: userData.dateBirth, email: userData.email };
+            this.userService.putUser(formUser, userData.id!)
+            window.location.href = 'login';
+          }
+        }
+      })
     } else {
       this.match = true;
       window.location.reload();

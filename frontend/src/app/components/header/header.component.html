@@ -5,9 +5,11 @@
         </a>
 
         <ul class="nav-menu">
-            <li *ngxPermissionsExcept="['ROLE_ADMIN', 'ROLE_USER']" class="nav-item"><a href="login" class="nav-link">Iniciar sesion</a> </li>
-            <li *ngxPermissionsOnly="['ROLE_ADMIN', 'ROLE_USER']" class="nav-item"><a href="home" (click)="logout()" class="nav-link">Cerrar sesión</a> </li>
-            <li class="nav-item"><a href="help" class="nav-link">Ayuda</a></li>
+            <li *ngxPermissionsExcept="['ROLE_ADMIN', 'ROLE_USER']" class="nav-item"><a href="login" class="nav-link">Login</a> </li>
+            <li *ngxPermissionsOnly="['ROLE_ADMIN', 'ROLE_USER']" class="nav-item"><a href="home" (click)="logout()" class="nav-link">Logout</a></li>
+            <li *ngxPermissionsOnly="['ROLE_USER']" class="nav-item"><a href="reservations" class="nav-link">Reservations</a></li>
+            <li *ngxPermissionsOnly="['ROLE_ADMIN']" class="nav-item"><a href="allReservations" class="nav-link">Reservations</a></li>
+            <li class="nav-item"><a href="help" class="nav-link">Help</a></li>
         </ul>
 
         <button id="btn" (click)="setActive()">
