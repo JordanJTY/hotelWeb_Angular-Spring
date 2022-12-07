@@ -60,7 +60,7 @@ export class RegisterFormComponent {
       // Swal.fire('Proceso terminado. Gracias por contactar con nosotros.').then(respuesta => {
       const formUser: User = { username: btoa(this.name?.value), password: btoa(this.password?.value), dateBirth: this.dateBirth?.value, email: this.email?.value };
       this.auth.register(formUser);
-      // window.location.href = 'login';
+      window.location.href = 'login';
       // });
     } else {
       // Swal.fire('Debe rellenar todos los campos.').then(respuesta => {

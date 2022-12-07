@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataHelp } from 'src/app/shared/interfaces/data-help'
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { StorageService } from 'src/app/shared/services/storage.service';
+import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
   selector: 'app-help-page',
@@ -17,7 +19,7 @@ export class HelpPageComponent {
     this.updateAuthInfo();
   }
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private auth: AuthService, private router: Router, private storage: StorageService, private userService: UserService) {
     this.data = [
       {
         image: 'docTerms',
@@ -43,13 +45,16 @@ export class HelpPageComponent {
   }
 
   deleteAccount() {
-    console.log('si elevado a 4');
-    // Put service to delete the user account and a alert to ask of the user is secure
+    var dataUser = this.storage.getUser();
+    console.log(dataUser.id)
+    this.userService.deleteUser(dataUser.id);
+    window.location.href = 'home';
+    this.storage.signOut();
     return false;
   }
 
   updateAuthInfo() {
-    this.isLogin = this.authService.isLoggedIn();
-    this.roleAs = this.authService.getRole();
+    this.isLogin = this.auth.isLoggedIn();
+    this.roleAs = this.auth.getRole();
   }
 }

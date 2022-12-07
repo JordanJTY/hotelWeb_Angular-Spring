@@ -20,8 +20,7 @@ export class UserService {
   }
 
   deleteUser(id: number) {
-    console.log(id)
-    // this.http.delete(this.endpoint + "/" + id).subscribe(data => { });
+    this.http.delete(this.endpoint + "/" + id).subscribe(data => { });
   }
 
   postUser(user: User) {
