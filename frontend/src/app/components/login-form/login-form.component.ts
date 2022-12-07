@@ -32,8 +32,18 @@ export class LoginFormComponent {
   get name() { return this.loginForm.get('name'); }
   get password() { return this.loginForm.get('password'); }
 
+  createForm() {
+    return new FormGroup({
+      name: new FormControl('', [Validators.required, Validators.minLength(5)]),
+      password: new FormControl('', [Validators.required, Validators.minLength(5)])
+    });
+  }
   ngOnInit(): void {
-    this.updateAuthInfo();
+    // this.updateAuthInfo();
+    if (this.storage.getToken()) {
+      this.isLoggedIn = true;
+    }
+    console.log(this.storage.getToken())
   }
 
   updateAuthInfo() {
@@ -41,20 +51,15 @@ export class LoginFormComponent {
     this.roleAs = this.auth.getRole();
   }
 
-  createForm() {
-    return new FormGroup({
-      name: new FormControl('', [Validators.required, Validators.minLength(5)]),
-      password: new FormControl('', [Validators.required, Validators.minLength(5)])
-    });
-  }
-
   submit() {
     if (this.loginForm.valid) {
       this.login = { username: btoa(this.name?.value), password: btoa(this.password?.value) }
       console.log(this.login.username + ' - ' + this.login.password)
-      this.auth.login(this.login).subscribe({
-        next: data => {
+      this.auth.login(this.login).subscribe(
+        data => {
+          this.storage.saveToken(data.accessToken);
           this.storage.saveUser(data);
+
           this.isLoginFailed = false;
           this.isLoggedIn = true;
           this.roles = this.storage.getUser().roles;
@@ -71,15 +76,14 @@ export class LoginFormComponent {
           }
           const perm: any[] = [this.roles];
           this.permissionsService.loadPermissions(perm);
-          // localStorage.setItem('STATE', 'true');
-          // localStorage.setItem('ROLE', this.roles.toString());
-          // return of({ success: true, role: this.roles });
+          window.location.href = '';
+          console.log(this.storage.getToken());
         },
-        error: err => {
+        err => {
           this.errorMessage = err.error.message;
           this.isLoginFailed = true;
         }
-      });
+      );
 
     } else {
 

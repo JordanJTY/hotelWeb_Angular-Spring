@@ -15,15 +15,16 @@ export class UserService {
     return this.http.get<Array<User>>(this.endpoint);
   }
 
-  getReservation(id: number) {
+  getUser(id: number) {
     return this.http.get<User>(this.endpoint + "/" + id);
   }
 
-  deleteReservation(id: number) {
-    this.http.delete(this.endpoint + "/" + id).subscribe(data => { });
+  deleteUser(id: number) {
+    console.log(id)
+    // this.http.delete(this.endpoint + "/" + id).subscribe(data => { });
   }
 
-  postReservation(user: User) {
+  postUser(user: User) {
     let data = new FormData();
     data.append("endDate", user.email);
     data.append("startDate", user.username);
@@ -32,7 +33,7 @@ export class UserService {
     this.http.post<User>(this.endpoint, data).subscribe(response => { }, (error) => { console.log(error) });
   }
 
-  putReservation(user: User, id: number) {
+  putUser(user: User, id: number) {
     let data = new FormData();
     data.append("endDate", user.email);
     data.append("startDate", user.username);

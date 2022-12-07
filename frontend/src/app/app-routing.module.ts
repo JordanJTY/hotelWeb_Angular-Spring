@@ -10,7 +10,7 @@ import { LoginPageComponent } from './views/login-page/login-page.component';
 import { RecoverPasswordPageComponent } from './views/recover-password-page/recover-password-page.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomePageComponent, },
+  { path: 'home', component: HomePageComponent },
   { path: 'help', component: HelpPageComponent },
   { path: 'info', component: InfoPageComponent },
   { path: 'contact', component: ContactPageComponent },

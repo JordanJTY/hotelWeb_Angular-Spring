@@ -24,6 +24,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { RecoverPasswordPageComponent } from './views/recover-password-page/recover-password-page.component';
 import { RecoverPasswordFormComponent } from './components/recover-password-form/recover-password-form.component';
+import { authInterceptorProviders } from './shared/_helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,7 @@ import { RecoverPasswordFormComponent } from './components/recover-password-form
     MatIconModule,
     NgxPermissionsModule.forRoot()
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

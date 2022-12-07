@@ -1,19 +1,23 @@
-import { Component , OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { StorageService } from 'src/app/shared/services/storage.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit{
+export class HeaderComponent implements OnInit {
 
-constructor(){}
+  constructor(private storage: StorageService) { }
 
-ngOnInit(){}
+  ngOnInit() { }
 
-setActive(){
-  const navMenu = document.querySelector('.nav-menu');
-  navMenu?.classList.toggle('active');
-}
+  setActive() {
+    const navMenu = document.querySelector('.nav-menu');
+    navMenu?.classList.toggle('active');
+  }
 
+  logout(){
+    this.storage.signOut();
+  }
 }
