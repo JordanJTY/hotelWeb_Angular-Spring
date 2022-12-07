@@ -22,22 +22,11 @@ export class AuthService {
   login(userData: LoginUser): Observable<any> {
     // const headers = new HttpHeaders({Authorization: 'Basic '+ btoa(userData.username+':'+userData.password)})
     return this.http.post<LoginUser>(this.endpoint + 'signin', userData, httpOptions);
-    /*const perm: any[] = [value];
-    this.permissionsService.loadPermissions(perm);
-
-    localStorage.setItem('STATE', 'true');
-    localStorage.setItem('ROLE', value);
-    return of({ success: true, role: value });*/
   }
 
-  register(user: User): Observable<any> {
-    return this.http.post<LoginUser>(this.endpoint + 'signup', user, httpOptions);
-    /*const perm: any[] = [value];
-    this.permissionsService.loadPermissions(perm);
-
-    localStorage.setItem('STATE', 'true');
-    localStorage.setItem('ROLE', value);
-    return of({ success: true, role: value });*/
+  register(user: User){
+    console.log(user.email + ' - ' + user.dateBirth + ' - ' + user.username + ' - ' + user.password)
+    this.http.post<User>(this.endpoint + 'signup', user, httpOptions).subscribe();
   }
 
   logout() {

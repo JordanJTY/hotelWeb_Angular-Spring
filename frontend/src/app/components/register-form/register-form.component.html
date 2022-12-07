@@ -1,0 +1,54 @@
+<div class="content">
+    <div class="contact-wrapper animated bounceInUp">
+        <div class="form-container">
+            <img src="assets/images/logo.png" alt="akohotel.png">
+            <form [formGroup]="registerForm" (ngSubmit)="submit()">
+                <input type="text" formControlName="email" placeholder="Email">
+                <div class="alert-danger" *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+                    <div class="container-error-message" *ngIf="email?.errors?.['required']">
+                        Email required.
+                    </div>
+                    <div class="container-error-message" *ngIf="email?.errors?.['minlength']">
+                        Email must have more then 5 characters.
+                    </div>
+                    <div class="container-error-message"
+                        *ngIf="(email?.dirty || email?.touched) && email?.invalid && email?.errors?.['pattern']">
+                        Must be a email.
+                    </div>
+                </div>
+                <input type="text" formControlName="name" placeholder="Full name">
+                <div class="alert-danger" *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+                    <div class="container-error-message" *ngIf="name?.errors?.['required']">
+                        Name required.
+                    </div>
+                    <div class="container-error-message" *ngIf="name?.errors?.['minlength']">
+                        Name must have more than 5 characters.
+                    </div>
+                </div>
+                <input type="password" formControlName="password" placeholder="Password">
+                <div class="alert-danger" *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+                    <div class="container-error-message" *ngIf="password?.errors?.['required']">
+                        Password required.
+                    </div>
+                    <div class="container-error-message" *ngIf="password?.errors?.['minlength']">
+                        Password must have more than 5 characters.
+                    </div>
+                </div>
+                <input id="date" type="date" formControlName="dateBirth" value="" min="1900-01-01" max="2022-12-31">
+                <div class="alert-danger" *ngIf="dateBirth?.invalid && (dateBirth?.dirty || dateBirth?.touched)">
+                    <div class="container-error-message" *ngIf="dateBirth?.errors?.['required']">
+                        Date of birth required.
+                    </div>
+                    <div class="container-error-message" *ngIf="compareDate(dateBirth?.value)">
+                        Date not valid
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <input id="checkbox" type="checkbox" value="off" > I accept and confirm that I have read the
+                    Privacy Policy
+                </div>
+                <button type="submit" class="btn-send" [disabled]="!registerForm.valid">Send</button>
+            </form>
+        </div>
+    </div>
+</div>

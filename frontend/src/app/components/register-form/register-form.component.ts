@@ -1,0 +1,70 @@
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { User } from 'src/app/shared/models/user';
+import { AuthService } from 'src/app/shared/services/auth.service';
+
+@Component({
+  selector: 'app-register-form',
+  templateUrl: './register-form.component.html',
+  styleUrls: ['./register-form.component.scss']
+})
+export class RegisterFormComponent {
+  public registerForm: FormGroup;
+  private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  checker: boolean = false
+  constructor(private auth: AuthService) {
+    this.registerForm = this.createForm();
+  }
+
+  get name() { return this.registerForm.get('name'); }
+  get email() { return this.registerForm.get('email'); }
+  get password() { return this.registerForm.get('password'); }
+  get dateBirth() { return this.registerForm.get('dateBirth'); }
+
+
+  createForm() {
+    return new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.minLength(5), Validators.pattern(this.emailPattern)]),
+      name: new FormControl('', [Validators.required, Validators.minLength(5)]),
+      password: new FormControl('', [Validators.required, Validators.minLength(5)]),
+      dateBirth: new FormControl('', [Validators.required])
+    });
+  }
+
+  checkbox() {
+    let check = document.querySelector(`#checkbox`) as HTMLInputElement;
+    console.log(check?.checked)
+    return check.checked;
+  }
+
+  compareDate(date: Date) {
+    var dateOfBirth = new Date(date);
+    // calculate difference between now and the dateOfBirth (in milliseconds)
+    var differenceMs = Date.now() - dateOfBirth.getTime();
+    // convert the calculated difference in date format
+    var dateFromEpoch = new Date(differenceMs);
+    // extract year from dateFromEpoch
+    var yearFromEpoch = dateFromEpoch.getUTCFullYear();
+    // calculate the age of the user
+    var age = Math.abs(yearFromEpoch - 1970);
+    if (age < 18) {
+      return true;
+    } else {
+      return false;
+    }
+
+  };
+
+  submit() {
+    if (this.registerForm.valid) {
+      // Swal.fire('Proceso terminado. Gracias por contactar con nosotros.').then(respuesta => {
+      const formUser: User = { username: btoa(this.name?.value), password: btoa(this.password?.value), dateBirth: this.dateBirth?.value, email: this.email?.value };
+      this.auth.register(formUser);
+      // window.location.href = 'login';
+      // });
+    } else {
+      // Swal.fire('Debe rellenar todos los campos.').then(respuesta => {
+      // });
+    }
+  }
+}

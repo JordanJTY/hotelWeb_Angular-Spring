@@ -7,7 +7,7 @@ import { User } from '../models/user';
 })
 export class UserService {
 
-  endpoint: string = "http://"+window.location.hostname+":8080/user"
+  endpoint: string = "http://" + window.location.hostname + ":8080/user"
 
   constructor(private http: HttpClient) { }
 
@@ -26,20 +26,19 @@ export class UserService {
 
   postUser(user: User) {
     let data = new FormData();
-    data.append("endDate", user.email);
-    data.append("startDate", user.username);
-    data.append("apartmentId", user.password);
-    data.append("appUserId", user.dateBirth.getDate().toString());
+    data.append("email", user.email);
+    data.append("username", user.username);
+    data.append("password", user.password);
+    data.append("dateBirth", user.dateBirth.toString());
     this.http.post<User>(this.endpoint, data).subscribe(response => { }, (error) => { console.log(error) });
   }
 
   putUser(user: User, id: number) {
     let data = new FormData();
-    data.append("endDate", user.email);
-    data.append("startDate", user.username);
-    data.append("apartmentId", user.password);
-    data.append("appUserId", user.dateBirth.getDate().toString());
+    data.append("email", user.email);
+    data.append("username", user.username);
+    data.append("password", user.password);
+    data.append("dateBirth", user.dateBirth.toString());
     this.http.put(this.endpoint + "/" + id, data).subscribe(response => { }, (error) => { console.log(error) });
-
   }
 }

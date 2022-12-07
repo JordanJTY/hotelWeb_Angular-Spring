@@ -46,6 +46,10 @@ export class LoginFormComponent {
     console.log(this.storage.getToken())
   }
 
+  goRegister(){
+    window.location.href = 'register';
+  }
+
   updateAuthInfo() {
     this.isLogin = this.auth.isLoggedIn();
     this.roleAs = this.auth.getRole();

@@ -25,6 +25,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { RecoverPasswordPageComponent } from './views/recover-password-page/recover-password-page.component';
 import { RecoverPasswordFormComponent } from './components/recover-password-form/recover-password-form.component';
 import { authInterceptorProviders } from './shared/_helpers/auth.interceptor';
+import { RegisterPageComponent } from './views/register-page/register-page.component';
+import { RegisterFormComponent } from './components/register-form/register-form.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { authInterceptorProviders } from './shared/_helpers/auth.interceptor';
     LoginFormComponent,
     RecoverPasswordPageComponent,
     RecoverPasswordFormComponent,
+    RegisterPageComponent,
+    RegisterFormComponent,
   ],
   imports: [
     BrowserModule,

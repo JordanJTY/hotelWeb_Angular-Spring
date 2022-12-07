@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { User } from 'src/app/shared/models/user';
+import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
   selector: 'app-recover-password-form',
@@ -11,7 +13,7 @@ export class RecoverPasswordFormComponent {
   public loginForm: FormGroup;
   match: boolean
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private userService: UserService) {
     this.loginForm = this.createForm();
     this.match = false;
   }
@@ -32,14 +34,13 @@ export class RecoverPasswordFormComponent {
   }
 
   submit() {
-    if (this.loginForm.valid && this.newPassword?.value == this.password?.value) {
-      // Swal.fire('Proceso terminado. Gracias por contactar con nosotros.').then(respuesta => {
-      window.location.href = 'login';
-      // });
+    if (this.loginForm.valid && (this.newPassword?.value == this.password?.value)) {
+      // const formUser: User = { username: btoa(this.name?.value), password: btoa(this.password?.value), dateBirth: this.dateBirth?.value, email: this.email?.value };
+      // this.userService.putUser(formUser,)
+      // window.location.href = 'login';
     } else {
-      // Swal.fire('Debe rellenar todos los campos.').then(respuesta => {
-      // });
       this.match = true;
+      window.location.reload();
     }
   }
 }
