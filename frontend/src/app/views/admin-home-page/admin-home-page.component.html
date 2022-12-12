@@ -1,0 +1,10 @@
+<app-header></app-header>
+<div class="btn">
+  <button type="submit" class="btn-send" (click)="goToAdd()">
+    <p>+</p>
+  </button>
+</div>
+<div class="container">
+  <app-apartment-card *ngFor="let a of apartment" [id]="a.id!" [type]="a.type"
+    [description]="a.description" [image]="a.image" [typeImg]="a.typeImg!"></app-apartment-card>
+</div>

@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.btn-send {
+    border-radius: 30px;
+    width: 80%;
+    padding: 3%;
+    background: #F5F1ED;
+    color: black;
+    border: 1px solid black;
+    font-size: 15px;
+    margin: 1em 0;
+}
+
+p{
+    font-size: 2em;
+}

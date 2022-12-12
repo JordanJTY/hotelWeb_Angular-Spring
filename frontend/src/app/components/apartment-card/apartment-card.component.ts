@@ -8,12 +8,15 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class ApartmentCardComponent implements OnInit {
 
+  @Input() id:number;
   @Input() type: string;
   @Input() image: SafeResourceUrl;
   @Input() description: string;
   @Input() typeImg:string;
 
+
   constructor(private sanitizer: DomSanitizer) {
+    this.id = 0;
     this.type = '';
     this.image = '';
     this.description = '';

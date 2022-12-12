@@ -1,5 +1,5 @@
 <app-header></app-header>
 <app-slider></app-slider>
 <div class="container" >
-    <app-apartment-card *ngFor="let a of apartment" [type]="a.type" [description]="a.description" [image]="a.image" [typeImg]="a.typeImg"></app-apartment-card>
+    <app-apartment-card *ngFor="let a of apartment" [type]="a.type" [description]="a.description" [image]="a.image" [typeImg]="a.typeImg!"></app-apartment-card>
 </div>

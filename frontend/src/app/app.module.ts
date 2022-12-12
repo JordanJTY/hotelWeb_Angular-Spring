@@ -27,6 +27,15 @@ import { RecoverPasswordFormComponent } from './components/recover-password-form
 import { authInterceptorProviders } from './shared/_helpers/auth.interceptor';
 import { RegisterPageComponent } from './views/register-page/register-page.component';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
+import { AdminHomePageComponent } from './views/admin-home-page/admin-home-page.component';
+import { AdminAddApartmentPageComponent } from './views/admin-add-apartment-page/admin-add-apartment-page.component';
+import { AdminEditApartmentPageComponent } from './views/admin-edit-apartment-page/admin-edit-apartment-page.component';
+import { EditApartmentFormComponent } from './components/edit-apartment-form/edit-apartment-form.component';
+import { AddApartmentFormComponent } from './components/add-apartment-form/add-apartment-form.component';
+import { AdminReservationsComponent } from './views/admin-reservations/admin-reservations.component';
+import { ReservationCardComponent } from './components/reservation-card/reservation-card.component';
+import { AdminReservationDataComponent } from './views/admin-reservation-data/admin-reservation-data.component';
+import { ReservationDetailsComponent } from './components/reservation-details/reservation-details.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +55,15 @@ import { RegisterFormComponent } from './components/register-form/register-form.
     RecoverPasswordFormComponent,
     RegisterPageComponent,
     RegisterFormComponent,
+    AdminHomePageComponent,
+    AdminAddApartmentPageComponent,
+    AdminEditApartmentPageComponent,
+    EditApartmentFormComponent,
+    AddApartmentFormComponent,
+    AdminReservationsComponent,
+    ReservationCardComponent,
+    AdminReservationDataComponent,
+    ReservationDetailsComponent,
   ],
   imports: [
     BrowserModule,

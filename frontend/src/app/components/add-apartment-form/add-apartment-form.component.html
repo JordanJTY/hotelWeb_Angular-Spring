@@ -1,0 +1,60 @@
+<div class="container">
+    <h2>Add apartment</h2>
+    <img *ngIf="image == ''" src="assets/images/placeholder.png" alt="placeholder.png">
+    <img src="{{'data:{{typeImg}};base64,' + image}}" alt="">
+    <input id="inputFile" type="file" (change)="file($event)">
+    <form [formGroup]="apartmentForm" (ngSubmit)="submit()">
+        <input type="text" formControlName="type" [(ngModel)]="type" placeholder="Apartment's type">
+        <div class="alert-danger" *ngIf="typeApartment?.invalid && (typeApartment?.dirty || typeApartment?.touched)">
+            <div class="container-error-message" *ngIf="typeApartment?.errors?.['required']">
+                Apartment's type required.
+            </div>
+            <div class="container-error-message" *ngIf="typeApartment?.errors?.['minlength']">
+                Apartment's type must have more than 5 characters.
+            </div>
+        </div>
+        <textarea formControlName="description" [(ngModel)]="description" placeholder="Apartment's description"
+            rows="5"></textarea>
+        <div class="alert-danger"
+            *ngIf="descriptionApartment?.invalid && (descriptionApartment?.dirty || descriptionApartment?.touched)">
+            <div class="container-error-message" *ngIf="descriptionApartment?.errors?.['required']">
+                Apartment's description required.
+            </div>
+            <div class="container-error-message" *ngIf="descriptionApartment?.errors?.['minlength']">
+                Apartment's description must have more than 5 characters.
+            </div>
+        </div>
+        <input type="text" formControlName="amount" [(ngModel)]="amount" placeholder="Apartment's amount">
+        <div class="alert-danger"
+            *ngIf="amountApartment?.invalid && (amountApartment?.dirty || amountApartment?.touched)">
+            <div class="container-error-message" *ngIf="amountApartment?.errors?.['required']">
+                Apartment's amount required.
+            </div>
+            <div class="container-error-message" *ngIf="amountApartment?.errors?.['minlength']">
+                Apartment's amount must have more than 1 numbers.
+            </div>
+            <div class="container-error-message" *ngIf="amountApartment?.errors?.['maxlength']">
+                Apartment's amount mustn't have more than 3 numbers.
+            </div>
+            <div class="container-error-message" *ngIf="amountApartment?.errors?.['pattern']">
+                Apartment's amount must have only numbers.
+            </div>
+        </div>
+        <input type="text" formControlName="price" [(ngModel)]="price" placeholder="Apartment's price">
+        <div class="alert-danger" *ngIf="priceApartment?.invalid && (priceApartment?.dirty || priceApartment?.touched)">
+            <div class="container-error-message" *ngIf="priceApartment?.errors?.['required']">
+                Apartment's price required.
+            </div>
+            <div class="container-error-message" *ngIf="priceApartment?.errors?.['minlength']">
+                Apartment's price must have more than 2 numbers.
+            </div>
+            <div class="container-error-message" *ngIf="priceApartment?.errors?.['maxlength']">
+                Apartment's price must have more than 6 numbers.
+            </div>
+            <div class="container-error-message" *ngIf="priceApartment?.errors?.['pattern']">
+                Apartment's price must have only numbers.
+            </div>
+        </div>
+        <button type="submit" class="btn-send" [disabled]="!apartmentForm.valid">Send</button>
+    </form>
+</div>

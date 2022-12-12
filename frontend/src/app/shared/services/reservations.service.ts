@@ -26,8 +26,8 @@ export class ReservationsService {
     let data = new FormData();
     data.append("endDate", reservations.endDate.getDate().toString());
     data.append("startDate", reservations.startDate.getDate().toString());
-    data.append("apartmentId", reservations.apartmentId.toString());
-    data.append("appUserId", reservations.appUserId.toString());
+    data.append("apartmentId", reservations.apartment.toString());
+    data.append("appUserId", reservations.appUser.toString());
     this.http.post<Reservations>(this.endpoint, data).subscribe(response => { }, (error) => { console.log(error) });
   }
 
@@ -35,8 +35,8 @@ export class ReservationsService {
     let data = new FormData();
     data.append("endDate", reservations.endDate.getDate().toString());
     data.append("startDate", reservations.startDate.getDate().toString());
-    data.append("apartmentId", reservations.apartmentId.toString());
-    data.append("appUserId", reservations.appUserId.toString());
+    data.append("apartmentId", reservations.apartment.toString());
+    data.append("appUserId", reservations.appUser.toString());
     this.http.put(this.endpoint + "/" + id, data).subscribe(response => { }, (error) => { console.log(error) });
 
   }

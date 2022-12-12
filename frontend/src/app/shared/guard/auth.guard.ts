@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanDeactivate, CanLoad, Route, Router, RouterStateSnapshot, UrlSegment, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
+import { StorageService } from '../services/storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate, CanActivateChild, CanDeactivate<unknown>, CanLoad {
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private storage: StorageService) { }
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -38,8 +39,8 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanDeactivate<u
   }
 
   checkUserLogin(route: ActivatedRouteSnapshot, url: any): boolean {
-    if (this.authService.isLoggedIn()) {
-      const userRole = this.authService.getRole();
+    if (this.storage.getUser()) {
+      const userRole = this.storage.getUser().roles;
       if (route.data['role'] && route.data['role'].indexOf(userRole) === -1) {
         this.router.navigate(['/home']);
         return false;

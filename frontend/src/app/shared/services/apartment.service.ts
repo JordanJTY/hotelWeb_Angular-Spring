@@ -23,23 +23,25 @@ export class ApartmentService {
     this.http.delete(this.endpoint + "/" + id).subscribe(data => { });
   }
 
-  postApartment(apartment: Apartment, blob: Blob) {
+  postApartment(apartment: Apartment, file: File) {
     let data = new FormData();
     data.append("type", apartment.type);
-    data.append("desciption", apartment.description);
+    data.append("description", apartment.description);
     data.append("amount", apartment.amount.toString());
     data.append("price", apartment.price.toString());
-    data.append("file", blob);
+    data.append("file", file);
     this.http.post<Apartment>(this.endpoint, data).subscribe(response => { }, (error) => { console.log(error) });
   }
 
-  putApartment(apartment: Apartment, id: number, blob: Blob) {
+  putApartment(apartment: Apartment, id: number, file?: File) {
     let data = new FormData();
     data.append("type", apartment.type);
-    data.append("desciption", apartment.description);
+    data.append("description", apartment.description);
     data.append("amount", apartment.amount.toString());
     data.append("price", apartment.price.toString());
-    data.append("file", blob);
+    if(file != null || file != ''){
+      data.append("file", file!);
+    }
     this.http.put(this.endpoint + "/" + id, data).subscribe(response => { }, (error) => { console.log(error) });
   }
 }

@@ -46,7 +46,7 @@ export class LoginFormComponent {
     console.log(this.storage.getToken())
   }
 
-  goRegister(){
+  goRegister() {
     window.location.href = 'register';
   }
 
@@ -68,29 +68,26 @@ export class LoginFormComponent {
           this.isLoggedIn = true;
           this.roles = this.storage.getUser().roles;
           console.log(this.roles)
+          const perm: any[] = [this.roles];
+          this.permissionsService.loadPermissions(perm);
           switch (this.roles.toString()) {
             case 'ROLE_ADMIN': {
               console.log('llegué como admin')
+              window.location.href = 'admin-home';
               break;
             }
             case 'ROLE_USER': {
               console.log('llegué como user')
+              window.location.href = 'home';
               break;
             }
           }
-          const perm: any[] = [this.roles];
-          this.permissionsService.loadPermissions(perm);
-          window.location.href = '';
-          console.log(this.storage.getToken());
         },
         err => {
           this.errorMessage = err.error.message;
           this.isLoginFailed = true;
         }
       );
-
-    } else {
-
     }
   }
 }

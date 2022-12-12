@@ -1,0 +1,4 @@
+<app-header></app-header>
+<div class="container">
+    <app-reservation-card *ngFor="let r of reservations" [startDate]="r.startDate" [endDate]="r.endDate" [apartment]="r.apartment" (click)="goToDetails(r.id!)" ></app-reservation-card>
+</div>

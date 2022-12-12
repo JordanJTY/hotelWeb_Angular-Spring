@@ -1,0 +1,5 @@
+<div class="container">
+    <h2>{{reservationData.apartment.type}}</h2>
+    <p>The reservation was made by {{reservationData.appUser.username.charAt(0).toUpperCase() + reservationData.appUser.username.slice(1)}} occupying an apartment from {{formatDate(reservationData.startDate)}} to {{formatDate(reservationData.endDate)}}</p>
+    <button type="submit" class="btn-send" (click)="delete()" >Delete</button>
+</div>

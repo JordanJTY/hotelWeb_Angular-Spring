@@ -1,4 +1,14 @@
-<mat-card class="example-card">
+<mat-card *ngxPermissionsOnly="['ROLE_ADMIN']" class="example-card" routerLink="/edit-apartment/{{id}}">
+    <img mat-card-image src="{{'data:{{typeImg}};base64,' + image}}" alt="">
+    <mat-card-content>
+        <h3>{{type}}</h3>
+        <hr>
+        <p>
+            {{description}}
+        </p>
+    </mat-card-content>
+</mat-card>
+<mat-card *ngxPermissionsExcept="['ROLE_ADMIN']" class="example-card">
     <img mat-card-image src="{{'data:{{typeImg}};base64,' + image}}" alt="">
     <mat-card-content>
         <h3>{{type}}</h3>

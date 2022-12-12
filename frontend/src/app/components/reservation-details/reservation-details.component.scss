@@ -1,0 +1,30 @@
+.container {
+    max-width: 700px;
+    padding: 16px;
+    margin: 10px auto;
+    background: transparent;
+    text-align: center;
+}
+
+h2{
+    font-size: 2.5em;
+    margin: 0 0 .75em;
+}
+
+p{
+    font-size: 1.5em;
+    text-align: justify;
+    width: auto;
+    padding: 0 1em;
+}
+
+.btn-send {
+    border-radius: 30px;
+    width: 60%;
+    padding: 3%;
+    background: #F5F1ED;
+    color: black;
+    border: 1px solid black;
+    font-size: 15px;
+    margin-top: 1em;
+}

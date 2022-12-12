@@ -1,6 +1,10 @@
 <header class="header">
     <nav class="navbar">
-        <a href="">
+        <a *ngxPermissionsOnly="['ROLE_ADMIN']" href="admin-home">
+            <img id="logo" src="assets/images/logo.png" />
+        </a>
+
+        <a *ngxPermissionsExcept="['ROLE_ADMIN']" href="">
             <img id="logo" src="assets/images/logo.png" />
         </a>
 
