@@ -14,7 +14,7 @@ public class ReservationController {
     IReservationService reservationService;
 
     @GetMapping("/reservation")
-    public List<Reservation> getAllApartment() {
+    public List<Reservation> getAllReservations() {
         return reservationService.getAll();
     }
 

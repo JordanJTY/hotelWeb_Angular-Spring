@@ -2,11 +2,14 @@ package com.jordan.hotelako.controllers;
 
 
 import com.jordan.hotelako.entity.models.User;
+import com.jordan.hotelako.entity.repository.RoleRepository;
 import com.jordan.hotelako.entity.services.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Base64;
 import java.util.List;
 
 @RestController
@@ -15,7 +18,12 @@ public class UserController {
     @Autowired
     IUserService userService;
 
-    @PreAuthorize("hasRole('ADMIN')")
+    @Autowired
+    PasswordEncoder encoder;
+
+    @Autowired
+    RoleRepository roleRepository;
+
     @GetMapping("/user")
     public List<User> getAllUsers() {
         return userService.getAll();
@@ -33,9 +41,16 @@ public class UserController {
         userService.post(appUser);
     }
 
-    @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
     @PutMapping("/user/{id}")
     public void put(@PathVariable(value = "id") Long id, User appUser) {
+        byte[] decodingPW = Base64.getDecoder().decode(appUser.getPassword());
+        String decodedPw = new String(decodingPW);
+        byte[] decodingName = Base64.getDecoder().decode(appUser.getUsername());
+        String decodedName = new String(decodingName);
+        String encryptPw = encoder.encode(decodedPw);
+        appUser.setUsername(decodedName);
+        appUser.setPassword(encryptPw);
+        appUser.setRoles(getOne(id).getRoles());
         userService.put(appUser, id);
     }
 

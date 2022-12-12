@@ -26,7 +26,7 @@ public class Apartment implements Serializable {
 
     private String typeImg;
 
-    @Column(name = "image", unique = false, nullable = false, length = 100000)
+    @Column(name = "image", unique = false, length = 100000)
     private byte[] image;
     private String description;
     private float price;

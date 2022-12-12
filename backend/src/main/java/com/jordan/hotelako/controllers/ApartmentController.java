@@ -24,7 +24,7 @@ public class ApartmentController {
     @GetMapping("/apartment")
     public List<Apartment> getAllApartment() {
         List<Apartment> db = apartmentService.getAll();
-        db.forEach((x)->{
+        db.forEach((x) -> {
             byte[] noZip = ImageUtility.decompressImage(x.getImage());
             x.setImage(noZip);
         });
@@ -34,17 +34,27 @@ public class ApartmentController {
     @GetMapping("/apartment/{id}")
     public Apartment getOne(@PathVariable(value = "id") Long id) {
         final Apartment db = apartmentService.get(id);
+        if (db.getImage() != null) {
+            return Apartment.builder()
+                    .nameImg(db.getNameImg())
+                    .typeImg(db.getTypeImg())
+                    .image(ImageUtility.decompressImage(db.getImage()))
+                    .amount(db.getAmount())
+                    .price(db.getPrice())
+                    .description(db.getDescription())
+                    .type(db.getType())
+                    .id(db.getId())
+                    .build();
+        } else {
+            return Apartment.builder()
+                    .amount(db.getAmount())
+                    .price(db.getPrice())
+                    .description(db.getDescription())
+                    .type(db.getType())
+                    .id(db.getId())
+                    .build();
+        }
 
-        return Apartment.builder()
-                .nameImg(db.getNameImg())
-                .typeImg(db.getTypeImg())
-                .image(ImageUtility.decompressImage(db.getImage()))
-                .amount(db.getAmount())
-                .price(db.getPrice())
-                .description(db.getDescription())
-                .type(db.getType())
-                .id(db.getId())
-                .build();
     }
 
     @PostMapping("/apartment")
@@ -59,13 +69,19 @@ public class ApartmentController {
     }
 
     @PutMapping("/apartment/{id}")
-    public void put(@PathVariable(value = "id") Long id, Apartment apartment, @RequestParam("file") MultipartFile image) throws IOException {
-        String randomID = UUID.randomUUID().toString();
-        String filename = randomID.concat(randomID + image.getOriginalFilename().substring(image.getOriginalFilename().lastIndexOf(".")));
+    public void put(@PathVariable(value = "id") Long id, Apartment apartment, @RequestParam(value = "file", required = false) MultipartFile image) throws IOException {
+        if (image != null) {
+            String randomID = UUID.randomUUID().toString();
+            String filename = randomID.concat(randomID + image.getOriginalFilename().substring(image.getOriginalFilename().lastIndexOf(".")));
 
-        apartment.setNameImg(filename);
-        apartment.setTypeImg(image.getContentType());
-        apartment.setImage(ImageUtility.compressImage(image.getBytes()));
+            apartment.setNameImg(filename);
+            apartment.setTypeImg(image.getContentType());
+            apartment.setImage(ImageUtility.compressImage(image.getBytes()));
+        } else {
+            apartment.setNameImg(getOne(id).getNameImg());
+            apartment.setTypeImg(getOne(id).getTypeImg());
+            apartment.setImage(ImageUtility.compressImage(getOne(id).getImage()));
+        }
         apartmentService.put(apartment, id);
     }
 
