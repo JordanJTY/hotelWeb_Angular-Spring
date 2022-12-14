@@ -3,11 +3,17 @@
     max-width: 20em;
     border-radius: 1em;
     text-align: center;
+    background-color: #F5F1ED;
     border: 1px solid black;
     margin: 1em 0 ;
 }
 
-.example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
+h3{
+    margin: .7em 0;
+    font-size: 1.25em;
+}
+
+p{
+    margin-top: 1em;
+    text-align: justify;
 }

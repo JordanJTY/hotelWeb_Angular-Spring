@@ -14,6 +14,8 @@ import { InfoPageComponent } from './views/info-page/info-page.component';
 import { LoginPageComponent } from './views/login-page/login-page.component';
 import { RecoverPasswordPageComponent } from './views/recover-password-page/recover-password-page.component';
 import { RegisterPageComponent } from './views/register-page/register-page.component';
+import { OrderPageComponent } from './views/order-page/order-page.component';
+import { ReservationsPageComponent } from './views/reservations-page/reservations-page.component';
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
@@ -39,7 +41,11 @@ const routes: Routes = [
     data: {
       role: 'ROLE_ADMIN'
   }},
-  // { path: 'reservations', component: RecoverPasswordPageComponent },
+  { path: 'order/:id', component: OrderPageComponent, canActivate: [AuthGuard],
+    data: {
+      role: 'ROLE_USER'
+  }},
+  { path: 'reservations', component: ReservationsPageComponent },
   { path: 'allReservations', component: AdminReservationsComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
   // { path: '**', component: PageNotFoundComponent, canActivate: [AuthGuard],

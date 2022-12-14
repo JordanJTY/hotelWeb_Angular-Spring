@@ -1,0 +1,19 @@
+<div class="container">
+    <mat-card class="example-card">
+        <img id="img" mat-card-image src="{{'data:{{apartment.typeImg}};base64,' + apartment.image}}" alt="">
+        <mat-card-content>
+            <h3>{{apartment.type}}</h3>
+            <hr>
+            <p>
+                {{apartment.description}}
+            </p>
+        </mat-card-content>
+        <div class="btns">
+            <button *ngxPermissionsExcept="['ROLE_USER', 'ROLE_ADMIN']" type="submit" class="btn-send"
+                (click)="goLogin()">Go
+                login</button>
+            <button *ngxPermissionsOnly="['ROLE_USER', 'ROLE_ADMIN']" type="submit" class="btn-send"
+                (click)="order()">Order</button>
+        </div>
+    </mat-card>
+</div>

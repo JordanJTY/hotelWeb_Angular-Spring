@@ -16,7 +16,7 @@ export class ReservationCardComponent implements OnInit {
   startDateFormat: string = '';
   typeApartment: string = '';
 
-  constructor(private apartmentService: ApartmentService) {
+  constructor() {
   }
 
   padTo2Digits(num: number) {
@@ -35,7 +35,6 @@ export class ReservationCardComponent implements OnInit {
 
   ngOnInit() {
     this.typeApartment = this.apartment.type;
-    console.log(this.endDate)
     this.endDateFormat = this.formatDate(this.endDate);
     this.startDateFormat = this.formatDate(this.startDate);
 

@@ -24,19 +24,19 @@ export class ReservationsService {
 
   postReservation(reservations: Reservations) {
     let data = new FormData();
-    data.append("endDate", reservations.endDate.getDate().toString());
-    data.append("startDate", reservations.startDate.getDate().toString());
-    data.append("apartmentId", reservations.apartment.toString());
-    data.append("appUserId", reservations.appUser.toString());
+    data.append("endDate", reservations.endDate.toString());
+    data.append("startDate", reservations.startDate.toString());
+    data.append("apartment", reservations.apartment.id!.toString());
+    data.append("appUser", reservations.appUser.id!.toString());
     this.http.post<Reservations>(this.endpoint, data).subscribe(response => { }, (error) => { console.log(error) });
   }
 
   putReservation(reservations: Reservations, id: number) {
     let data = new FormData();
-    data.append("endDate", reservations.endDate.getDate().toString());
-    data.append("startDate", reservations.startDate.getDate().toString());
-    data.append("apartmentId", reservations.apartment.toString());
-    data.append("appUserId", reservations.appUser.toString());
+    data.append("endDate", reservations.endDate.toString());
+    data.append("startDate", reservations.startDate.toString());
+    data.append("apartment", reservations.apartment.id!.toString());
+    data.append("appUser", reservations.appUser.id!.toString());
     this.http.put(this.endpoint + "/" + id, data).subscribe(response => { }, (error) => { console.log(error) });
 
   }

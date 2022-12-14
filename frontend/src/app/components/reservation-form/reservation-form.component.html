@@ -1,0 +1,42 @@
+<div class="content">
+    <div class="contact-wrapper animated bounceInUp">
+        <div class="form-container">
+            <h2>Order {{apartmentData.type}}</h2>
+            <form [formGroup]="reservationForm" (ngSubmit)="submit()">
+                <p class="pDate">Start date</p>
+                <input class="date" type="date" formControlName="startDate" min="{{actualDate}}" max="2023-12-31"
+                    (change)="compareDate()">
+                <div class="alert-danger" *ngIf="(startDate?.invalid && (startDate?.dirty || startDate?.touched))">
+                    <div class="container-error-message" *ngIf="startDate?.errors?.['required']">
+                        Date are required.
+                    </div>
+                </div>
+                <p class="pDate">End date</p>
+                <input class="date" type="date" formControlName="endDate" min="{{actualDate}}" max="2023-12-31"
+                    (change)="compareDate()">
+                <div class="alert-danger" *ngIf="(endDate?.invalid && (endDate?.dirty || endDate?.touched))">
+                    <div class="container-error-message" *ngIf="endDate?.errors?.['required']">
+                        Date are required.
+                    </div>
+                </div>
+                <div class="alert-danger">
+                    <div class="container-error-message" *ngIf="equalsDate">
+                        Dates should be valid.
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <div>
+                        <h4>Duration:</h4>
+                        <p>{{getDayDiff() + ' day(s)'}}</p>
+                    </div>
+                    <hr>
+                    <div class="">
+                        <h3>Price: </h3>
+                        <p>{{(apartmentData.price * getDayDiff()) + '€'}}</p>
+                    </div>
+                </div>
+                <button type="submit" class="btn-send" [disabled]="!reservationForm.valid">Order</button>
+            </form>
+        </div>
+    </div>
+</div>

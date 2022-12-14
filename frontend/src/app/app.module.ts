@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPermissionsModule } from 'ngx-permissions';
+import { MatDialogModule } from '@angular/material/dialog'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,6 +37,10 @@ import { AdminReservationsComponent } from './views/admin-reservations/admin-res
 import { ReservationCardComponent } from './components/reservation-card/reservation-card.component';
 import { AdminReservationDataComponent } from './views/admin-reservation-data/admin-reservation-data.component';
 import { ReservationDetailsComponent } from './components/reservation-details/reservation-details.component';
+import { ApartmentDetailsComponent } from './views/apartment-details/apartment-details.component';
+import { OrderPageComponent } from './views/order-page/order-page.component';
+import { ReservationFormComponent } from './components/reservation-form/reservation-form.component';
+import { ReservationsPageComponent } from './views/reservations-page/reservations-page.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +69,10 @@ import { ReservationDetailsComponent } from './components/reservation-details/re
     ReservationCardComponent,
     AdminReservationDataComponent,
     ReservationDetailsComponent,
+    ApartmentDetailsComponent,
+    OrderPageComponent,
+    ReservationFormComponent,
+    ReservationsPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,8 +84,10 @@ import { ReservationDetailsComponent } from './components/reservation-details/re
     ReactiveFormsModule,
     MatFormFieldModule,
     MatIconModule,
-    NgxPermissionsModule.forRoot()
+    NgxPermissionsModule.forRoot(),
+    MatDialogModule
   ],
+  entryComponents: [ApartmentDetailsComponent],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
