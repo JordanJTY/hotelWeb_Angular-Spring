@@ -47,8 +47,13 @@
                     </div>
                 </div>
                 <div class="contact-info">
-                    <input id="checkbox" type="checkbox" value="off"> I accept and confirm that I have read the
+                    <input id="checkbox" type="checkbox" (change)="checkbox()"> I accept and confirm that I have read the
                     Privacy Policy
+                </div>
+                <div class="alert-danger">
+                    <div class="container-error-message" *ngIf="!checkboxChecker && boxChecker">
+                        You should accept our Privacy Policy
+                    </div>
                 </div>
                 <button type="submit" class="btn-send" [disabled]="!registerForm.valid">Send</button>
             </form>

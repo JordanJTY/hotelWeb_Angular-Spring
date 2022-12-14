@@ -45,7 +45,6 @@ export class ReservationFormComponent {
   compareDate(): any {
     if (this.endDate?.value < this.startDate?.value || this.endDate?.value == this.startDate?.value) {
       this.equalsDate = true;
-      console.log(this.startDate?.value + ' - ' + this.endDate?.value);
     } else {
       this.equalsDate = false;
     }

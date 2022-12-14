@@ -30,7 +30,6 @@ export class ReservationsPageComponent {
   }
 
   checkOrder(id: number, index: number) {
-    console.log(this.reservations[index].startDate);
     if (new Date(this.reservations[index].startDate).toISOString() == new Date().toISOString() || new Date(this.reservations[index].startDate).toISOString() < new Date().toISOString()) {
       Swal.fire({
         title: 'Do you want to delete your reservation?',

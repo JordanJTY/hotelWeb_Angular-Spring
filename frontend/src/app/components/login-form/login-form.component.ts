@@ -43,7 +43,7 @@ export class LoginFormComponent {
     if (this.storage.getToken()) {
       this.isLoggedIn = true;
     }
-    console.log(this.storage.getToken())
+    // console.log(this.storage.getToken())
   }
 
   goRegister() {
@@ -58,7 +58,7 @@ export class LoginFormComponent {
   submit() {
     if (this.loginForm.valid) {
       this.login = { username: btoa(this.name?.value), password: btoa(this.password?.value) }
-      console.log(this.login.username + ' - ' + this.login.password)
+      // console.log(this.login.username + ' - ' + this.login.password)
       this.auth.login(this.login).subscribe(
         data => {
           this.storage.saveToken(data.accessToken);
@@ -67,17 +67,15 @@ export class LoginFormComponent {
           this.isLoginFailed = false;
           this.isLoggedIn = true;
           this.roles = this.storage.getUser().roles;
-          console.log(this.roles)
+          // console.log(this.roles)
           const perm: any[] = [this.roles];
           this.permissionsService.loadPermissions(perm);
           switch (this.roles.toString()) {
             case 'ROLE_ADMIN': {
-              console.log('llegué como admin')
               window.location.href = 'admin-home';
               break;
             }
             case 'ROLE_USER': {
-              console.log('llegué como user')
               window.location.href = 'home';
               break;
             }

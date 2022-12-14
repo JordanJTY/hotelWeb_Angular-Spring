@@ -13,6 +13,8 @@ export class RegisterFormComponent {
   public registerForm: FormGroup;
   private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   checker: boolean = false
+  checkboxChecker: boolean = false;
+  boxChecker: boolean = false;
   constructor(private auth: AuthService) {
     this.registerForm = this.createForm();
   }
@@ -33,9 +35,11 @@ export class RegisterFormComponent {
   }
 
   checkbox() {
-    let check = document.querySelector(`#checkbox`) as HTMLInputElement;
-    console.log(check?.checked)
-    return check.checked;
+    if (this.checkboxChecker) {
+      this.checkboxChecker = false;
+    } else {
+      this.checkboxChecker = true;
+    }
   }
 
   compareDate(date: Date) {
@@ -48,8 +52,7 @@ export class RegisterFormComponent {
     var yearFromEpoch = dateFromEpoch.getUTCFullYear();
     // calculate the age of the user
     var age = Math.abs(yearFromEpoch - 1970);
-    if (age < 18) {
-      console.log(age);
+    if (age < 18 || age > 120) {
       this.checker = true;
     } else {
       this.checker = false;
@@ -58,7 +61,8 @@ export class RegisterFormComponent {
   };
 
   submit() {
-    if (this.registerForm.valid && !this.checker) {
+    if (this.registerForm.valid && !this.checker && this.boxChecker) {
+      this.boxChecker = false;
       const formUser: User = { username: btoa(this.name?.value), password: btoa(this.password?.value), dateBirth: this.dateBirth?.value, email: this.email?.value };
       Swal.fire({
         title: 'Are you sure?',
@@ -80,6 +84,8 @@ export class RegisterFormComponent {
           })
         }
       })
+    } else {
+      this.boxChecker = true;
     }
   }
 }
