@@ -96,7 +96,26 @@ ul {
 }
 
 .contact-info {
+    padding: 1em;
+    background-color: #F5F1ED;
+    border-radius: .5em;
     display: flex;
     flex-direction: column;
     font-size: 600;
+}
+
+.duration {
+    margin: 0 0 .75em 0 ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: .75em 0 0 0 ;
 }
