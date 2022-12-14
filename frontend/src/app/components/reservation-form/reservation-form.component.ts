@@ -6,6 +6,7 @@ import { Reservations } from 'src/app/shared/models/reservations';
 import { ApartmentService } from 'src/app/shared/services/apartment.service';
 import { ReservationsService } from 'src/app/shared/services/reservations.service';
 import { StorageService } from 'src/app/shared/services/storage.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-reservation-form',
@@ -42,17 +43,9 @@ export class ReservationFormComponent {
   }
 
   compareDate(): any {
-    let from_date = this.startDate?.value;
-    let to_date = this.endDate?.value;
-    var fromdate = from_date.split('-');
-    from_date = new Date();
-    from_date.setFullYear(fromdate[2], fromdate[1] - 1, fromdate[0]);
-    var todate = to_date.split('-');
-    to_date = new Date();
-    to_date.setFullYear(todate[2], todate[1] - 1, todate[0]);
-    if (from_date > to_date || from_date.toISOString() == to_date.toISOString()) {
+    if (this.endDate?.value < this.startDate?.value || this.endDate?.value == this.startDate?.value) {
       this.equalsDate = true;
-      console.log(this.equalsDate);
+      console.log(this.startDate?.value + ' - ' + this.endDate?.value);
     } else {
       this.equalsDate = false;
     }
@@ -64,20 +57,31 @@ export class ReservationFormComponent {
     if (isNaN(num) || num == null || this.equalsDate) {
       return 0;
     } else { return num }
-
   }
 
   submit() {
     if (this.reservationForm.valid && !this.equalsDate) {
-      let reservation: Reservations = {endDate: this.endDate?.value, startDate: this.startDate?.value, apartment: this.apartmentData, appUser: this.storage.getUser() };
-      console.log(reservation);
-      // Swal.fire('Proceso terminado. Gracias por contactar con nosotros.').then(respuesta => {
-      this.reservationsService.postReservation(reservation);
-      window.location.href = 'home';
-      // });
-    } else {
-      // Swal.fire('Debe rellenar todos los campos.').then(respuesta => {
-      // });
+      let reservation: Reservations = { endDate: this.endDate?.value, startDate: this.startDate?.value, apartment: this.apartmentData, appUser: this.storage.getUser() };
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#DAD2BC',
+        cancelButtonColor: '#69747C',
+        confirmButtonText: 'Yes'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.reservationsService.postReservation(reservation);
+          Swal.fire(
+            'Done!',
+            'Your order has been done correctly.',
+            'success'
+          ).then(function () {
+            window.location.href = 'home';
+          })
+        }
+      })
     }
   }
 }

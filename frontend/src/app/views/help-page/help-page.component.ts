@@ -4,6 +4,7 @@ import { DataHelp } from 'src/app/shared/interfaces/data-help'
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { StorageService } from 'src/app/shared/services/storage.service';
 import { UserService } from 'src/app/shared/services/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-help-page',
@@ -16,7 +17,6 @@ export class HelpPageComponent {
   roleAs: string = "";
 
   ngOnInit(): void {
-    this.updateAuthInfo();
   }
 
   constructor(private auth: AuthService, private router: Router, private storage: StorageService, private userService: UserService) {
@@ -46,15 +46,28 @@ export class HelpPageComponent {
 
   deleteAccount() {
     var dataUser = this.storage.getUser();
-    console.log(dataUser.id)
-    this.userService.deleteUser(dataUser.id);
-    window.location.href = 'home';
-    this.storage.signOut();
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#DAD2BC',
+      cancelButtonColor: '#69747C',
+      confirmButtonText: 'Yes'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.userService.deleteUser(dataUser.id);
+        this.storage.signOut();
+        Swal.fire(
+          'Done!',
+          'Your account has been deleted correctly.',
+          'success'
+        ).then(function () {
+          window.location.href = 'home';
+        })
+      }
+    })
     return false;
   }
 
-  updateAuthInfo() {
-    this.isLogin = this.auth.isLoggedIn();
-    this.roleAs = this.auth.getRole();
-  }
 }

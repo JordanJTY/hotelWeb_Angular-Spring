@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SafeResourceUrl } from '@angular/platform-browser';
 import { Apartment } from 'src/app/shared/models/apartment';
 import { ApartmentService } from 'src/app/shared/services/apartment.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-apartment-form',
@@ -52,16 +53,32 @@ export class AddApartmentFormComponent {
       let base64 = base64Data[1].split(',')
       this.image = base64[1];
       this.typeImg = typeImage[1];
-      console.log(this.typeImg + ' --- ' + this.image)
     };
   }
 
   submit() {
     if (this.apartmentForm.valid) {
-      console.log(this.amount + ' - ' + this.type + ' - ' + this.description + ' - ' + this.price)
+      // console.log(this.amount + ' - ' + this.type + ' - ' + this.description + ' - ' + this.price)
       let apartmentData: Apartment = { type: this.type, amount: this.amount, description: this.description, price: this.price, image: '' }
-      this.apartmentService.postApartment(apartmentData, this.dataImg);
-      window.location.href = 'admin-home'
+      Swal.fire({
+        title: 'Are you sure?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#DAD2BC',
+        cancelButtonColor: '#69747C',
+        confirmButtonText: 'Yes'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.apartmentService.postApartment(apartmentData, this.dataImg);
+          Swal.fire(
+            'Done!',
+            'Your apartment has been deleted correctly.',
+            'success'
+          ).then(function () {
+            window.location.href = 'admin-home';
+          })
+        }
+      })
     }
   }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contact-form',
@@ -34,12 +35,9 @@ export class ContactFormComponent {
 
   submit() {
     if (this.contactForm.valid) {
-      // Swal.fire('Proceso terminado. Gracias por contactar con nosotros.').then(respuesta => {
-      window.location.reload();
-      // });
-    } else {
-      // Swal.fire('Debe rellenar todos los campos.').then(respuesta => {
-      // });
+      Swal.fire({ title: 'Thank you for contacting us.', icon: 'success' }).then(() => {
+        window.location.reload();
+      });
     }
   }
 }

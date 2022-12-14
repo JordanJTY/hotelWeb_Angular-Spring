@@ -3,6 +3,7 @@ import { Apartment } from 'src/app/shared/models/apartment';
 import { Reservations } from 'src/app/shared/models/reservations';
 import { User } from 'src/app/shared/models/user';
 import { ReservationsService } from 'src/app/shared/services/reservations.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-reservation-details',
@@ -37,12 +38,26 @@ export class ReservationDetailsComponent implements OnInit {
     );
   }
 
-  delete(){
-    if(true){
-      // this.reservationsService.deleteReservation(this.id);
-      console.log(this.id)
-    } else {
-
-    }
+  delete() {
+    Swal.fire({
+      title: 'Do you want to delete this reservation?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#DAD2BC',
+      cancelButtonColor: '#69747C',
+      confirmButtonText: 'Yes'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.reservationsService.deleteReservation(this.id);
+        Swal.fire(
+          'Done!',
+          'Your reservation has been deleted correctly.',
+          'success'
+        ).then(function () {
+          window.location.href = 'allReservations'
+        })
+      }
+    })
   }
 }

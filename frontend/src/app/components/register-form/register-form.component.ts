@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/shared/models/user';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register-form',
@@ -48,23 +49,37 @@ export class RegisterFormComponent {
     // calculate the age of the user
     var age = Math.abs(yearFromEpoch - 1970);
     if (age < 18) {
-      return true;
+      console.log(age);
+      this.checker = true;
     } else {
-      return false;
+      this.checker = false;
     }
 
   };
 
   submit() {
-    if (this.registerForm.valid) {
-      // Swal.fire('Proceso terminado. Gracias por contactar con nosotros.').then(respuesta => {
+    if (this.registerForm.valid && !this.checker) {
       const formUser: User = { username: btoa(this.name?.value), password: btoa(this.password?.value), dateBirth: this.dateBirth?.value, email: this.email?.value };
-      this.auth.register(formUser);
-      window.location.href = 'login';
-      // });
-    } else {
-      // Swal.fire('Debe rellenar todos los campos.').then(respuesta => {
-      // });
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#DAD2BC',
+        cancelButtonColor: '#69747C',
+        confirmButtonText: 'Yes'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.auth.register(formUser);
+          Swal.fire(
+            'Done!',
+            'Your register has been done correctly.',
+            'success'
+          ).then(function () {
+            window.location.href = 'login';
+          })
+        }
+      })
     }
   }
 }

@@ -1,6 +1,8 @@
 <app-header></app-header>
-<div class="container">
+<div class="text">
     <h2>Reservations</h2>
-    <app-reservation-card (click)="checkOrder()" *ngFor="let r of reservations" [startDate]="r.startDate" [endDate]="r.endDate"
-        [apartment]="r.apartment"></app-reservation-card>
+</div>
+<div class="container">
+    <app-reservation-card (click)="checkOrder(r.id!)" *ngFor="let r of reservations" [startDate]="r.startDate"
+        [endDate]="r.endDate" [apartment]="r.apartment"></app-reservation-card>
 </div>

@@ -4,6 +4,7 @@ import { SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Apartment } from 'src/app/shared/models/apartment';
 import { ApartmentService } from 'src/app/shared/services/apartment.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-apartment-form',
@@ -43,7 +44,6 @@ export class EditApartmentFormComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.params['id'];
-    console.log(id)
     let apartmentData = this.apartmentService.getApartment(id);
     apartmentData.forEach(data => {
       this.type = data.type;
@@ -66,31 +66,61 @@ export class EditApartmentFormComponent implements OnInit {
       let base64 = base64Data[1].split(',')
       this.image = base64[1];
       this.typeImg = typeImage[1];
-      console.log(this.typeImg + ' --- ' + this.image)
+      // console.log(this.typeImg + ' --- ' + this.image)
     };
   }
 
   delete() {
     const id = this.activatedRoute.snapshot.params['id'];
-    if (true) {
-      this.apartmentService.deleteAparment(id);
-      window.location.href = 'admin-home';
-    }
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#DAD2BC',
+      cancelButtonColor: '#69747C',
+      confirmButtonText: 'Yes'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.apartmentService.deleteAparment(id);
+        Swal.fire(
+          'Done!',
+          'Your apartment has been created correctly.',
+          'success'
+        ).then(function () {
+          window.location.href = 'admin-home';
+        })
+      }
+    })
   }
 
   submit() {
     if (this.apartmentForm.valid) {
       const id = this.activatedRoute.snapshot.params['id'];
-      console.log(this.amount + ' - ' + this.type + ' - ' + this.description + ' - ' + this.price)
       let apartmentData: Apartment = { type: this.type, amount: this.amount, description: this.description, price: this.price, image: '' }
-      if (this.dataImg.name != "oldImage.") {
-        console.log('llego master')
-        this.apartmentService.putApartment(apartmentData, id, this.dataImg);
-      } else {
-        console.log('chungo')
-        this.apartmentService.putApartment(apartmentData, id);
-      }
-      window.location.href = 'admin-home'
+      Swal.fire({
+        title: 'Are you sure?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#DAD2BC',
+        cancelButtonColor: '#69747C',
+        confirmButtonText: 'Yes'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          if (this.dataImg.name != "oldImage.") {
+            this.apartmentService.putApartment(apartmentData, id, this.dataImg);
+          } else {
+            this.apartmentService.putApartment(apartmentData, id);
+          }
+          Swal.fire(
+            'Done!',
+            'Your apartment has been updated correctly.',
+            'success'
+          ).then(function () {
+            window.location.href = 'admin-home';
+          })
+        }
+      })
     }
   }
 }

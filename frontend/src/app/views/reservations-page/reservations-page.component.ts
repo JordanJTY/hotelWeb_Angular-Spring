@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Reservations } from 'src/app/shared/models/reservations';
 import { ReservationsService } from 'src/app/shared/services/reservations.service';
 import { StorageService } from 'src/app/shared/services/storage.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-reservations-page',
@@ -27,7 +28,26 @@ export class ReservationsPageComponent {
     })
   }
 
-  checkOrder(){
-    console.log('Perfe pá');
+  checkOrder(id: number){
+    Swal.fire({
+      title: 'Do you want to delete your reservation?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#DAD2BC',
+      cancelButtonColor: '#69747C',
+      confirmButtonText: 'Yes'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.reservationsService.deleteReservation(id);
+        Swal.fire(
+          'Done!',
+          'Your reservation has been deleted correctly.',
+          'success'
+        ).then(function () {
+          window.location.reload()
+        })
+      }
+    })
   }
 }

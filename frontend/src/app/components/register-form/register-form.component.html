@@ -34,17 +34,20 @@
                         Password must have more than 5 characters.
                     </div>
                 </div>
-                <input id="date" type="date" formControlName="dateBirth" value="" min="1900-01-01" max="2022-12-31">
+                <input id="date" type="date" formControlName="dateBirth" (change)="compareDate(dateBirth?.value)"
+                    value="" min="1900-01-01" max="2022-12-31">
                 <div class="alert-danger" *ngIf="dateBirth?.invalid && (dateBirth?.dirty || dateBirth?.touched)">
                     <div class="container-error-message" *ngIf="dateBirth?.errors?.['required']">
                         Date of birth required.
                     </div>
-                    <div class="container-error-message" *ngIf="compareDate(dateBirth?.value)">
+                </div>
+                <div class="alert-danger">
+                    <div class="container-error-message" *ngIf="checker">
                         Date not valid
                     </div>
                 </div>
                 <div class="contact-info">
-                    <input id="checkbox" type="checkbox" value="off" > I accept and confirm that I have read the
+                    <input id="checkbox" type="checkbox" value="off"> I accept and confirm that I have read the
                     Privacy Policy
                 </div>
                 <button type="submit" class="btn-send" [disabled]="!registerForm.valid">Send</button>
