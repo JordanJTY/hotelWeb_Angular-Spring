@@ -16,6 +16,8 @@ import { RecoverPasswordPageComponent } from './views/recover-password-page/reco
 import { RegisterPageComponent } from './views/register-page/register-page.component';
 import { OrderPageComponent } from './views/order-page/order-page.component';
 import { ReservationsPageComponent } from './views/reservations-page/reservations-page.component';
+import { EditOrderFormComponent } from './components/edit-order-form/edit-order-form.component';
+import { EditReservationPageComponent } from './views/edit-reservation-page/edit-reservation-page.component';
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
@@ -25,28 +27,54 @@ const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
   { path: 'register', component: RegisterPageComponent },
   { path: 'recover-password', component: RecoverPasswordPageComponent },
-  { path: 'admin-home', component: AdminHomePageComponent, canActivate: [AuthGuard],
+  {
+    path: 'admin-home', component: AdminHomePageComponent, canActivate: [AuthGuard],
     data: {
       role: 'ROLE_ADMIN'
-  }},
-  { path: 'add-apartment', component: AdminAddApartmentPageComponent, canActivate: [AuthGuard],
+    }
+  },
+  {
+    path: 'add-apartment', component: AdminAddApartmentPageComponent, canActivate: [AuthGuard],
     data: {
       role: 'ROLE_ADMIN'
-  }},
-  { path: 'edit-apartment/:id', component: AdminEditApartmentPageComponent, canActivate: [AuthGuard],
+    }
+  },
+  {
+    path: 'edit-apartment/:id', component: AdminEditApartmentPageComponent, canActivate: [AuthGuard],
     data: {
       role: 'ROLE_ADMIN'
-  }},
-  { path: 'details-reservation/:id', component: AdminReservationDataComponent, canActivate: [AuthGuard],
+    }
+  },
+  {
+    path: 'details-reservation/:id', component: AdminReservationDataComponent, canActivate: [AuthGuard],
     data: {
       role: 'ROLE_ADMIN'
-  }},
-  { path: 'order/:id', component: OrderPageComponent, canActivate: [AuthGuard],
+    }
+  },
+  {
+    path: 'order/:id', component: OrderPageComponent, canActivate: [AuthGuard],
     data: {
       role: 'ROLE_USER'
-  }},
-  { path: 'reservations', component: ReservationsPageComponent },
-  { path: 'allReservations', component: AdminReservationsComponent },
+    }
+  },
+  {
+    path: 'edit-order/:id', component: EditReservationPageComponent, canActivate: [AuthGuard],
+    data: {
+      role: 'ROLE_USER'
+    }
+  },
+  {
+    path: 'reservations', component: ReservationsPageComponent, canActivate: [AuthGuard],
+    data: {
+      role: 'ROLE_USER'
+    }
+  },
+  {
+    path: 'allReservations', component: AdminReservationsComponent, canActivate: [AuthGuard],
+    data: {
+      role: 'ROLE_ADMIN'
+    }
+  },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
   // { path: '**', component: PageNotFoundComponent, canActivate: [AuthGuard],
   //   data: {

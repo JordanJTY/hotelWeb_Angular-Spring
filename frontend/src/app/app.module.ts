@@ -41,6 +41,8 @@ import { ApartmentDetailsComponent } from './views/apartment-details/apartment-d
 import { OrderPageComponent } from './views/order-page/order-page.component';
 import { ReservationFormComponent } from './components/reservation-form/reservation-form.component';
 import { ReservationsPageComponent } from './views/reservations-page/reservations-page.component';
+import { EditReservationPageComponent } from './views/edit-reservation-page/edit-reservation-page.component';
+import { EditOrderFormComponent } from './components/edit-order-form/edit-order-form.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +75,8 @@ import { ReservationsPageComponent } from './views/reservations-page/reservation
     OrderPageComponent,
     ReservationFormComponent,
     ReservationsPageComponent,
+    EditReservationPageComponent,
+    EditOrderFormComponent,
   ],
   imports: [
     BrowserModule,

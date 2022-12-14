@@ -85,7 +85,7 @@ export class EditApartmentFormComponent implements OnInit {
         this.apartmentService.deleteAparment(id);
         Swal.fire(
           'Done!',
-          'Your apartment has been created correctly.',
+          'Your apartment has been deleted correctly.',
           'success'
         ).then(function () {
           window.location.href = 'admin-home';

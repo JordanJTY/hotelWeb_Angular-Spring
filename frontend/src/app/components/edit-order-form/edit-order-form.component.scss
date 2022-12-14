@@ -1,0 +1,121 @@
+.form-container {
+    max-width: 700px;
+    padding: 16px;
+    margin: 10px auto;
+    background: transparent;
+    text-align: center;
+}
+
+img {
+    background-color: #69747C;
+    border-radius: 10px;
+    margin: 0 0 2.5em 0;
+    width: 90%;
+    height: auto;
+}
+
+.date {
+    border-radius: 2em;
+    width: 90%;
+    height: auto;
+    text-align: center;
+}
+
+.btn-send {
+    border-radius: 30px;
+    width: 60%;
+    padding: 3%;
+    background: #F5F1ED;
+    color: black;
+    border: 1px solid black;
+    font-size: 15px;
+    margin-top: 1em;
+    //-webkit-box-sizing: border-box;
+    //box-sizing: border-box;
+    // border-top-style: none;
+    // border-right-style: none;
+    // border-left-style: none;
+}
+
+.btn-send:hover:not([disabled]) {
+    background: #dcd8d4;
+}
+
+input[type="date"],
+textarea {
+    border-radius: 10px;
+    -webkit-transition: all 0, 30s ease-in-out;
+    transition: all 0, 30s ease-in-out;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    background: #F5F1ED;
+    margin-bottom: 4%;
+    border: 1px solid black;
+    padding: 3%;
+    color: #555;
+    font: 95% Arial, Helvetica, sans-serif;
+}
+
+input[type="date"],
+textarea :focus {
+    padding: 3%;
+}
+
+.alert-danger {
+    color: #721c24;
+    border-color: #f5c6cb;
+    margin: 1rem 0;
+}
+
+.container-error-message {
+    padding: 3px;
+}
+
+.content {
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5em;
+    padding-bottom: 6em;
+}
+
+.pDate{
+    margin-bottom: .5em;
+}
+
+h2{
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info {
+    padding: 1em;
+    background-color: #F5F1ED;
+    border-radius: .5em;
+    display: flex;
+    flex-direction: column;
+    font-size: 600;
+}
+
+.duration {
+    margin: 0 0 .75em 0 ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: .75em 0 0 0 ;
+}
