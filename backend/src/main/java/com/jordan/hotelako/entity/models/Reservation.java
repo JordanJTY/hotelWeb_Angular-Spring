@@ -3,6 +3,7 @@ package com.jordan.hotelako.entity.models;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -14,8 +15,10 @@ public class Reservation implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @NotNull
     @ManyToOne
     private User appUser;
+    @NotNull
     @ManyToOne
     private Apartment apartment;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
