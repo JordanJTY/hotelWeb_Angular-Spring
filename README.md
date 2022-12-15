@@ -55,7 +55,7 @@ Once open, go to Files > Open Folder > and select the folder you just created.
 
 Now, open a terminal in the new folder.
 
-![newTerminal](https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/guide/newTerminalVS.png)
+![newTerminal][newTerminal.img]
 
 Once you are in the terminal of your folder execute the following commands:
 
@@ -79,15 +79,15 @@ When dependencies have been installed, you can go to set up your backend.
 
 To get started, open the backend of the project with the IDE of your choice. In my case, I used IntelliJ.
 
-![openedIDE](https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/guide/openedIDE.png)
+![openedIDE][openedIDE.img]
 
 Once you have the backend open, go to MYSQL Workbench and check your username and password to access in your IDE. Also, take advantage of this opportunity to create a database where you save your data with the name you prefer:
 
-![createDB](https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/guide/mySQLdbCreate.png)
+![createDB][createDB.img]
 
 Once these steps are done, you can start your backend.
 
-![changeBackendConfiguration](https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/guide/backendConfiguration.png)
+![changeBackendConfiguration][changeBackendConfiguration.img]
 
 Remember start your frontend!
 
@@ -108,7 +108,7 @@ Remember start your frontend!
 
 ##### Entities and attributes
 
-![ERDiagram](https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/diagrams/diagramER.png)
+![ERDiagram][ERDiagram.img]
 
 With this entity-relationship diagram, we can see what entities, attributes and keys we should create in our database structure.
 
@@ -164,12 +164,12 @@ As we can see, we have a database with 5 entities that we will later transform i
 
 UML diagram:
 
-![umlDiagram](https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/diagrams/diagramUML.png)
+![umlDiagram][umlDiagram.img]
 
 
 Relational Model:
 
-![relacionalDiagram](https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/diagrams/diagramRelational.png)
+![relacionalDiagram][relacionalDiagram.img]
 
 ---
 
@@ -257,6 +257,14 @@ Regarding usability elements, we have a clear and simple clean design, adapted t
 ---
 
 <!-- MARKDOWN LINKS AND IMAGES -->
+[newTerminal.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/guide/newTerminalVS.png
+[openedIDE.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/guide/openedIDE.png
+[createDB.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/guide/mySQLdbCreate.png
+[changeBackendConfiguration.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/guide/backendConfiguration.png
+[ERDiagram.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/diagrams/diagramER.png
+[umlDiagram.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/diagrams/diagramUML.png
+[relacionalDiagram.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/diagrams/diagramRelational.png
+
 [author-jordan.io]: https://img.shields.io/badge/-Jordan%20Jared%20Tejera%20Yánez-purple?style=for-the-badge&label=author&logo=pokemon&labelColor=black
 [author-jordan.url]: https://github.com/JordanJTY
 [angular.io]: https://img.shields.io/badge/Frontend-Angular-red?style=flat-square&logo=angular&logoColor=red
