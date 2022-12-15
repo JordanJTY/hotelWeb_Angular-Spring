@@ -16,11 +16,21 @@
     <ol>
 
 - [About this project](#About-this-project)
-- [Installation guide](#installation-guide)
-- [Requirements](#requirements)
 - [Data model](#data-model)
+- [Requirements](#user-requirements)
 - [Use Cases](#use-cases)
-- [Usability and accessibility](#usability-and-accessibility)
+- [System operation and technical specifications](#system-operation-and-technical-specifications)
+- [Interfaces](#interfaces)
+  - [Start design](#start-design)
+  - [Usability and accessibility](#usability-and-accessibility)
+- [Manuals](#Manuals)
+  - [Installation guide](#installation-guide)
+- [Technology stack](#technology-stack)
+- [Technology comparison](#technology-comparison)
+- [Repositories](#repositories)
+- [Planification](#planification)
+- [Conclusion](#conclusion)
+- [Links and references](#links-and-references)
 - [Author](#Author/s)
 
     </ol>
@@ -30,99 +40,9 @@
 
 ### Why I did it?
 
+Currently, all services need a web page to do his management with people who wants to order anything. With this in mind, I realised that some hotels needed a web application for management of their reservations, apartment, stays... 
+
 When I was thinking about what application to do, I remembered that I had never asked for an apartment reservation in my whole life. Also, I live on a tourist island, so I decided to research these services to find out how they work when people order an apartment.
-
----
-
-## Installation guide
-
-#### Requirements
-
-- Eclipse IDE o IntelliJ IDEA.
-- MySQL Workbench.
-- PostMan, for RESTFul tests.
-- Visual Studio Code.
-
-### Get started 
-
-#### Frontend
-
-[![Angular][angular.io]][angular.url]
-
-To get started, create an empty folder on your computer and open your Visual Studio Code.
-
-Once open, go to Files > Open Folder > and select the folder you just created.
-
-Now, open a terminal in the new folder.
-
-![newTerminal][newTerminal.img]
-
-Once you are in the terminal of your folder execute the following commands:
-
-* clone repository
-    ```sh
-    git clone https://github.com/JordanJTY/hotelWeb_Angular-Spring
-    ```
-
-Install all project's dependencies (Patience! It may take a few minutes):
- 
-* npm
-    ```sh
-    npm install
-    ```
-
-When dependencies have been installed, you can go to set up your backend.
-
-#### Backend
-
-[![Spring][spring.io]][spring.url]
-
-To get started, open the backend of the project with the IDE of your choice. In my case, I used IntelliJ.
-
-![openedIDE][openedIDE.img]
-
-Once you have the backend open, go to MYSQL Workbench and check your username and password to access in your IDE. Also, take advantage of this opportunity to create a database where you save your data with the name you prefer:
-
-![createDB][createDB.img]
-
-Once these steps are done, you can start your backend without first configuring your application properties with your database name and MySQL password.
-
-![changeBackendConfiguration][changeBackendConfiguration.img]
-
-Remember start your frontend!
-
-* Run your frontend
-    ```sh
-    cd frontend/
-
-    ng serve -o
-    ```
-
----
-
-## Requirements
-
-##### Platform:
-- **P1**.This app comes as a web app as it is understood to be made to be used in the workplace.
-- **P2**.In any case, it can also be used on mobile or tablet devices since it is responsive.
-
-##### Access:
-- **A1**. The app has a guest screen that can be accessed without being logged in.
-- **A2**. In order to use the page you must be registered as a doctor, an administrator will be in charge of registering the doctors previously.
-- **A3**. To add, delete or modify the information of the doctors you must be an administrator.
-
-##### Interfaces:
-
-- **I1**.The app has 2 main interfaces that show lists of both patients and prescriptions.
-- **I2**. The user registration and doctor registration interfaces will be available only for administrators.
-- **I3**. In the main interfaces it will be possible to search patients by name.
-
-##### Actions:
-
-- **A1**.User actions will be accompanied by feedback andnotifications.
-- **A2**. When entering data in the form, it is validated that the information is entered correctly, notifying the user if there is an error.
-
-##### Validations:
 
 ---
 
@@ -199,6 +119,33 @@ Relational Model:
 
 ---
 
+## User requirements
+
+##### Platform:
+- **P1**.This app comes as a web app as it is understood to be made to be used in the workplace.
+- **P2**.In any case, it can also be used on mobile or tablet devices since it is responsive.
+
+##### Access:
+- **A1**. The app has a guest screen that can be accessed without being logged in.
+- **A2**. In order to use the page you must be registered as a doctor, an administrator will be in charge of registering the doctors previously.
+- **A3**. To add, delete or modify the information of the doctors you must be an administrator.
+
+##### Interfaces:
+
+- **I1**.The app has 2 main interfaces that show lists of both patients and prescriptions.
+- **I2**. The user registration and doctor registration interfaces will be available only for administrators.
+- **I3**. In the main interfaces it will be possible to search patients by name.
+
+##### Actions:
+
+- **A1**.User actions will be accompanied by feedback andnotifications.
+- **A2**. When entering data in the form, it is validated that the information is entered correctly, notifying the user if there is an error.
+
+##### Validations:
+
+
+---
+
 ## Use cases.
 
 Below we can see the use case diagram, this is reduced to the actions that the doctor (main user of the application) and the administrator (in charge of adding or removing doctors from the system) can perform.
@@ -211,7 +158,17 @@ In the case of the administrator, its only function is to consult the doctors th
 
 ---
 
-## Usability and accessibility
+## System operation and technical specifications
+
+---
+
+## Interfaces
+
+#### Start design
+
+You can see application design in my Figma project: [Ako hotel Project][figma.url].
+
+#### Usability and accessibility
 
 ###### Usability:
  
@@ -252,6 +209,98 @@ Regarding usability elements, we have a clear and simple clean design, adapted t
 
 ---
 
+## Manuals
+
+### Installation guide
+
+#### Requirements
+
+- Eclipse IDE o IntelliJ IDEA.
+- MySQL Workbench.
+- PostMan, for RESTFul tests.
+- Visual Studio Code.
+
+### Get started 
+
+#### Frontend
+
+[![Angular][angular.io]][angular.url]
+
+To get started, create an empty folder on your computer and open your Visual Studio Code.
+
+Once open, go to Files > Open Folder > and select the folder you just created.
+
+Now, open a terminal in the new folder.
+
+![newTerminal][newTerminal.img]
+
+Once you are in the terminal of your folder execute the following commands:
+
+* clone repository
+    ```sh
+    git clone https://github.com/JordanJTY/hotelWeb_Angular-Spring
+    ```
+
+Install all project's dependencies (Patience! It may take a few minutes):
+ 
+* npm
+    ```sh
+    npm install
+    ```
+
+When dependencies have been installed, you can go to set up your backend.
+
+#### Backend
+
+[![Spring][spring.io]][spring.url]
+
+To get started, open the backend of the project with the IDE of your choice. In my case, I used IntelliJ.
+
+![openedIDE][openedIDE.img]
+
+Once you have the backend open, go to MYSQL Workbench and check your username and password to access in your IDE. Also, take advantage of this opportunity to import a database where you save your data:
+
+![createDB][createDB.img]
+
+Once these steps are done, you can start your backend without first configuring your application properties with your database name and MySQL password.
+
+![changeBackendConfiguration][changeBackendConfiguration.img]
+
+Remember start your frontend!
+
+* Run your frontend
+    ```sh
+    cd frontend/
+
+    ng serve -o
+    ```
+
+---
+
+## Technology stack
+
+---
+
+## Technology comparison
+
+---
+
+## Repositories
+
+---
+
+## Planification
+
+---
+
+## Conclusion
+
+---
+
+## Links and references
+
+---
+
 ## Author/s
 
 [![Jordan Jared Tejera Yánez][author-jordan.io]][author-jordan.url]
@@ -266,6 +315,8 @@ Regarding usability elements, we have a clear and simple clean design, adapted t
 [ERDiagram.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/diagrams/diagramER.png
 [umlDiagram.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/diagrams/diagramUML.png
 [relacionalDiagram.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/diagrams/diagramRelational.png
+
+[figma.url]: https://www.figma.com/file/WCxnIb2Czop1TWowRPx371/HotelAko?node-id=33%3A75&t=S61Phe0yC3oc3t7R-1
 
 [author-jordan.io]: https://img.shields.io/badge/-Jordan%20Jared%20Tejera%20Yánez-purple?style=for-the-badge&label=author&logo=pokemon&labelColor=black
 [author-jordan.url]: https://github.com/JordanJTY
