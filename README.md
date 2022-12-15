@@ -85,13 +85,13 @@ Once you have the backend open, go to MYSQL Workbench and check your username an
 
 ![createDB][createDB.img]
 
-Once these steps are done, you can start your backend.
+Once these steps are done, you can start your backend without first configuring your application properties with your database name and MySQL password.
 
 ![changeBackendConfiguration][changeBackendConfiguration.img]
 
 Remember start your frontend!
 
-* npm
+* Run your frontend
     ```sh
     cd frontend/
 
@@ -139,7 +139,7 @@ As we can see, we have a database with 5 entities that we will later transform i
   - Username: Username.
   - Email: User email.
   - Password: User password encrypted.
-  - DateBirth: User date birth.
+  - DateBirth: User's date of birth.
 
 + Role:
 
