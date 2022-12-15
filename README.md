@@ -258,7 +258,7 @@ Regarding usability elements, we have a clear and simple clean design, adapted t
 
 <!-- MARKDOWN LINKS AND IMAGES -->
 [newTerminal.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/guide/newTerminalVS.png
-[openedIDE.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/guide/openedIDE.png
+[openedIDE.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/ada4b13f2ed2209e54b033cfcbc71e222eed9b3b/frontend/src/assets/readme/guide/openedIDE.png
 [createDB.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/guide/mySQLdbCreate.png
 [changeBackendConfiguration.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/guide/backendConfiguration.png
 [ERDiagram.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/diagrams/diagramER.png
