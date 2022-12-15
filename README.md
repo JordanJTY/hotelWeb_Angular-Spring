@@ -2,17 +2,17 @@
 
 <br />
 <div align="center">
-    <img src="https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/master/frontend/src/assets/images/logo.png" alt="Logo" width="120" height="80">
+    <img src="https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/master/frontend/src/assets/images/logo.png" alt="Logo" width="160" height="80">
 
   <h3 align="center">Ako hotel's management</h3>
 
   <p align="center">
-    An awesome proyect inspired in hotel webs!
+    An awesome project inspired in hotel webs!
   </p>
 </div>
 
 <details>
-  <summary>Table of Contents</summary>
+  <summary>Content's table</summary>
     <ol>
 
 - [About this project](#About-this-project)
@@ -33,6 +33,7 @@
 When I was thinking about what application to do, I remembered that I had never asked for an apartment reservation in my whole life. Also, I live on a tourist island, so I decided to research these services to find out how they work when people order an apartment.
 
 ---
+
 ## Installation guide
 
 ##### Requirements
@@ -46,7 +47,7 @@ When I was thinking about what application to do, I remembered that I had never 
 
 ###### Frontend
 
-[angular-icon]
+[![Angular][angular.io]][angular.url]
 
 To get started, create an empty folder on your computer and open your Visual Studio Code.
 
@@ -54,7 +55,7 @@ Once open, go to Files > Open Folder > and select the folder you just created.
 
 Now, open a terminal in the new folder.
 
-![newTerminal](https://user-images.githubusercontent.com/95490721/206923001-02dca638-9c1d-4b65-a5ca-f622c899171b.png)
+![newTerminal](https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/guide/newTerminalVS.png)
 
 Once you are in the terminal of your folder execute the following commands:
 
@@ -74,19 +75,19 @@ When dependencies have been installed, you can go to set up your backend.
 
 ###### Backend
 
-[spring-icon]
+[![Spring][spring.io]][spring.url]
 
 To get started, open the backend of the project with the IDE of your choice. In my case, I used IntelliJ.
 
-![openedIDE](https://user-images.githubusercontent.com/95490721/206922111-cc3cae87-53f0-4a4e-b1e3-d304c016cf65.png)
+![openedIDE](https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/guide/openedIDE.png)
 
 Once you have the backend open, go to MYSQL Workbench and check your username and password to access in your IDE. Also, take advantage of this opportunity to create a database where you save your data with the name you prefer:
 
-![createDB](https://user-images.githubusercontent.com/95490721/206922786-2debae45-be7d-4dbe-a88f-981c699fc96c.png)
+![createDB](https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/guide/mySQLdbCreate.png)
 
 Once these steps are done, you can start your backend.
 
-![changeBackendConfiguration](https://user-images.githubusercontent.com/95490721/206922838-c909d359-0a04-4dac-994b-0e5004dd1bc9.png)
+![changeBackendConfiguration](https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/guide/backendConfiguration.png)
 
 Remember start your frontend!
 
@@ -101,91 +102,73 @@ Remember start your frontend!
 
 ## Data model
 
- - Entities and attributes.
- - Relations between tables.
- - Graph of the data model.
+ - [Entities and attributes](#entities-and-attributes)
+ - [Relations between tables](#relationships-between-tables)
+ - [Data model diagrams](#data-model-diagrams)
 
-###### Entities and attributes
+##### Entities and attributes
 
-![ERDiagram](https://user-images.githubusercontent.com/95490721/205692474-f9b3c0d6-8830-48aa-9bd3-6412835facd4.png)
+![ERDiagram](https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/diagrams/diagramER.png)
 
-Here we can see the entity-relationship model from which we can deduct its keys, entities and relationships.
+With this entity-relationship diagram, we can see what entities, attributes and keys we should create in our database structure.
 
 As we can see, we have a database with 5 entities that we will later transform into tables. These are:
 
-+ Doctor: atributes:
++ Apartment:
 
-  - ID: Identification number of each doctor (cannot be null).
-  - Name: Name of the doctor.
-  - Surname: First surname.
-  - Second last name: Second last name.
-  - Collegiate_Num: Collegiate number of each doctor.
-  - User_ID: Foreign user key in the medical table. It relates the user to the doctor.
-  - DNI: National identity document.
-    
-    - FK: USER_ID
+  - ID: Identification number of each apartment (not null).
+  - Amount: Apartment amount what we have.
+  - Price: Apartment price.
+  - Type: Apartment type (like single apartment, double apartment...).
+  - Description: Apartment description.
+  - Image: Apartment image what it contains blob (not null).
+  - NameImg: Image name encoded.
+  - TypeImg: Image type (.png, .jpg...).
   
-+ Patient: patient attributes:
++ User:
 
-  - ID: Identification number of each patient (cannot be null).
-  - Name: Name of the patient.
-  - Surname: First surname of the patient.
-  - Second_surname: Second surname of the patient.
-  - Image: an image of the patient will be saved.
-  - DNI: National identity document.
-  - History: Medical history of each patient.
-  
-  - FK: DOCTOR_ID
-  
-+ Prescriptions: prescription information:
- 
-  - Posology: Medication dosage.
-  - Date: Date of the recipe.
-  - Patient_name: Name of the patient to whom the prescription is issued.
-  - Doctor_name: Name of the doctor issuing the prescription.
-  - ID: Recipe identifier number (Cannot be null).
-  - Medicine: Name of the medicine that is issued.
-  - Doctor_id: Identifier of the doctor who issued the prescription.
-  - Patien_id: Identifier of the patient for whom the prescription is made.
-  
-  - FK:PATIENT_ID
-  - FK:DOCTOR_ID
-  
-+ User: in this entity the user data will be stored:
-
-  - ID: User identifier (Cannot be null).
-  - Email: Email of the user.
-  - Password: user password.
+  - ID: Identification number of each user (not null).
   - Username: Username.
-  
-+ Role: Roles in the application:
- 
-  - ID: role identifier number (cannot be null).
+  - Email: User email.
+  - Password: User password encrypted.
+  - DateBirth: User date birth.
+
++ Reservations:
+
+  - ID: Identification number of each reservation (not null).
+  - StartDate: Start date reservation.
+  - EndDate: End date reservation.
+  - FK:Apartment_ID: Identification number of apartment selected by user.
+  - FK:AppUser_ID: Identification number of user who order a reservation.
+
++ Role:
+
+  - ID: role identifier number (not null).
   - Name: Name of the role.
-  
+
   The information in this table will not change.
 
-+ User_Role:intermediate table that is generated by the N:N relationship between user and role.
-  -FK:USER_ID
-  -FK:ROLE_ID
++ User_Role:
 
-###### Relationships between tables
+  -FK:User_ID: Identification number of the user that has a role.
+  -FK:Role_ID: Identification number of the role that a user has.
 
-  - USER-ROLE: Many-to-many relationship, many users can have many roles.
-  - USER-DOCTOR: One to one relationship, the doctor is a user.
-  - DOCTOR-PATIENT: One to many relationship, in my data model a patient is associated with a single doctor, since it is a private practice and the doctor is only interested in seeing the information of his patients.
-  - DOCTOR- PRESCRIPTIONS: One to many relationship, a doctor can make many prescriptions.
-  - PATIENTS- PRESCRIPTIONS: One to many relationship, a patient can have many prescriptions at the same time.
+##### Relationships between tables
 
-###### Data model graph
+  - User-Reservation: One-to-Many relationship, one user can request many reservations.
+  - Apartment-Reservation: One-to-Many relationship, one apartment can be requested many reservations.
+  - User-Role: Many-to-Many relationship, many users can have many roles.
 
-Relational Model:
-
-![relacionalDiagram](https://user-images.githubusercontent.com/95490721/206920279-d4804fb8-1b43-4905-bfd6-f281d1c573e5.png)
+##### Data model diagrams
 
 UML diagram:
 
-![umlDiagram](https://user-images.githubusercontent.com/95490721/206920186-09be84cb-4711-401e-85fc-231f59735e04.png)
+![umlDiagram](https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/diagrams/diagramUML.png)
+
+
+Relational Model:
+
+![relacionalDiagram](https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/diagrams/diagramRelational.png)
 
 ---
 
@@ -224,6 +207,7 @@ As we can see in the image, when consulting a prescription, the doctor can modif
 In the case of the administrator, its only function is to consult the doctors that are in the system, delete them, modify them or introduce new ones.
 
 ---
+
 ## Usability and accessibility
 
 ###### Usability:
@@ -267,10 +251,14 @@ Regarding usability elements, we have a clear and simple clean design, adapted t
 
 ## Autor/es
 
-- Jordan Jared Tejera Yánez
+[![Jordan Jared Tejera Yánez][author-jordan.io]][author-jordan.url]
 
 ---
 
 <!-- MARKDOWN LINKS AND IMAGES -->
-[angular-icon]: https://img.shields.io/badge/Frontend-Angular-red?style=flat-square&logo=angular&logoColor=red
-[spring-icon]: https://img.shields.io/badge/Backend-Spring-green?style=flat-square&logo=spring&logoColor=green
+[author-jordan.io]: https://img.shields.io/badge/-Jordan%20Jared%20Tejera%20Yánez-purple?style=for-the-badge&label=author&logo=pokemon&labelColor=black
+[author-jordan.url]: https://github.com/JordanJTY
+[angular.io]: https://img.shields.io/badge/Frontend-Angular-red?style=flat-square&logo=angular&logoColor=red
+[angular.url]: https://angular.io
+[spring.io]: https://img.shields.io/badge/Backend-Spring-green?style=flat-square&logo=spring&logoColor=green
+[spring.url]: https://spring.io
