@@ -217,9 +217,9 @@ In the case of the administrator, its only function is to consult the doctors th
  
 Regarding usability elements, we have a clear and simple clean design, adapted to all users. We recognize a color palette that is familiar to us from the medical field, but at the same time modern, including warmer colors.
  
- ![image](https://user-images.githubusercontent.com/95490721/206919510-3532a341-430c-4ce6-9c65-82e21cab3b7b.png)
+![image](https://user-images.githubusercontent.com/95490721/206919510-3532a341-430c-4ce6-9c65-82e21cab3b7b.png)
 
- ![image](https://user-images.githubusercontent.com/95490721/206919497-a95362e0-3cf4-4acf-a469-a624acac2428.png)
+![image](https://user-images.githubusercontent.com/95490721/206919497-a95362e0-3cf4-4acf-a469-a624acac2428.png)
 
 ![image](https://user-images.githubusercontent.com/95490721/206919999-6e7ff21b-3312-4766-83c4-27e6abe0409d.png)
  
