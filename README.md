@@ -36,16 +36,16 @@ When I was thinking about what application to do, I remembered that I had never 
 
 ## Installation guide
 
-##### Requirements
+#### Requirements
 
 - Eclipse IDE o IntelliJ IDEA.
 - MySQL Workbench.
 - PostMan, for RESTFul tests.
 - Visual Studio Code.
 
-##### Get started 
+### Get started 
 
-###### Frontend
+#### Frontend
 
 [![Angular][angular.io]][angular.url]
 
@@ -73,7 +73,7 @@ Install all project's dependencies (Patience! It may take a few minutes):
 
 When dependencies have been installed, you can go to set up your backend.
 
-###### Backend
+#### Backend
 
 [![Spring][spring.io]][spring.url]
 
@@ -106,7 +106,7 @@ Remember start your frontend!
  - [Relations between tables](#relationships-between-tables)
  - [Data model diagrams](#data-model-diagrams)
 
-##### Entities and attributes
+#### Entities and attributes
 
 ![ERDiagram][ERDiagram.img]
 
@@ -154,13 +154,13 @@ As we can see, we have a database with 5 entities that we will later transform i
   - FK:Role_ID: Identification number of the role that a user has.
 
 
-##### Relationships between tables
+#### Relationships between tables
 
   - User-Reservation: One-to-Many relationship, one user can request many reservations.
   - Apartment-Reservation: One-to-Many relationship, one apartment can be requested many reservations.
   - User-Role: Many-to-Many relationship, many users can have many roles.
 
-##### Data model diagrams
+#### Data model diagrams
 
 UML diagram:
 
