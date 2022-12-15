@@ -150,8 +150,9 @@ As we can see, we have a database with 5 entities that we will later transform i
 
 + User_Role:
 
-  -FK:User_ID: Identification number of the user that has a role.
-  -FK:Role_ID: Identification number of the role that a user has.
+  - FK:User_ID: Identification number of the user that has a role.
+  - FK:Role_ID: Identification number of the role that a user has.
+
 
 ##### Relationships between tables
 
