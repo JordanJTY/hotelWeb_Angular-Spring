@@ -17,11 +17,11 @@
 
 - [About this project](#About-this-project)
 - [Installation guide](#installation-guide)
+- [Requirements](#requirements)
 - [Data model](#data-model)
 - [Use Cases](#use-cases)
 - [Usability and accessibility](#usability-and-accessibility)
-- [User requirements](#user-requirements)
-- [Author](#Autor/es)
+- [Author](#Author/s)
 
     </ol>
 </details>
@@ -100,6 +100,32 @@ Remember start your frontend!
 
 ---
 
+## Requirements
+
+##### Platform:
+- **P1**.This app comes as a web app as it is understood to be made to be used in the workplace.
+- **P2**.In any case, it can also be used on mobile or tablet devices since it is responsive.
+
+##### Access:
+- **A1**. The app has a guest screen that can be accessed without being logged in.
+- **A2**. In order to use the page you must be registered as a doctor, an administrator will be in charge of registering the doctors previously.
+- **A3**. To add, delete or modify the information of the doctors you must be an administrator.
+
+##### Interfaces:
+
+- **I1**.The app has 2 main interfaces that show lists of both patients and prescriptions.
+- **I2**. The user registration and doctor registration interfaces will be available only for administrators.
+- **I3**. In the main interfaces it will be possible to search patients by name.
+
+##### Actions:
+
+- **A1**.User actions will be accompanied by feedback andnotifications.
+- **A2**. When entering data in the form, it is validated that the information is entered correctly, notifying the user if there is an error.
+
+##### Validations:
+
+---
+
 ## Data model
 
  - [Entities and attributes](#entities-and-attributes)
@@ -173,30 +199,6 @@ Relational Model:
 
 ---
 
-## User requirements
-
-###### Platform:
-- **P1**.This app comes as a web app as it is understood to be made to be used in the workplace.
-- **P2**.In any case, it can also be used on mobile or tablet devices since it is responsive.
-
-###### Access:
-- **A1**. The app has a guest screen that can be accessed without being logged in.
-- **A2**. In order to use the page you must be registered as a doctor, an administrator will be in charge of registering the doctors previously.
-- **A3**. To add, delete or modify the information of the doctors you must be an administrator.
-
-###### Interfaces:
-
-- **I1**.The app has 2 main interfaces that show lists of both patients and prescriptions.
-- **I2**. The user registration and doctor registration interfaces will be available only for administrators.
-- **I3**. In the main interfaces it will be possible to search patients by name.
-
-###### Actions:
-
-- **A1**.User actions will be accompanied by feedback andnotifications.
-- **A2**. When entering data in the form, it is validated that the information is entered correctly, notifying the user if there is an error.
-
-###### Validations:
----
 ## Use cases.
 
 Below we can see the use case diagram, this is reduced to the actions that the doctor (main user of the application) and the administrator (in charge of adding or removing doctors from the system) can perform.
@@ -250,7 +252,7 @@ Regarding usability elements, we have a clear and simple clean design, adapted t
 
 ---
 
-## Autor/es
+## Author/s
 
 [![Jordan Jared Tejera Yánez][author-jordan.io]][author-jordan.url]
 
