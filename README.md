@@ -2,7 +2,7 @@
 
 <br />
 <div align="center">
-    <img src="https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/master/frontend/src/assets/images/logo.png" alt="Logo" width="160" height="80">
+    <img src="https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/master/frontend/src/assets/images/logo.png" alt="Logo" width="200" height="80">
 
   <h3 align="center">Ako hotel's management</h3>
 
