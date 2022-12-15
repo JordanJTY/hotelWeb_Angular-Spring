@@ -124,14 +124,6 @@ As we can see, we have a database with 5 entities that we will later transform i
   - Image: Apartment image what it contains blob (not null).
   - NameImg: Image name encoded.
   - TypeImg: Image type (.png, .jpg...).
-  
-+ User:
-
-  - ID: Identification number of each user (not null).
-  - Username: Username.
-  - Email: User email.
-  - Password: User password encrypted.
-  - DateBirth: User date birth.
 
 + Reservations:
 
@@ -140,6 +132,14 @@ As we can see, we have a database with 5 entities that we will later transform i
   - EndDate: End date reservation.
   - FK:Apartment_ID: Identification number of apartment selected by user.
   - FK:AppUser_ID: Identification number of user who order a reservation.
+  
++ User:
+
+  - ID: Identification number of each user (not null).
+  - Username: Username.
+  - Email: User email.
+  - Password: User password encrypted.
+  - DateBirth: User date birth.
 
 + Role:
 
