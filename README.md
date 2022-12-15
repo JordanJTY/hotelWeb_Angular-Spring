@@ -267,7 +267,9 @@ Regarding usability elements, we have a clear and simple clean design, adapted t
 
 [author-jordan.io]: https://img.shields.io/badge/-Jordan%20Jared%20Tejera%20Yánez-purple?style=for-the-badge&label=author&logo=pokemon&labelColor=black
 [author-jordan.url]: https://github.com/JordanJTY
+
 [angular.io]: https://img.shields.io/badge/Frontend-Angular-red?style=flat-square&logo=angular&logoColor=red
 [angular.url]: https://angular.io
+
 [spring.io]: https://img.shields.io/badge/Backend-Spring-green?style=flat-square&logo=spring&logoColor=green
 [spring.url]: https://spring.io
