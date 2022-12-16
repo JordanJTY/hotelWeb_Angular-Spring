@@ -260,7 +260,7 @@ To run this application, you must have a computer with the following minimum req
 
   - Storage: 1GB.
 
-  - RAM memory: 8GB.
+  - RAM memory: 2GB.
 
   - S.O.: Windows 10.
 
@@ -275,7 +275,10 @@ To see this application on your mobile device or tablet, you must execute:
   ng serve --host 0.0.0.0
   ```     
 
-And you will 
+When you have done the last step, you should find in CMD you ip with commmand 'ipconfig'.
+
+[cmdipConfig][cmdipConfig.img]
+
 ---
 
 ## Interfaces
@@ -364,6 +367,7 @@ Regarding usability elements, we have a clear and simple clean design, adapted t
 [umlDiagram.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/diagrams/diagramUML.png
 [relacionalDiagram.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/diagrams/diagramRelational.png
 [useCase.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/35410e924c5309a9063fb1cc828a84dbf5aba6fe/frontend/src/assets/readme/diagrams/useCase.png
+[cmdipConfig.img]: 
 
 [figma.url]: https://www.figma.com/file/WCxnIb2Czop1TWowRPx371/HotelAko?node-id=33%3A75&t=S61Phe0yC3oc3t7R-1
 
