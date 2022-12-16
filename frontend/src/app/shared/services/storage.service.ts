@@ -11,7 +11,8 @@ export class StorageService {
   constructor() { }
 
   signOut(): void {
-    window.localStorage.clear();
+    window.localStorage.removeItem('auth-user');
+    window.localStorage.removeItem('auth-token');
   }
 
   public saveToken(token: string): void {
