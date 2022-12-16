@@ -30,11 +30,13 @@ export class EditApartmentFormComponent implements OnInit {
   get descriptionApartment() { return this.apartmentForm.get('description'); }
   get priceApartment() { return this.apartmentForm.get('price'); }
   get amountApartment() { return this.apartmentForm.get('amount'); }
+  get fileApartment() { return this.apartmentForm.get('file'); }
 
 
   createForm() {
     return new FormGroup({
       type: new FormControl('', [Validators.required, Validators.minLength(5)]),
+      file: new FormControl('', [Validators.required]),
       description: new FormControl('', [Validators.required, Validators.minLength(5)]),
       price: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(6), Validators.pattern('^[0-9,]*$')]),
       amount: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(3), Validators.pattern('^[0-9]*$')]),

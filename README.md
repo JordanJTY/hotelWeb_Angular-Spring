@@ -19,7 +19,7 @@
 - [Data model](#data-model)
 - [Requirements](#user-requirements)
 - [Use Cases](#use-cases)
-- [System operation and technical specifications](#system-operation-and-technical-specifications)
+- [System operation and technical specifications](#description-of-system-operation-and-technical-specifications)
 - [Interfaces](#interfaces)
   - [Start design](#start-design)
   - [Usability and accessibility](#usability-and-accessibility)
@@ -180,19 +180,17 @@ Relational Model:
 
 ---
 
-## Use cases.
+## Use cases
 
-Below we can see the use case diagram, this is reduced to the actions that the doctor (main user of the application) and the administrator (in charge of adding or removing doctors from the system) can perform.
+Next we can see the use case diagram, this is reduced to the actions that can be performed by the guest, the user (common user of the application) and the administrator (admin user of the application).
 
-![UseCaseDiagram](https://user-images.githubusercontent.com/95490721/207313239-b5bb35f6-f40c-454c-b18f-7b6042d1e24b.jpg)
-
-As we can see in the image, when consulting a prescription, the doctor can modify, update or delete it, the same can be done with his patients.
-
-In the case of the administrator, its only function is to consult the doctors that are in the system, delete them, modify them or introduce new ones.
+![UseCaseDiagram][useCase.img]
 
 ---
 
-## System operation and technical specifications
+## Description of system operation and technical specifications
+
+To know about 
 
 ---
 
@@ -345,6 +343,7 @@ Remember start your frontend!
 [ERDiagram.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/diagrams/diagramER.png
 [umlDiagram.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/diagrams/diagramUML.png
 [relacionalDiagram.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/diagrams/diagramRelational.png
+[useCase.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/35410e924c5309a9063fb1cc828a84dbf5aba6fe/frontend/src/assets/readme/diagrams/useCase.png
 
 [figma.url]: https://www.figma.com/file/WCxnIb2Czop1TWowRPx371/HotelAko?node-id=33%3A75&t=S61Phe0yC3oc3t7R-1
 

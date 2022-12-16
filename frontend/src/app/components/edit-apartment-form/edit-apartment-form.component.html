@@ -1,8 +1,13 @@
 <div class="container">
     <h2>Edit apartment</h2>
-    <img src="{{'data:{{typeImg}};base64,' + image}}" alt="">
-    <input id="inputFile" type="file" (change)="file($event)">
     <form [formGroup]="apartmentForm" (ngSubmit)="submit()">
+        <img src="{{'data:{{typeImg}};base64,' + image}}" alt="">
+        <input id="inputFile" type="file" formControlName="file" (change)="file($event)">
+        <div class="alert-danger" *ngIf="fileApartment?.invalid && (fileApartment?.dirty || fileApartment?.touched)">
+            <div class="container-error-message" *ngIf="fileApartment?.errors?.['required']">
+                Apartment's file required.
+            </div>
+        </div>
         <input type="text" formControlName="type" [(ngModel)]="type" placeholder="Apartment's type">
         <div class="alert-danger" *ngIf="typeApartment?.invalid && (typeApartment?.dirty || typeApartment?.touched)">
             <div class="container-error-message" *ngIf="typeApartment?.errors?.['required']">
