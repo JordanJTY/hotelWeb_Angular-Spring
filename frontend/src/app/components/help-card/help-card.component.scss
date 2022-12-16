@@ -1,3 +1,7 @@
+.helpCard{
+    border-radius: 7px;
+}
+
 a {
     text-decoration: none;
     color: black;
@@ -17,6 +21,8 @@ div:hover {
 }
 
 img {
+    border-start-start-radius: 7px;
+    border-end-start-radius: 7px;
     display: inline;
     width: 2.75em;
     padding: 0.3em;

@@ -5,6 +5,7 @@ import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPermissionsModule } from 'ngx-permissions';
 import { MatDialogModule } from '@angular/material/dialog'
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -89,7 +90,8 @@ import { EditOrderFormComponent } from './components/edit-order-form/edit-order-
     MatFormFieldModule,
     MatIconModule,
     NgxPermissionsModule.forRoot(),
-    MatDialogModule
+    MatDialogModule,
+    MatSlideToggleModule
   ],
   entryComponents: [ApartmentDetailsComponent],
   providers: [authInterceptorProviders],

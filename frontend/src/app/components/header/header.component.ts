@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { MatSlideToggleChange } from '@angular/material/slide-toggle';
+import { DarkModeService } from 'angular-dark-mode';
+import { Observable } from 'rxjs';
 import { StorageService } from 'src/app/shared/services/storage.service';
 import Swal from 'sweetalert2';
 
@@ -9,9 +12,15 @@ import Swal from 'sweetalert2';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private storage: StorageService) { }
+  constructor(private storage: StorageService, private darkModeService: DarkModeService) { }
+
+  darkMode$: Observable<boolean> = this.darkModeService.darkMode$;
 
   ngOnInit() { }
+
+  onToggle() {
+    this.darkModeService.toggle();
+  }
 
   setActive() {
     const navMenu = document.querySelector('.nav-menu');

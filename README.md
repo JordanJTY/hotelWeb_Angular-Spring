@@ -40,13 +40,19 @@
 
 ### Why I did it?
 
-Currently, all services need a web page to do his management with people who wants to order anything. With this in mind, I realised that some hotels needed a web application for management of their reservations, apartment, stays... 
+Nowadays, all services need a website to manage them. With this in mind, I realized that some hotels needed a web application for the management of their reservations, apartment, stays... In this way, thanks to an intuitive interface and a good management system, I think it could solve it.
 
 When I was thinking about what application to do, I remembered that I had never asked for an apartment reservation in my whole life. Also, I live on a tourist island, so I decided to research these services to find out how they work when people order an apartment.
+
+This application was made for OpenCanarias, a company in the Canary Islands, in order for them to see my programming skills in my internship.
+
+The idea of this web page is to be used as a hotel reservation manager, where you can register as a user and request reservations for any type of apartment; or as an administrator, being able to create, modify or delete such apartments, as well as being able to review the reservations made by users. 
 
 ---
 
 ## Data model
+
+As a first step, we will analyze the data model of our project according to the following: 
 
  - [Entities and attributes](#entities-and-attributes)
  - [Relations between tables](#relationships-between-tables)
@@ -76,8 +82,8 @@ As we can see, we have a database with 5 entities that we will later transform i
   - ID: Identification number of each reservation (not null).
   - StartDate: Start date reservation.
   - EndDate: End date reservation.
-  - FK:Apartment_ID: Identification number of apartment selected by user.
-  - FK:AppUser_ID: Identification number of user who order a reservation.
+  - FK:Apartment_ID: Identification number of apartment selected by user (not null).
+  - FK:AppUser_ID: Identification number of user who order a reservation (not null).
   
 + User:
 
@@ -99,6 +105,7 @@ As we can see, we have a database with 5 entities that we will later transform i
   - FK:User_ID: Identification number of the user that has a role.
   - FK:Role_ID: Identification number of the role that a user has.
 
+We can obtain the .sql file of the database in the folder 'database' of this project. 
 
 #### Relationships between tables
 
@@ -121,27 +128,32 @@ Relational Model:
 
 ## User requirements
 
-##### Platform:
-- **P1**.This app comes as a web app as it is understood to be made to be used in the workplace.
-- **P2**.In any case, it can also be used on mobile or tablet devices since it is responsive.
+#### Platform:
+- **P1**. This application comes as a website that you can use wherever you want.
+- **P2**. You can use it on mobile devices or tablets because it is a responsive application.
 
-##### Access:
+#### Access:
 - **A1**. The app has a guest screen that can be accessed without being logged in.
-- **A2**. In order to use the page you must be registered as a doctor, an administrator will be in charge of registering the doctors previously.
-- **A3**. To add, delete or modify the information of the doctors you must be an administrator.
+- **A2**. To make reservations you must be registered as a user, an administrator will check that everything is correct.
+- **A3**. As an administrator you can create, edit or delete data.
+  - **A3.1**. As an administrator you can create, update or delete an apartment.
+  - **A3.2**. As an administrator you can check all reservations of users.
+- **A4**. As a user you can edit your reservation.
+  - **A4.1**. As a user you can book an apartment and modify it if the start date does not match today's date.
+  - **A4.2**. As a user you can delete your reservation when it is finished.
 
-##### Interfaces:
+#### Interfaces:
 
-- **I1**.The app has 2 main interfaces that show lists of both patients and prescriptions.
+- **I1**. The app has a main interface where you can see all apartments.
 - **I2**. The user registration and doctor registration interfaces will be available only for administrators.
 - **I3**. In the main interfaces it will be possible to search patients by name.
 
-##### Actions:
+#### Actions:
 
 - **A1**.User actions will be accompanied by feedback andnotifications.
 - **A2**. When entering data in the form, it is validated that the information is entered correctly, notifying the user if there is an error.
 
-##### Validations:
+#### Validations:
 
 
 ---

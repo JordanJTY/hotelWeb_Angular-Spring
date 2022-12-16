@@ -9,3 +9,17 @@ body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+body.dark-mode {
+    a #pw{
+        color: aqua;
+    }
+    // background-color: #231B1B;
+    background-color: #65325D;
+    color: white;
+}
+
+body.light-mode {
+    background-color: #dfe6e9;
+    // color: #2d3436;
+}
