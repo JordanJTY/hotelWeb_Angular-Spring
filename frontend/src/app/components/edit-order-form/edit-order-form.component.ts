@@ -60,6 +60,29 @@ export class EditOrderFormComponent {
     } else { return num }
   }
 
+  delete() {
+    Swal.fire({
+      title: 'Do you want to delete your reservation?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#DAD2BC',
+      cancelButtonColor: '#69747C',
+      confirmButtonText: 'Yes'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.reservationsService.deleteReservation(this.idReservation);
+        Swal.fire(
+          'Done!',
+          'Your reservation has been deleted correctly.',
+          'success'
+        ).then(function () {
+          window.location.href = 'reservations'
+        })
+      }
+    })
+  }
+
   submit() {
     if (this.orderForm.valid && !this.equalsDate) {
       let reservation: Reservations = { endDate: this.endDate?.value, startDate: this.startDate?.value, apartment: this.apartmentData, appUser: this.storage.getUser() };
