@@ -27,7 +27,6 @@
   - [Installation guide](#installation-guide)
 - [Technology stack](#technology-stack)
 - [Technology comparison](#technology-comparison)
-- [Repositories](#repositories)
 - [Planification](#planification)
 - [Conclusion](#conclusion)
 - [Links and references](#links-and-references)
@@ -144,17 +143,40 @@ Relational Model:
 
 #### Interfaces:
 
-- **I1**. The app has a main interface where you can see all apartments.
-- **I2**. The user registration and doctor registration interfaces will be available only for administrators.
-- **I3**. In the main interfaces it will be possible to search patients by name.
+- **I1**. The application has two main interface where you can see all types of apartments.
+- **I2**. In the first main interface, you can navigate between help, login or apartment details and there is slider.
+  - **I2.1**. In the help interface, you will find cards with some places to go.
+    - **I2.1.1**. The first card you will find is the terms and privacy policy.
+    - **I2.1.2**. The second card you will fin is the application information.
+    - **I2.1.3**. The third card you will find is the additional information.
+    - **I2.1.4**. The fourth card you will find is the contact.
+  - **I2.2**. You will find a form and some actions in login interface.
+    - **I2.2.1**. You will be able to login to these interfaces by filling in the form with your account data.
+    - **I2.2.2**. You will be able to register if you do not have an account by clicking on a button.
+    - **I2.2.3**. You will be able to recover your password if you do not remember it.
+- **I3**. As a user you will be able to find more options than before.
+  - **I3.1**. In the help interface, you will find a card to delete your account.
+  - **I3.2**. You will be able to book an apartment.
+  - **I3.3**. You will be able to see all the reservations you have made.
+    - **I3.3.1**. You will be able to delete or edit your reservations depending on whether you have your reservation that day or not.
+  - **I3.4**. You will be able to log out.
+- **I4**. As a administrator, you will be able to see the second main interface.
+  - **I4.1**. You will be able to add new types of apartments.
+  - **I4.2**. You will be able to edit or delete existing apartment types.
+  - **I4.3**. You will be able to see all the reservations of all users.
+    -**I4.3.1**. You will be able to delete user reservations.
 
 #### Actions:
 
-- **A1**.User actions will be accompanied by feedback andnotifications.
+- **A1**. User actions will be accompanied by comments and notifications when they are performed.
 - **A2**. When entering data in the form, it is validated that the information is entered correctly, notifying the user if there is an error.
 
 #### Validations:
 
+- **V1**. When typing or adding data, if an error occurs with respect to any character, you will be warned and the desired action will not be allowed.
+- **V2**. There are more than one type of validations, such as when you do not have the required credentials or the date is incorrect.
+  - **V2.1**. When you book an apartment, you cannot choose dates less than the current date at that time.
+- **V3**. When you enter your email address to log in or register, we will apply a mask to see if it is a valid email address.
 
 ---
 
@@ -294,10 +316,6 @@ Remember start your frontend!
 ---
 
 ## Technology comparison
-
----
-
-## Repositories
 
 ---
 
