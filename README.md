@@ -352,7 +352,7 @@ To carry out this project, I used a technology stack consisting of:
 
 [![Angular][angular2.io]][angular.url] used as Frontend.
 
-[![Spring][spring2.io]][spring.url] with Java, used as Backend.
+[![Spring][spring2.io]][spring.url] with Hibernate and Java, used as Backend.
 
 ---
 
@@ -362,13 +362,33 @@ To compare technologies, I will choose those that I have had the opportunity to 
 
 Frontend: 
 
-[![React][react.io]][react.url] to compare with [![Angular][angular.io]][angular.url].
+[![React][react.io]][react.url] to compare with [![Angular][angular.io]][angular.url]
+
+Both are constituted by the use of components, therefore, they are a good example to compare. However, while React uses JavaScript, Angular uses TypeScript. The difference between the two tools is that React is a JavaScript library and Angular is a framework designed for the frontend. With the basics clarified, let's list the differences:
+
+  - React uses one-way data binding and virtual DOM, whereas Angular uses two-way data binding and real DOM.
+
+  - React is faster than Angular as it has a smaller bundle size.
+
+  - React is mostly used to build interactive UI components with frequently variable data, whereas Angular.js is used to build complex enterprise apps like progressive web apps and single-page apps.
+
+  - Angular JS is used to build single-page applications using HTML and TypeScript. React JS is commonly used to create user interfaces for single-page applications from isolated components.
+
+  - Angular is a part of the MEAN stack and is very compatible with many code editors. It’s also considered to develop dynamic websites and web apps. On the other hand, React is widely used to develop reusable HTML elements for front end development.
 
 Backend: 
 
-[![Sequelize][sequelize.io]][sequelize.url] to compare with [![Spring][spring.io]][spring.url].
+[![Sequelize][sequelize.io]][sequelize.url] to compare with [![Spring][spring.io]][spring.url]
 
+Both technologies are ORMs used for the connection between the backend and the frontend. Therefore, it seems appropriate to compare them. So, let's list the differences:
 
+  - Sequelize is a simpler development tool than Spring with respect to application development.
+
+  - Spring and sequelize focus on creating a backend for frameworks such as frontends, having similar power in their uses. 
+
+  - Spring allows us to work with MVC frameworks with PHP, being the better of the two ORMs in this aspect.
+
+  - Sequelize allows us to perform powerful works in Digital Drawing and Painting environments.
 
 ---
 
