@@ -277,7 +277,7 @@ To see this application on your mobile device or tablet, you must execute:
 
 When you have done the last step, you should find in CMD you ip with commmand 'ipconfig'.
 
-[cmdipConfig][cmdipConfig.img]
+![cmdipConfig][cmdipConfig.img]
 
 When you have it, you should be in the same network and you should type in your web browser the following url:
 
@@ -314,19 +314,19 @@ In terms of usability elements, we have prioritized the user experience by setti
 
 The user's comfort has been prioritized at all times. For this, I have designed a simple and easy to use interface that allows the user to have everything they need at hand. In addition, I have tried to use colors that convey comfort and simplicity to the environment, observable in the color palettes below. Mentioning the color palette, I did a lot of research about a color palette that does not stray from the original one and keeps its nuances when creating the dark theme combination.
 
-[lightPalette][lightPalette.img]
+![lightPalette][lightPalette.img]
 
 Light Palette example: 
 
-[lightMode][lightMode.img]
+![lightMode][lightMode.img]
 
 Along with this palette, we have given it a darker touch to allow access to more muted shades to enhance the user experience along with their preferences.
 
-[darkPalette][darkPalette.img]
+![darkPalette][darkPalette.img]
 
 Dark Palette example: 
 
-[darkMode][darkMode.img]
+![darkMode][darkMode.img]
 
 #####  Accessibility 
   
