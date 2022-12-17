@@ -394,6 +394,15 @@ Both technologies are ORMs used for the connection between the backend and the f
 
 ## Planification
 
+To organize myself during the development of this project, I have established pending objectives to be done from the beginning, proposing to do them as I finished the ideation of the application.
+
+The first thing I did after establishing the idea of creating the website of a hotel, was to start developing the diagrams of the database and its relationships, as well as its attributes. Once decided, I created a project in GitHub that allowed me to keep a version control and, in turn, a control of the pending tasks I had. Once the tasks were set, create a mockup of the interfaces of my application, to have a reference as soon as I started to develop them with Angular. After finalizing the prototype, I prioritized the development of a stable and complete backend that would allow me to make a CRUD of all the tables and be able to "forget" about it once the frontend was ready.
+After the completion of the backend, along with its authentication and its respective tests with Postman, I proceeded with the frontend, taking as a reference my mockup made in Figma, but not before creating the corresponding services and models for a good connection to the database.
+
+When I finished the project, I started to write the project documentation, including the different manuals for future users.
+
+You can see the control of pending tasks in the link of this project, navigating to the "project" section. However, I'll leave the link here for you to go from now on. [![ControlTasks][controlTasks.io]][controlTasks.url]
+
 ---
 
 ## Conclusion
@@ -427,6 +436,9 @@ Both technologies are ORMs used for the connection between the backend and the f
 [browserCompatibilityAngular.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/a4c95938e8df60f5f4d448bdcdaba88ba51a0c37/frontend/src/assets/readme/browsersCompatibilityAngular.png
 
 [figma.url]: https://www.figma.com/file/WCxnIb2Czop1TWowRPx371/HotelAko?node-id=33%3A75&t=S61Phe0yC3oc3t7R-1
+
+[controlTasks.io]:https://img.shields.io/badge/GitHub-Control%20tasks-lightgrey
+[controlTasks.url]: https://github.com/users/JordanJTY/projects/1/views/1?layout=table
 
 [author-jordan.io]: https://img.shields.io/badge/-Jordan%20Jared%20Tejera%20Yánez-purple?style=for-the-badge&label=author&logo=pokemon&labelColor=black
 [author-jordan.url]: https://github.com/JordanJTY
