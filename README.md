@@ -425,6 +425,8 @@ To finish my conclusion, I would like to emphasize what was said at the beginnin
 
   - [![Postman][postman.io]][postman.url]
 
+  - [![Base64][base64.io]][base64.url]
+
 ---
 
 ## Author/s
@@ -455,6 +457,9 @@ To finish my conclusion, I would like to emphasize what was said at the beginnin
 
 [Postman.io]: https://img.shields.io/badge/POSTMAN%20Documentation-orange?style=for-the-badge&logo=postman&logoColor=black
 [postman.url]: https://documenter.getpostman.com/view/23478612/2s8YzXwLiH
+
+[base64.io]: https://img.shields.io/badge/Base64-green?style=for-the-badge
+[base64.url]: https://www.base64encode.org
 
 [controlTasks.io]:https://img.shields.io/badge/GitHub-Control%20tasks-lightgrey
 [controlTasks.url]: https://github.com/users/JordanJTY/projects/1/views/1?layout=table
