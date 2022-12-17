@@ -401,7 +401,8 @@ After the completion of the backend, along with its authentication and its respe
 
 When I finished the project, I started to write the project documentation, including the different manuals for future users.
 
-You can see the control of pending tasks in the link of this project, navigating to the "project" section. However, I'll leave the link here for you to go from now on. [![ControlTasks][controlTasks.io]][controlTasks.url]
+You can see the control of pending tasks in the link of this project, navigating to the "project" section. However, I'll leave the link here for you to go from now on. 
+ - [![ControlTasks][controlTasks.io]][controlTasks.url]
 
 ---
 
