@@ -409,7 +409,9 @@ You can see the control of pending tasks in the link of this project, navigating
 ## Conclusion
 
 As a conclusion of this project, I have to say that I was very excited to do it, because I had never been able to experience creating a product before, let alone made by myself. On several occasions I have been able to feel how everything fell apart and, after a hard effort, everything was back on its feet and working again. It is one of the best feelings I have ever had.
+
 This project has made me realize how much I love programming and how much it fills me up to be able to show these feats with this quality that, although it remains to be polished, I consider that it is not a bad start.
+
 I have been satisfied with the result of the product and I have learned new things from the technology stack that I have used, it never hurts to learn something new.
 To finish my conclusion, I would like to emphasize what was said at the beginning of this document. And it is that, thanks to this project, I have been able to see and learn something that I had never done before, and from the inside.
 
