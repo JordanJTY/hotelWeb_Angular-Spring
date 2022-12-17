@@ -408,9 +408,20 @@ You can see the control of pending tasks in the link of this project, navigating
 
 ## Conclusion
 
+As a conclusion of this project, I have to say that I was very excited to do it, because I had never been able to experience creating a product before, let alone made by myself. On several occasions I have been able to feel how everything fell apart and, after a hard effort, everything was back on its feet and working again. It is one of the best feelings I have ever had.
+This project has made me realize how much I love programming and how much it fills me up to be able to show these feats with this quality that, although it remains to be polished, I consider that it is not a bad start.
+I have been satisfied with the result of the product and I have learned new things from the technology stack that I have used, it never hurts to learn something new.
+To finish my conclusion, I would like to emphasize what was said at the beginning of this document. And it is that, thanks to this project, I have been able to see and learn something that I had never done before, and from the inside.
+
 ---
 
 ## Links and references
+
+  - [Bezkoder repository][bezkoderRepository.url]
+
+  - [Dark mode dependency][darkModeDependency.url]
+
+  - [![Postman][postman.io]][postman.url]
 
 ---
 
@@ -437,6 +448,11 @@ You can see the control of pending tasks in the link of this project, navigating
 [browserCompatibilityAngular.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/a4c95938e8df60f5f4d448bdcdaba88ba51a0c37/frontend/src/assets/readme/browsersCompatibilityAngular.png
 
 [figma.url]: https://www.figma.com/file/WCxnIb2Czop1TWowRPx371/HotelAko?node-id=33%3A75&t=S61Phe0yC3oc3t7R-1
+[bezkoderRepository.url]: https://github.com/bezkoder/angular-11-spring-boot-jwt-authentication
+[darkModeDependency.url]: https://www.npmjs.com/package/angular-dark-mode
+
+[Postman.io]: https://img.shields.io/badge/POSTMAN%20Documentation-orange?style=for-the-badge&logo=postman&logoColor=black
+[postman.url]: https://documenter.getpostman.com/view/23478612/2s8YzXwLiH
 
 [controlTasks.io]:https://img.shields.io/badge/GitHub-Control%20tasks-lightgrey
 [controlTasks.url]: https://github.com/users/JordanJTY/projects/1/views/1?layout=table
