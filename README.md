@@ -379,11 +379,11 @@ Dark Palette example:
 [umlDiagram.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/diagrams/diagramUML.png
 [relacionalDiagram.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/diagrams/diagramRelational.png
 [useCase.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/35410e924c5309a9063fb1cc828a84dbf5aba6fe/frontend/src/assets/readme/diagrams/useCase.png
-[cmdipConfig.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/9826a5f1843b83abd3c6fb7d701c0c72fd5e91ae/frontend/src/assets/readme/cmdipConfig.png
-[lightPalette.img]: 
-[darkPalette.img]: 
-[lightMode.img]: 
-[darkMode.img]: 
+[cmdipConfig.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/a126191fc71cfccbf8761ccd944ad8faf8e2fe9e/frontend/src/assets/readme/interfaces/cmdipConfig.png
+[lightPalette.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/a126191fc71cfccbf8761ccd944ad8faf8e2fe9e/frontend/src/assets/readme/interfaces/LightPaletteProject.png
+[darkPalette.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/a126191fc71cfccbf8761ccd944ad8faf8e2fe9e/frontend/src/assets/readme/interfaces/DarkPaletteProject.png
+[lightMode.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/a126191fc71cfccbf8761ccd944ad8faf8e2fe9e/frontend/src/assets/readme/interfaces/lightModeExample.png
+[darkMode.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/a126191fc71cfccbf8761ccd944ad8faf8e2fe9e/frontend/src/assets/readme/interfaces/darkModeExample.png
 
 [figma.url]: https://www.figma.com/file/WCxnIb2Czop1TWowRPx371/HotelAko?node-id=33%3A75&t=S61Phe0yC3oc3t7R-1
 
