@@ -194,7 +194,7 @@ Next we can see the use case diagram, this is reduced to the actions that can be
 
 To run this application, you must have a computer with the following minimum requirements:
 
-  - Storage: 1GB.
+  - Storage: 5GB.
 
   - RAM memory: 2GB.
 
