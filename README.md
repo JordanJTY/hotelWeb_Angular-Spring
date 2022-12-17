@@ -190,70 +190,6 @@ Next we can see the use case diagram, this is reduced to the actions that can be
 
 ## Description of system operation and technical specifications
 
-### Installation guide
-
-#### Requirements
-
-- Eclipse IDE o IntelliJ IDEA.
-- MySQL Workbench.
-- PostMan, for RESTFul tests.
-- Visual Studio Code.
-
-#### Get started 
-
-##### Frontend
-
-[![Angular][angular.io]][angular.url]
-
-To get started, create an empty folder on your computer and open your Visual Studio Code.
-
-Once open, go to Files > Open Folder > and select the folder you just created.
-
-Now, open a terminal in the new folder.
-
-![newTerminal][newTerminal.img]
-
-Once you are in the terminal of your folder execute the following commands:
-
-* clone repository
-    ```sh
-    git clone https://github.com/JordanJTY/hotelWeb_Angular-Spring
-    ```
-
-Install all project's dependencies (Patience! It may take a few minutes):
- 
-* npm
-    ```sh
-    npm install
-    ```
-
-When dependencies have been installed, you can go to set up your backend.
-
-##### Backend
-
-[![Spring][spring.io]][spring.url]
-
-To get started, open the backend of the project with the IDE of your choice. In my case, I used IntelliJ.
-
-![openedIDE][openedIDE.img]
-
-Once you have the backend open, go to MYSQL Workbench and check your username and password to access in your IDE. Also, take advantage of this opportunity to import a database where you save your data:
-
-![createDB][createDB.img]
-
-Once these steps are done, you can start your backend without first configuring your application properties with your database name and MySQL password.
-
-![changeBackendConfiguration][changeBackendConfiguration.img]
-
-Remember start your frontend!
-
-* Run your frontend
-    ```sh
-    cd frontend/
-
-    ng serve -o
-    ```
-
 ### Technical specifications
 
 To run this application, you must have a computer with the following minimum requirements:
@@ -267,6 +203,8 @@ To run this application, you must have a computer with the following minimum req
   - CPU: Intel Core i3 or AMD Ryzen 4.
 
   - Web browser: Google Chrome, Opera, Opera GX, Microsoft Edge, Firefox.
+
+![browserCompatibilityAngular][browserCompatibilityAngular.img]
 
 To see this application on your mobile device or tablet, you must execute:
 
@@ -342,6 +280,70 @@ Dark Palette example:
 
 ## Manuals
 
+### Installation guide
+
+#### Requirements
+
+- Eclipse IDE o IntelliJ IDEA.
+- MySQL Workbench.
+- PostMan, for RESTFul tests.
+- Visual Studio Code.
+
+#### Get started 
+
+##### Frontend
+
+[![Angular][angular.io]][angular.url]
+
+To get started, create an empty folder on your computer and open your Visual Studio Code.
+
+Once open, go to Files > Open Folder > and select the folder you just created.
+
+Now, open a terminal in the new folder.
+
+![newTerminal][newTerminal.img]
+
+Once you are in the terminal of your folder execute the following commands:
+
+* clone repository
+    ```sh
+    git clone https://github.com/JordanJTY/hotelWeb_Angular-Spring
+    ```
+
+Install all project's dependencies (Patience! It may take a few minutes):
+ 
+* npm
+    ```sh
+    npm install
+    ```
+
+When dependencies have been installed, you can go to set up your backend.
+
+##### Backend
+
+[![Spring][spring.io]][spring.url]
+
+To get started, open the backend of the project with the IDE of your choice. In my case, I used IntelliJ.
+
+![openedIDE][openedIDE.img]
+
+Once you have the backend open, go to MYSQL Workbench and check your username and password to access in your IDE. Also, take advantage of this opportunity to import a database where you save your data:
+
+![createDB][createDB.img]
+
+Once these steps are done, you can start your backend without first configuring your application properties with your database name and MySQL password.
+
+![changeBackendConfiguration][changeBackendConfiguration.img]
+
+Remember start your frontend!
+
+* Run your frontend
+    ```sh
+    cd frontend/
+
+    ng serve -o
+    ```
+
 ---
 
 ## Technology stack
@@ -384,6 +386,7 @@ Dark Palette example:
 [darkPalette.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/a126191fc71cfccbf8761ccd944ad8faf8e2fe9e/frontend/src/assets/readme/interfaces/DarkPaletteProject.png
 [lightMode.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/a126191fc71cfccbf8761ccd944ad8faf8e2fe9e/frontend/src/assets/readme/interfaces/lightModeExample.png
 [darkMode.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/a126191fc71cfccbf8761ccd944ad8faf8e2fe9e/frontend/src/assets/readme/interfaces/darkModeExample.png
+[browserCompatibilityAngular.img]: 
 
 [figma.url]: https://www.figma.com/file/WCxnIb2Czop1TWowRPx371/HotelAko?node-id=33%3A75&t=S61Phe0yC3oc3t7R-1
 
