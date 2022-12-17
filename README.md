@@ -279,6 +279,15 @@ When you have done the last step, you should find in CMD you ip with commmand 'i
 
 [cmdipConfig][cmdipConfig.img]
 
+When you have it, you should be in the same network and you should type in your web browser the following url:
+
+* URL:
+  ```sh
+  http://{{Computer IP}}:4200
+  ```
+
+Now, you should see the website in your mobile or tablet.
+
 ---
 
 ## Interfaces
@@ -289,34 +298,37 @@ You can see application design in my Figma project: [Ako hotel Project][figma.ur
 
 #### Usability and accessibility
 
-###### Usability:
- 
-Regarding usability elements, we have a clear and simple clean design, adapted to all users. We recognize a color palette that is familiar to us from the medical field, but at the same time modern, including warmer colors.
- 
-![image](https://user-images.githubusercontent.com/95490721/206919510-3532a341-430c-4ce6-9c65-82e21cab3b7b.png)
+##### Usability:
 
-![image](https://user-images.githubusercontent.com/95490721/206919497-a95362e0-3cf4-4acf-a469-a624acac2428.png)
+In terms of usability elements, we have prioritized the user experience by setting standards to achieve user satisfaction. To do so, we will list all these elements:
 
-![image](https://user-images.githubusercontent.com/95490721/206919999-6e7ff21b-3312-4766-83c4-27e6abe0409d.png)
- 
- - Easy to understand, the user does not need more than three clicks to reach his goal with minimal effort. In addition, essential information is visible and clear.
- 
- - Elegant in its design, it favors the user's perception, the soft colors of its interface and the homogeneity make the end user feel attracted to the product.
- 
- - The user is able to interact with the application thanks to its elegant and simple design, overloading is avoided, which makes it difficult for users to easily navigate through applications.
- 
- - Feedback and appropriate responses to user actions through messages and alerts
- 
- - Clean layout of windows to create a seamless visual flow of information for the user.
- 
- - Consistent interface, basic operations are intuitive and all done in the same way.
- 
- - Clear and harmonious interface structure, menus and windows are consistent with each other.
- 
- - Easy navigation through the page, both with mouse and keyboard.
- 
- 
-######  Accessibility 
+  - Useful design, coupled with ease of use and quick learning.
+
+  - Prediction of errors before actions together with feedback and methods to locate the user.
+
+  - Wide range of actions regarding customization and interactivity with the application.
+
+  - Consistent interface, with user-friendly attributes and a simplicity that makes it easy to use.
+
+  - Interface structure that allows the user to feel comfortable navigating it.
+
+The user's comfort has been prioritized at all times. For this, I have designed a simple and easy to use interface that allows the user to have everything they need at hand. In addition, I have tried to use colors that convey comfort and simplicity to the environment, observable in the color palettes below. Mentioning the color palette, I did a lot of research about a color palette that does not stray from the original one and keeps its nuances when creating the dark theme combination.
+
+[lightPalette][lightPalette.img]
+
+Light Palette example: 
+
+[lightMode][lightMode.img]
+
+Along with this palette, we have given it a darker touch to allow access to more muted shades to enhance the user experience along with their preferences.
+
+[darkPalette][darkPalette.img]
+
+Dark Palette example: 
+
+[darkMode][darkMode.img]
+
+#####  Accessibility 
   
  - Accessibility is the attribute that allows people to easily perceive, understand and navigate the web. For this, the following has been taken into account:
  
@@ -367,7 +379,11 @@ Regarding usability elements, we have a clear and simple clean design, adapted t
 [umlDiagram.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/diagrams/diagramUML.png
 [relacionalDiagram.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/d4cb4f9eb9bf54954a635067ccc6b23664cd9cbb/frontend/src/assets/readme/diagrams/diagramRelational.png
 [useCase.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/35410e924c5309a9063fb1cc828a84dbf5aba6fe/frontend/src/assets/readme/diagrams/useCase.png
-[cmdipConfig.img]: 
+[cmdipConfig.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/9826a5f1843b83abd3c6fb7d701c0c72fd5e91ae/frontend/src/assets/readme/cmdipConfig.png
+[lightPalette.img]: 
+[darkPalette.img]: 
+[lightMode.img]: 
+[darkMode.img]: 
 
 [figma.url]: https://www.figma.com/file/WCxnIb2Czop1TWowRPx371/HotelAko?node-id=33%3A75&t=S61Phe0yC3oc3t7R-1
 
