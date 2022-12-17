@@ -23,7 +23,7 @@ export class HelpPageComponent {
     this.data = [
       {
         image: 'docTerms',
-        title: 'Terms and Privacy Policy',
+        title: 'Help system',
         href: ''
       },
       {

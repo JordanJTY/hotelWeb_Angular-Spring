@@ -146,7 +146,7 @@ Relational Model:
 - **I1**. The application has two main interface where you can see all types of apartments.
 - **I2**. In the first main interface, you can navigate between help, login or apartment details and there is slider.
   - **I2.1**. In the help interface, you will find cards with some places to go.
-    - **I2.1.1**. The first card you will find is the terms and privacy policy.
+    - **I2.1.1**. The first card you will find is the help system.
     - **I2.1.2**. The second card you will fin is the application information.
     - **I2.1.3**. The third card you will find is the additional information.
     - **I2.1.4**. The fourth card you will find is the contact.
