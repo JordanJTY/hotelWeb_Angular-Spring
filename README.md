@@ -267,13 +267,13 @@ Dark Palette example:
 ![darkMode][darkMode.img]
 
 #####  Accessibility 
-  
- - Accessibility is the attribute that allows people to easily perceive, understand and navigate the web. For this, the following has been taken into account:
+
+Regarding accessibility, we tried to make it possible for most people to use this application, from the elderly to people with disabilities. To do this, we have covered the following points:
  
  - Contrast between the background and the color of the font to favor reading and favor visual health, also pure white is not used to avoid glare and visual fatigue.
- 
+
  - Well-defined form fields and fonts that favor the perfect legibility of the texts.
- 
+
  - Design adaptable to all kinds of devices.
 
 ---
@@ -348,9 +348,27 @@ Remember start your frontend!
 
 ## Technology stack
 
+To carry out this project, I used a technology stack consisting of:
+
+[![Angular][angular2.io]][angular.url] used as Frontend.
+
+[![Spring][spring2.io]][spring.url] with Java, used as Backend.
+
 ---
 
 ## Technology comparison
+
+To compare technologies, I will choose those that I have had the opportunity to test or see from my peers. In this case I have chosen the following:
+
+Frontend: 
+
+[![React][react.io]][react.url] to compare with [![Angular][angular.io]][angular.url].
+
+Backend: 
+
+[![Sequelize][sequelize.io]][sequelize.url] to compare with [![Spring][spring.io]][spring.url].
+
+
 
 ---
 
@@ -386,15 +404,23 @@ Remember start your frontend!
 [darkPalette.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/a126191fc71cfccbf8761ccd944ad8faf8e2fe9e/frontend/src/assets/readme/interfaces/DarkPaletteProject.png
 [lightMode.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/a126191fc71cfccbf8761ccd944ad8faf8e2fe9e/frontend/src/assets/readme/interfaces/lightModeExample.png
 [darkMode.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/a126191fc71cfccbf8761ccd944ad8faf8e2fe9e/frontend/src/assets/readme/interfaces/darkModeExample.png
-[browserCompatibilityAngular.img]: 
+[browserCompatibilityAngular.img]: https://github.com/JordanJTY/hotelWeb_Angular-Spring/blob/a4c95938e8df60f5f4d448bdcdaba88ba51a0c37/frontend/src/assets/readme/browsersCompatibilityAngular.png
 
 [figma.url]: https://www.figma.com/file/WCxnIb2Czop1TWowRPx371/HotelAko?node-id=33%3A75&t=S61Phe0yC3oc3t7R-1
 
 [author-jordan.io]: https://img.shields.io/badge/-Jordan%20Jared%20Tejera%20Yánez-purple?style=for-the-badge&label=author&logo=pokemon&labelColor=black
 [author-jordan.url]: https://github.com/JordanJTY
 
+[angular2.io]: https://img.shields.io/badge/Angular-red?style=for-the-badge&logo=angular&logoColor=black
 [angular.io]: https://img.shields.io/badge/Frontend-Angular-red?style=flat-square&logo=angular&logoColor=red
 [angular.url]: https://angular.io
 
+[react.io]: https://img.shields.io/badge/Frontend-React-aqua?style=flat-square&logo=React&logoColor=aqua
+[react.url]: https://reactjs.org
+
+[spring2.io]: https://img.shields.io/badge/Spring-green?style=for-the-badge&logo=spring&logoColor=black
 [spring.io]: https://img.shields.io/badge/Backend-Spring-green?style=flat-square&logo=spring&logoColor=green
 [spring.url]: https://spring.io
+
+[sequelize.io]: https://img.shields.io/badge/Backend-Sequelize-blue?style=flat-square&logo=Sequelize&logoColor=blue
+[sequelize.url]: https://sequelize.org
