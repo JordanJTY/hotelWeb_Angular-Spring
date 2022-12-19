@@ -200,7 +200,7 @@ To run this application, you must have a computer with the following minimum req
 
   - S.O.: Windows 10.
 
-  - CPU: Intel Core i3 or AMD Ryzen 4.
+  - CPU: Intel Core i3.
 
   - Web browser: Google Chrome, Opera, Opera GX, Microsoft Edge, Firefox.
 
@@ -376,6 +376,8 @@ Both are constituted by the use of components, therefore, they are a good exampl
 
   - Angular is a part of the MEAN stack and is very compatible with many code editors. It’s also considered to develop dynamic websites and web apps. On the other hand, React is widely used to develop reusable HTML elements for front end development.
 
+  - Regarding the type of apps that are Angular and React, we can highlight that both are Web applications, because they are frameworks that are accessed from the web browser.
+
 Backend: 
 
 [![Sequelize][sequelize.io]][sequelize.url] to compare with [![Spring][spring.io]][spring.url]
@@ -389,6 +391,8 @@ Both technologies are ORMs used for the connection between the backend and the f
   - Spring allows us to work with MVC frameworks with PHP, being the better of the two ORMs in this aspect.
 
   - Sequelize allows us to perform powerful works in Digital Drawing and Painting environments.
+
+  - Regarding the type of apps that are Spring and Sequelize, we can observe that Spring is a native app, due to the use of Java in its development. This makes us develop applications only for android, excluding IOS from the end user. Meanwhile, sequelize is a hybrid app because of the use of javaScript in its development, allowing its cross-platform export.
 
 ---
 
