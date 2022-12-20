@@ -376,7 +376,7 @@ Both are constituted by the use of components, therefore, they are a good exampl
 
   - Angular is a part of the MEAN stack and is very compatible with many code editors. It’s also considered to develop dynamic websites and web apps. On the other hand, React is widely used to develop reusable HTML elements for front end development.
 
-  - Regarding the type of apps that are Angular and React, we can highlight that both are Web applications, because they are frameworks that are accessed from the web browser.
+  - Regarding the type of apps that are Angular and React, we can highlight that both are Web applications, because they are frameworks that are accessed from the web browser. Angular is mainly used to create web applications, it is also possible to use it to create hybrid apps and progressive apps (PWA).
 
 Backend: 
 
@@ -392,7 +392,7 @@ Both technologies are ORMs used for the connection between the backend and the f
 
   - Sequelize allows us to perform powerful works in Digital Drawing and Painting environments.
 
-  - Regarding the type of apps that are Spring and Sequelize, we can observe that Spring is a native app, due to the use of Java in its development. This makes us develop applications only for android, excluding IOS from the end user. Meanwhile, sequelize is a hybrid app because of the use of javaScript in its development, allowing its cross-platform export.
+  - Regarding the type of apps that are Spring and Sequelize, we can observe that Spring is a hybrid app and can be run on desktops and web browsers. Meanwhile, Sequelize is an open source software library used to connect to databases and perform operations on them, such as queries, inserts, updates and deletes. Therefore, it is not native, hybrid or PWA. It is a web library, as it is used in web applications to interact with databases.
 
 ---
 
