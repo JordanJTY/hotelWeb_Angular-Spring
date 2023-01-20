@@ -3,6 +3,8 @@ package com.jordan.hotelako.controllers;
 import com.jordan.hotelako.entity.models.Reservation;
 import com.jordan.hotelako.entity.services.IReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -37,4 +39,15 @@ public class ReservationController {
     public void delete(@PathVariable(value = "id") Long id) {
         reservationService.delete(id);
     }
+
+    //Informes
+    @GetMapping("/reservation/exportInvoice")
+    public ResponseEntity<Resource> exportInvoice(@RequestParam int idUser, @RequestParam int idReservation){
+        return this.reservationService.exportInvoice(idUser, idReservation);
+    }
+    @GetMapping("/reservation/exportData")
+    public ResponseEntity<Resource> exportData(@RequestParam int year){
+        return this.reservationService.exportData(year);
+    }
+
 }

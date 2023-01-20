@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Reservations } from 'src/app/shared/models/reservations';
+import { ReportsService } from 'src/app/shared/services/reports.service';
 import { ReservationsService } from 'src/app/shared/services/reservations.service';
 import { StorageService } from 'src/app/shared/services/storage.service';
 import Swal from 'sweetalert2';
@@ -14,7 +15,7 @@ export class ReservationsPageComponent {
 
   reservations: Array<Reservations> = []
 
-  constructor(private reservationsService: ReservationsService, private storage: StorageService, private router: Router) { }
+  constructor(private reservationsService: ReservationsService, private storage: StorageService, private router: Router, private reportService: ReportsService) { }
 
   ngOnInit() {
     let data = this.reservationsService.getAllReservations();
@@ -48,6 +49,27 @@ export class ReservationsPageComponent {
             'success'
           ).then(function () {
             window.location.reload()
+          })
+        } else {
+          Swal.fire({
+            title: 'Do you want to print your invoice?',
+            text: "You will see your invoice in another window!",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#DAD2BC',
+            cancelButtonColor: '#69747C',
+            confirmButtonText: 'Yes'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              this.reportService.getInvoice(this.storage.getUser().id, id)
+              Swal.fire(
+                'Done!',
+                'Your reservation has been printed correctly.',
+                'success'
+              ).then(function () {
+                window.location.reload()
+              })
+            }
           })
         }
       })

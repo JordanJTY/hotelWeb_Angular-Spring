@@ -35,7 +35,6 @@ public class UserController {
         return userService.get(id);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/user")
     public void post(User appUser) {
         userService.post(appUser);

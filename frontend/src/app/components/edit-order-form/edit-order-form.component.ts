@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Apartment } from 'src/app/shared/models/apartment';
 import { Reservations } from 'src/app/shared/models/reservations';
+import { ReportsService } from 'src/app/shared/services/reports.service';
 import { ReservationsService } from 'src/app/shared/services/reservations.service';
 import { StorageService } from 'src/app/shared/services/storage.service';
 import Swal from 'sweetalert2';
@@ -21,7 +22,7 @@ export class EditOrderFormComponent {
   actualDate: any = new Date().toISOString().split('T')[0];
   equalsDate: boolean = false;
 
-  constructor(private activatedRoute: ActivatedRoute, private reservationsService: ReservationsService, private storage: StorageService) {
+  constructor(private activatedRoute: ActivatedRoute, private reservationsService: ReservationsService, private storage: StorageService, private reportService: ReportsService) {
     this.orderForm = this.createForm();
   }
 
@@ -78,6 +79,29 @@ export class EditOrderFormComponent {
           'success'
         ).then(function () {
           window.location.href = 'reservations'
+        })
+      }
+    })
+  }
+
+  printInvoice(){
+    Swal.fire({
+      title: 'Do you want to print your invoice?',
+      text: "You will see your invoice in another window!",
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#DAD2BC',
+      cancelButtonColor: '#69747C',
+      confirmButtonText: 'Yes'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.reportService.getInvoice(this.storage.getUser().id, this.idReservation)
+        Swal.fire(
+          'Done!',
+          'Your reservation has been printed correctly.',
+          'success'
+        ).then(function () {
+          window.location.href = 'reservations';
         })
       }
     })

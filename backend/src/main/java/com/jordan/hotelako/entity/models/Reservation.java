@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 @Entity
 public class Reservation implements Serializable {
@@ -78,4 +79,31 @@ public class Reservation implements Serializable {
         this.endDate = endDate;
     }
 
+    public String getNombre(){
+        return this.apartment!=null ? this.apartment.getType() : "----";
+    }
+
+    public Double getSubTotal(){
+        long dateBeforeInMs = this.endDate.getTime();
+        long dateAfterInMs = this.startDate.getTime();
+
+        long timeDiff = Math.abs(dateAfterInMs - dateBeforeInMs);
+
+        long daysDiff = TimeUnit.DAYS.convert(timeDiff, TimeUnit.MILLISECONDS);
+        return Double.parseDouble(String.valueOf(this.apartment.getPrice() * daysDiff));
+    }
+
+    public int getCantidad(){
+        long dateBeforeInMs = this.endDate.getTime();
+        long dateAfterInMs = this.startDate.getTime();
+
+        long timeDiff = Math.abs(dateAfterInMs - dateBeforeInMs);
+
+        long daysDiff = TimeUnit.DAYS.convert(timeDiff, TimeUnit.MILLISECONDS);
+        return Integer.parseInt(String.valueOf(daysDiff));
+    }
+
+    public double getPrecio(){
+        return this.apartment.getPrice();
+    }
 }
