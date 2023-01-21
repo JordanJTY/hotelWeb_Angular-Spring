@@ -108,6 +108,7 @@ public class ReservationServiceImpl implements IReservationService {
 
             final HashMap<String, Object> parameters = new HashMap<>();
             parameters.put("imgLogo", new FileInputStream(imgLogo));
+            parameters.put("year", year);
 
             JasperPrint jasperPrint = JasperFillManager.fillReport(report, parameters, new JRBeanCollectionDataSource(this.reservationDao.avgReservations(year)));
             byte[] reporte = JasperExportManager.exportReportToPdf(jasperPrint);
