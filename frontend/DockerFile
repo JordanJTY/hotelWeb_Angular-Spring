@@ -5,7 +5,7 @@ FROM node:16.17
 WORKDIR /usr/src/app
 
 #Copiar los archivos necesarios para la construcción
-COPY package*.json /usr/src/app/
+COPY package*.json ./
 
 #Copiar el resto del código
 COPY . .
