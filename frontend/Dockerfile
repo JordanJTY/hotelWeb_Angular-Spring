@@ -6,6 +6,8 @@ WORKDIR /usr/src/app
 
 COPY package*.json .
 
+RUN npm install -g npm@9.3.1
+
 #Instalar las dependencias
 RUN npm install
 
