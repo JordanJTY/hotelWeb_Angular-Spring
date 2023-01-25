@@ -1,7 +1,7 @@
 #Utilizar la imagen oficial de Node.js
 FROM node:latest as builder
 
-RUN mkdir -p /usr/src/app
+RUN mkdir /usr/src/app
 
 #Establecer el directorio de trabajo
 WORKDIR /usr/src/app
