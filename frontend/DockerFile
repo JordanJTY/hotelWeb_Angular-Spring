@@ -1,8 +1,6 @@
 #Utilizar la imagen oficial de Node.js
 FROM node:16.17
 
-RUN mkdir /usr/src/app
-
 #Establecer el directorio de trabajo
 WORKDIR /usr/src/app
 
