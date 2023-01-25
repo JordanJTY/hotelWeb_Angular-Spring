@@ -2,10 +2,10 @@
 FROM node:16.17
 
 #Establecer el directorio de trabajo
-WORKDIR /app
+WORKDIR /usr/src/app
 
 #Copiar el resto del código
-COPY . .
+COPY .
 
 #Instalar las dependencias
 RUN npm install
