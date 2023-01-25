@@ -5,7 +5,7 @@ FROM node:16
 WORKDIR /usr/src/app
 
 #Copiar los archivos necesarios para la construcción
-COPY package*.json ./
+COPY package*.json /usr/src/app
 
 #Copiar el resto del código
 COPY . .
@@ -14,7 +14,7 @@ COPY . .
 RUN npm install
 
 #Generar el build de Angular
-#RUN npm run build
+RUN npm run build
 
 #Exponer el puerto
 EXPOSE 4200
