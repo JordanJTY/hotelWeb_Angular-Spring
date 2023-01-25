@@ -7,7 +7,7 @@ USER root
 WORKDIR /usr/src/app
 
 #Copiar el resto del código
-ADD . .
+COPY . .
 
 #Instalar las dependencias
 RUN npm install
