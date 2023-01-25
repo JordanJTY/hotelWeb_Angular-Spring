@@ -5,7 +5,7 @@ FROM node:16.19
 WORKDIR /usr/src/app
 
 #Copiar el resto del código
-COPY . .
+COPY . /usr/src/app
 
 #Instalar las dependencias
 RUN npm install
