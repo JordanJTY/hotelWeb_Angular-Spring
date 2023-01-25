@@ -11,4 +11,4 @@ COPY target/classes
 EXPOSE 8080
 
 # Iniciar la aplicación
-CMD ["java", "-jar", "app.jar"] 
+CMD ["java", "-jar", "app.jar"]
