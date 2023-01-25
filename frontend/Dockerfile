@@ -8,6 +8,8 @@ COPY package*.json .
 
 RUN npm install -g npm@9.3.1
 
+RUN npm install -g npm-check-updates
+
 #Instalar las dependencias
 RUN npm install
 
