@@ -1,9 +1,10 @@
 #Utilizar la imagen oficial de Node.js
 FROM node:16.19
 
+USER root
+
 #Establecer el directorio de trabajo
 WORKDIR /usr/src/app
-
 
 #Copiar el resto del código
 COPY . /usr/src/app
