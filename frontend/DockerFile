@@ -1,5 +1,5 @@
 #Utilizar la imagen oficial de Node.js
-FROM node:latest as builder
+FROM node:16.17
 
 RUN mkdir /usr/src/app
 
@@ -13,7 +13,7 @@ COPY . .
 RUN npm install
 
 #Generar el build de Angular
-RUN npm run build --prod
+RUN npm run build
 
 #Iniciar la aplicación
 CMD ["npm", "start"]
