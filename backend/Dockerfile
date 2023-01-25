@@ -5,7 +5,7 @@ FROM openjdk:14
 WORKDIR /usr/src/app
 
 # Copiar el archivo jar
-COPY target/classes .
+COPY target/backend-0.0.1-SNAPSHOT.jar .
 
 # Exponer el puerto
 EXPOSE 8080
