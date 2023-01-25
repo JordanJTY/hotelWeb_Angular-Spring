@@ -5,13 +5,15 @@ FROM node:16
 WORKDIR /usr/src/app
 
 #Copiar el resto del código
-ADD .  .
+COPY . .
 
 #Instalar las dependencias
 RUN npm install
 
 #Generar el build de Angular
 RUN npm run build
+
+EXPOSE 4200
 
 #Iniciar la aplicación
 CMD ["npm", "start"]

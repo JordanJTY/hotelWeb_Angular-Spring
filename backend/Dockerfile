@@ -5,7 +5,7 @@ FROM openjdk:14
 WORKDIR /usr/src/app
 
 # Copiar el archivo jar
-ADD target/classes
+COPY target/classes
 
 # Exponer el puerto
 EXPOSE 8080
