@@ -1,25 +1,26 @@
 #Utilizar la imagen oficial de Node.js
 FROM node:16.19
 
-#Establecer el directorio de trabajo
+# Create a directory for the application
+RUN mkdir -p /usr/src/app
+
+# Set the working directory for the rest of the commands
 WORKDIR /usr/src/app
 
-COPY package*.json .
+# Copy the package.json and package-lock.json files to the container
+COPY package*.json ./
 
-RUN npm install -g npm@9.4.0
-
-RUN npm update --force
-
-#Instalar las dependencias
+# Install the application's dependencies
 RUN npm install --force
 
-#Copiar el resto del código
+# Copy the rest of the application's files to the container
 COPY . .
 
-#Generar el build de Angular
-RUN npm run build
+# Build the application for production
+RUN npm run build --prod
 
+# Expose the port that the application runs on
 EXPOSE 4200
 
-#Iniciar la aplicación
+# Start the application
 CMD ["npm", "start"]
