@@ -1,14 +1,3 @@
-# Utilizar la imagen oficial de Java
-FROM openjdk:14
-
-# Establecer el directorio de trabajo
-WORKDIR /usr/src/app
-
-# Copiar el archivo jar
-COPY target/hotelAko-0.0.1-SNAPSHOT.jar .
-
-# Exponer el puerto
-EXPOSE 8080
-
-# Iniciar la aplicación
-CMD ["java", "-jar", "app.jar"]
+FROM openjdk:8-alpine
+ADD target/*.jar /usr/share/app.jar
+ENTRYPOINT ["/usr/bin/java", "-jar", "/usr/share/app.jar"]
