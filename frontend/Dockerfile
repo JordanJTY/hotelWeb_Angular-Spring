@@ -14,7 +14,7 @@ COPY package.json /usr/src/app
 RUN npm install --force
 
 # Copy the rest of the application's files to the container
-COPY . .
+COPY . /usr/src/app
 
 # Build the application for production
 RUN npm run build --prod
