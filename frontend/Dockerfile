@@ -6,12 +6,14 @@ WORKDIR /usr/src/app
 
 COPY package*.json .
 
-RUN npm install -g npm@9.3.1
+RUN npm install -g npm@9.4.0
+
+RUN npm-check-updates
 
 RUN npm update
 
 #Instalar las dependencias
-RUN npm install --force
+RUN npm install
 
 #Copiar el resto del código
 COPY . .
