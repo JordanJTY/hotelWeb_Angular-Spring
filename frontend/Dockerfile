@@ -11,7 +11,7 @@ RUN npm install -g npm@9.3.1
 RUN npm update
 
 #Instalar las dependencias
-RUN npm install
+RUN npm install --force
 
 #Copiar el resto del código
 COPY . .
