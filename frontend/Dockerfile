@@ -19,8 +19,5 @@ COPY . /usr/src/app
 # Build the application for production
 RUN npm run build --prod
 
-# Expose the port that the application runs on
-EXPOSE 4201
-
 # Start the application
 CMD ["npm", "start"]
