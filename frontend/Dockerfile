@@ -8,7 +8,7 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # Copy the package.json and package-lock.json files to the container
-COPY package*.json ./
+COPY package.json /usr/src/app
 
 # Install the application's dependencies
 RUN npm install --force
