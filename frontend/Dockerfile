@@ -8,7 +8,7 @@ COPY package*.json .
 
 RUN npm install -g npm@9.4.0
 
-RUN npm update
+RUN npm update --force
 
 #Instalar las dependencias
 RUN npm install --force
