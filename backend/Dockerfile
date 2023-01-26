@@ -1,3 +1,3 @@
 FROM openjdk:17-alpine
-ADD target/*.jar /usr/share/app.jar
-ENTRYPOINT ["/usr/bin/java", "-jar", "/usr/share/app.jar"]
+ADD target/*.jar /usr/src/app.jar
+ENTRYPOINT ["java", "-jar", "/usr/src/app.jar"]
