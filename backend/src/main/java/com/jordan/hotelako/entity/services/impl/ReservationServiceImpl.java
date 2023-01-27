@@ -87,7 +87,7 @@ public class ReservationServiceImpl implements IReservationService {
                                 .append(".pdf")
                                 .toString())
                         .build();
-                emailSender.sendEmail(reporte);
+//                emailSender.sendEmail(reporte);
                 HttpHeaders headers = new HttpHeaders();
                 headers.setContentDisposition(contentDisposition);
                 return ResponseEntity.ok().contentLength((long) reporte.length)

@@ -36,7 +36,7 @@ public class EmailSender {
                 }
             });
             Message msg = new MimeMessage(session);
-            msg.setFrom(new InternetAddress("test@gmail.com", false));
+            msg.setFrom(new InternetAddress("darkjordanrayo@gmail.com", false));
 
             msg.setRecipients(Message.RecipientType.TO,
                     InternetAddress.parse("test@gmail.com"));
