@@ -1,9 +1,6 @@
 #Utilizar la imagen oficial de Node.js
 FROM node:16.19
 
-# Create a directory for the application
-RUN mkdir -p /usr/src/app
-
 # Set the working directory for the rest of the commands
 WORKDIR /usr/src/app
 
