@@ -1,6 +1,25 @@
-FROM node:16.19 AS build
+#Utilizar la imagen oficial de Node.js
+FROM node:16.19
+
+# Create a directory for the application
+RUN mkdir -p /usr/src/app
+
+# Set the working directory for the rest of the commands
 WORKDIR /usr/src/app
-COPY package.json package-lock.json ./
+
+# Copy the package.json and package-lock.json files to the container
+COPY package.json /usr/src/app
+
+# Install the application's dependencies
 RUN npm install --force
-COPY . .
-RUN npm run build
+
+# Copy the rest of the application's files to the container
+COPY . /usr/src/app
+
+# Build the application for production
+RUN npm run build --prod
+
+EXPOSE 4200
+
+# Start the application
+CMD ["npm", "start"]
