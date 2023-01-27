@@ -19,5 +19,7 @@ COPY . /usr/src/app
 # Build the application for production
 RUN npm run build --prod
 
+EXPOSE 4200
+
 # Start the application
 CMD ["npm", "start"]
