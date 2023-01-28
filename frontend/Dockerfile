@@ -1,5 +1,5 @@
 # Stage 1
-FROM alpine:3.16 as build
+FROM alpine:3.16 as build-step
 
 RUN mkdir -p /app
 
