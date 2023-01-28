@@ -1,18 +1,9 @@
 # Stage 1
-FROM node:16-alpine as build-step
-
+FROM node:16.17 as node
 WORKDIR /app
-
-COPY package.json /app
-
+COPY . .
 RUN npm install --force
-
-COPY . /app
-
 RUN npm run build --prod
-
 # Stage 2
-
-FROM nginx as runtime
-
-COPY --from=build-step /app/dist /usr/share/nginx/html
+FROM nginx:alpine
+COPY --from=node /app/dist/angular-app /usr/share/nginx/html
