@@ -1,20 +1,12 @@
-# Stage 1
-FROM alpine:3.16 as build
-
-RUN mkdir -p /app
-
+FROM node:16.17 as build
 WORKDIR /app
 
-COPY package.json /app
+RUN npm install -g @angular/cli
 
-RUN npm install
-
-COPY . /app
-
-RUN npm run build --prod
-
-# Stage 2
+COPY ./package.json .
+RUN npm install --force
+COPY . .
+RUN ng build
 
 FROM nginx as runtime
-
-COPY --from=build-step /app/docs /usr/share/nginx/html
+COPY --from=build /app/dist/hotel-ako /usr/share/nginx/html
