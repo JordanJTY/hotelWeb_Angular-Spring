@@ -1,5 +1,5 @@
 # Stage 1
-FROM alpine:3.16 as build-step
+FROM node:16-alpine as build-step
 
 RUN mkdir -p /app
 
