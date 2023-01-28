@@ -1,5 +1,5 @@
 #Utilizar la imagen oficial de Node.js
-FROM node:16.19
+FROM nginx:1.17.1-alpine
 
 # Set the working directory for the rest of the commands
 WORKDIR /usr/src/app
