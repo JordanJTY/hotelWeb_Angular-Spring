@@ -1,22 +1,12 @@
-#Utilizar la imagen oficial de Node.js
-FROM nginx:1.17.1-alpine
+FROM node:14.2.0-alpine3.11 as build
+WORKDIR /app
 
-# Set the working directory for the rest of the commands
-WORKDIR /usr/src/app
+RUN npm install -g @angular/cli
 
-# Copy the package.json and package-lock.json files to the container
-COPY package.json /usr/src/app
-
-# Install the application's dependencies
+COPY ./package.json .
 RUN npm install --force
+COPY . .
+RUN ng build
 
-# Copy the rest of the application's files to the container
-COPY . /usr/src/app
-
-# Build the application for production
-RUN npm run build --prod
-
-EXPOSE 4200
-
-# Start the application
-CMD ["npm", "start"]
+FROM nginx as runtime
+COPY --from=build /app/dist/MyAngularApp /usr/share/nginx/html
