@@ -6,4 +6,4 @@ RUN npm install --force
 RUN npm run build --prod
 # Stage 2
 FROM nginx:alpine
-COPY --from=node /app/dist/angular-app /usr/share/nginx/html
+COPY --from=node /app/dist/hotel-ako /usr/share/nginx/html
