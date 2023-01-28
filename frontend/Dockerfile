@@ -1,22 +1,20 @@
-#Utilizar la imagen oficial de Node.js
-FROM node:16.19
+# Stage 1
+FROM alpine:3.16 as build
 
-# Set the working directory for the rest of the commands
-WORKDIR /usr/src/app
+RUN mkdir -p /app
 
-# Copy the package.json and package-lock.json files to the container
-COPY package.json /usr/src/app
+WORKDIR /app
 
-# Install the application's dependencies
-RUN npm install --force
+COPY package.json /app
 
-# Copy the rest of the application's files to the container
-COPY . /usr/src/app
+RUN npm install
 
-# Build the application for production
+COPY . /app
+
 RUN npm run build --prod
 
-EXPOSE 4200
+# Stage 2
 
-# Start the application
-CMD ["npm", "start"]
+FROM nginx as runtime
+
+COPY --from=build-step /app/docs /usr/share/nginx/html
