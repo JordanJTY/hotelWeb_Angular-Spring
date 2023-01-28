@@ -15,4 +15,4 @@ RUN npm run build --prod
 
 FROM nginx as runtime
 
-COPY --from=build-step /app/docs /usr/share/nginx/html
+COPY --from=build-step /app/dist /usr/share/nginx/html
