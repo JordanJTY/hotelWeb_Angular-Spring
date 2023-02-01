@@ -280,7 +280,9 @@ Regarding accessibility, we tried to make it possible for most people to use thi
 
 ## Manuals
 
-### Installation guide
+### Installation guides
+
+
 
 #### Requirements
 
@@ -289,7 +291,15 @@ Regarding accessibility, we tried to make it possible for most people to use thi
 - PostMan, for RESTFul tests.
 - Visual Studio Code.
 
-#### Get started 
+#### Get started with the script installation
+
+In the root of the project, an script is added named "installation.bat", this script will automatically install both of the servers, but you will still need the requirements that are wrote above this. 
+
+This script will build your backend, edit the application.properties with the username and password you provide for MySQL, run it, and then install all the dependencies in the frontend and run it too.
+
+For a complete installation, importing the .sql would be great for the completion of the installation, so roles are imported in correctly and you have an admin user to manage the application.
+
+#### Get started with manual installation
 
 ##### Frontend
 

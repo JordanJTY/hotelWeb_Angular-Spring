@@ -11,6 +11,7 @@ export class ContactFormComponent {
   public contactForm: FormGroup;
 
   // tslint:disable-next-line: max-line-length
+  private usernamePattern: any = /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/;
   private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 
@@ -28,8 +29,8 @@ export class ContactFormComponent {
   createForm() {
     return new FormGroup({
       email: new FormControl('', [Validators.required, Validators.minLength(5), Validators.pattern(this.emailPattern)]),
-      name: new FormControl('', [Validators.required, Validators.minLength(5)]),
-      message: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(100)])
+      name: new FormControl('', [Validators.required, Validators.minLength(5), Validators.pattern(this.usernamePattern)]),
+      message: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(150)])
     });
   }
 

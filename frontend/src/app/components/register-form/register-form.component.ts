@@ -11,8 +11,8 @@ import Swal from 'sweetalert2';
 })
 export class RegisterFormComponent {
   public registerForm: FormGroup;
-  private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  checker: boolean = false
+  private usernamePattern: any = /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/;
+  private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;  checker: boolean = false
   checkboxChecker: boolean = false;
   boxChecker: boolean = false;
   constructor(private auth: AuthService) {
@@ -28,7 +28,7 @@ export class RegisterFormComponent {
   createForm() {
     return new FormGroup({
       email: new FormControl('', [Validators.required, Validators.minLength(5), Validators.pattern(this.emailPattern)]),
-      name: new FormControl('', [Validators.required, Validators.minLength(5)]),
+      name: new FormControl('', [Validators.required, Validators.minLength(5), Validators.pattern(this.usernamePattern)]),
       password: new FormControl('', [Validators.required, Validators.minLength(5)]),
       dateBirth: new FormControl('', [Validators.required])
     });
