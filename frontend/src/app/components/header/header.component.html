@@ -23,9 +23,9 @@
         </ul>
 
         <button id="btn" (click)="setActive()">
-            <img *ngxPermissionsExcept="['ROLE_ADMIN', 'ROLE_USER']" id="userImg" src="assets/images/withinLogin.png" />
-            <img *ngxPermissionsOnly="['ROLE_USER']" id="userImg" src="assets/images/userPlaceholder.png" />
-            <img *ngxPermissionsOnly="['ROLE_ADMIN']" id="userImg" src="assets/images/adminIcon.png" />
+            <img (click)="playSound()" *ngxPermissionsExcept="['ROLE_ADMIN', 'ROLE_USER']" id="userImg" src="assets/images/withinLogin.png" />
+            <img (click)="playSound()" *ngxPermissionsOnly="['ROLE_USER']" id="userImg" src="assets/images/userPlaceholder.png" />
+            <img (click)="playSound()"*ngxPermissionsOnly="['ROLE_ADMIN']" id="userImg" src="assets/images/adminIcon.png" />
         </button>
     </nav>
 </header>

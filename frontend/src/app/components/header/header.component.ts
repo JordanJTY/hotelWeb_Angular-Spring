@@ -48,4 +48,11 @@ export class HeaderComponent implements OnInit {
       }
     })
   }
+
+  playSound(){
+    let audio = new Audio();
+    audio.src = "../../assets/audio/button.wav" 
+    audio.load();
+    audio.play(); 
+  }
 }
