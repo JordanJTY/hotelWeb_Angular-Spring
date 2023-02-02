@@ -5,3 +5,11 @@
     align-items: flex-start;
     flex-wrap: wrap;
 }
+
+#searchBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 2em;
+    padding:0.25em;
+}

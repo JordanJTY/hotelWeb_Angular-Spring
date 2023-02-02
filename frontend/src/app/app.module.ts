@@ -7,6 +7,8 @@ import { NgxPermissionsModule } from 'ngx-permissions';
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -91,7 +93,8 @@ import { EditOrderFormComponent } from './components/edit-order-form/edit-order-
     MatIconModule,
     NgxPermissionsModule.forRoot(),
     MatDialogModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    Ng2SearchPipeModule
   ],
   entryComponents: [ApartmentDetailsComponent],
   providers: [authInterceptorProviders],

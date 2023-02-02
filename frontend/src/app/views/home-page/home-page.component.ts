@@ -11,9 +11,11 @@ import { ApartmentDetailsComponent } from '../apartment-details/apartment-detail
 })
 export class HomePageComponent {
   apartment: Array<Apartment> = [];
+  name: string;
 
   constructor(private apartmentService: ApartmentService, private dialog: MatDialog) {
     this.getAllApartment();
+    this.name="";
   }
 
   openDetails(id: any) {
