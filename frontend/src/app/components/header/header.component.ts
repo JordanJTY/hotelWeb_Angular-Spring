@@ -51,7 +51,7 @@ export class HeaderComponent implements OnInit {
 
   playSound(){
     let audio = new Audio();
-    audio.src = "assets/audio/button.wav" 
+    audio.src = "assets/audio/paper-slide.wav" 
     audio.load();
     audio.play(); 
   }
