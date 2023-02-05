@@ -28,7 +28,7 @@ export class AdminReservationsComponent implements OnInit {
     this.router.navigateByUrl(`/details-reservation/${id}`);
   }
 
-  printReport() {
+  printReportReservations() {
     let year: number;
     Swal.fire({
       title: 'Submit the year what do you want to report',
@@ -37,6 +37,8 @@ export class AdminReservationsComponent implements OnInit {
         autocapitalize: 'off'
       },
       showCancelButton: true,
+      confirmButtonColor: '#DAD2BC',
+      cancelButtonColor: '#69747C',
       confirmButtonText: 'Look up',
       showLoaderOnConfirm: true,
       preConfirm: (input) => {
@@ -46,6 +48,37 @@ export class AdminReservationsComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         this.reportService.getDataReservations(year);
+        Swal.fire(
+          'Done!',
+          'Your report has been printed correctly.',
+          'success'
+        ).then(function () {
+          window.location.href = 'allReservations';
+        })
+      }
+    })
+  }
+
+  printReportUserReservations() {
+    let username: string;
+    Swal.fire({
+      title: 'Submit the username what do you want to report',
+      input: 'text',
+      inputAttributes: {
+        autocapitalize: 'off'
+      },
+      showCancelButton: true,
+      confirmButtonColor: '#DAD2BC',
+      cancelButtonColor: '#69747C',
+      confirmButtonText: 'Look up',
+      showLoaderOnConfirm: true,
+      preConfirm: (input) => {
+        username = input
+      },
+      allowOutsideClick: () => !Swal.isLoading()
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.reportService.getUserReservations(username);
         Swal.fire(
           'Done!',
           'Your report has been printed correctly.',

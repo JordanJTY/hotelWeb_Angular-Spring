@@ -45,9 +45,15 @@ public class ReservationController {
     public ResponseEntity<Resource> exportInvoice(@RequestParam int idUser, @RequestParam int idReservation){
         return this.reservationService.exportInvoice(idUser, idReservation);
     }
-    @GetMapping("/reservation/exportData")
-    public ResponseEntity<Resource> exportData(@RequestParam int year){
-        return this.reservationService.exportData(year);
+    @GetMapping("/reservation/exportAverageReservationData")
+    public ResponseEntity<Resource> exportAverageReservationData(@RequestParam int year){
+        return this.reservationService.exportAverageReservationData(year);
     }
 
+    @GetMapping("/reservation/exportUserReservations")
+    public ResponseEntity<Resource> exportUserReservations(@RequestParam int idUser){
+        return this.reservationService.exportUserReservations(idUser);
+    }
+
+    
 }

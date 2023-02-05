@@ -6,8 +6,15 @@
     flex-wrap: wrap;
 }
 
-#searchBar{
+.searchbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#searchBar {
     border-radius: 2em;
-    padding:0.25em;
-    width: 70%;
+    padding: 0.25em;
+    width: 75%;
+    height: 2em;
 }

@@ -14,6 +14,9 @@ public interface IReservationDao extends CrudRepository<Reservation, Long> {
     @Query(value = "SELECT * FROM db_hotel.reservation r WHERE r.id =:idReservation", nativeQuery = true)
     Iterable<Reservation> findById(int idReservation);
 
+    @Query(value = "SELECT * FROM db_hotel.reservation r WHERE r.app_user_id =:idUser", nativeQuery = true)
+    Iterable<Reservation> findByUser(int idUser);
+
     @Query(value = "SELECT count(r.apartment_id) as numberApartment, " +
             "a.type as typeApartment " +
             "FROM db_hotel.reservation r " +
