@@ -65,4 +65,15 @@ export class ReportsService {
         window.open(fileURL);
       }, (error) => { console.log(error) })
   }
+
+  getApartmwntUsage(idApartment: number) {
+    let headers = new HttpHeaders();
+    headers = headers.set('Accept', 'application/pdf');
+    return this.http.get(this.endpoint + '/exportApartmentUsage', { responseType: 'blob', params: { idApartment: idApartment } })
+      .subscribe(response => {
+        const file = new Blob([response], { type: 'application/pdf' });
+        const fileURL = URL.createObjectURL(file);
+        window.open(fileURL);
+      }, (error) => { console.log(error) })
+  }
 }

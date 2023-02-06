@@ -211,4 +211,38 @@ public class ReservationServiceImpl implements IReservationService {
         }
         return null;
     }
+
+    @Override
+    public ResponseEntity<Resource> exportApartmentUsage(int idApartment) {
+        try {
+            final File file = ResourceUtils.getFile("classpath:templates/exportApartmentUsage.jasper");
+            final File imgLogo = ResourceUtils.getFile("classpath:images/logoAkoWithBackground.jpg");
+            final JasperReport report = (JasperReport) JRLoader.loadObject(file);
+
+            final HashMap<String, Object> parameters = new HashMap<>();
+            parameters.put("imgLogo", new FileInputStream(imgLogo));
+            parameters.put("dsInvoice", new JRBeanCollectionDataSource((Collection<?>) this.reservationDao.apartmentUsageCount(idApartment)));
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(report, parameters, new JREmptyDataSource());
+            byte[] reporte = JasperExportManager.exportReportToPdf(jasperPrint);
+            String sdf = new SimpleDateFormat("dd/MM/YYYY").format(new Date());
+            StringBuilder stringBuilder = new StringBuilder().append("ReservationPDF:");
+            ContentDisposition contentDisposition = ContentDisposition.builder("attachment")
+                    .filename(stringBuilder.append(Math.random() * 120)
+                            .append("generateDate:")
+                            .append(sdf)
+                            .append(".pdf")
+                            .toString())
+                    .build();
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentDisposition(contentDisposition);
+            return ResponseEntity.ok().contentLength((long) reporte.length)
+                    .contentType(MediaType.APPLICATION_PDF)
+                    .headers(headers)
+                    .body(new ByteArrayResource(reporte));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

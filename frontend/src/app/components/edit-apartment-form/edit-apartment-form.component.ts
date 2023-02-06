@@ -4,6 +4,7 @@ import { SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Apartment } from 'src/app/shared/models/apartment';
 import { ApartmentService } from 'src/app/shared/services/apartment.service';
+import { ReportsService } from 'src/app/shared/services/reports.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -22,7 +23,7 @@ export class EditApartmentFormComponent implements OnInit {
   typeImg: string = '';
   dataImg: File = new File([''], "oldImage.");
 
-  constructor(private activatedRoute: ActivatedRoute, private apartmentService: ApartmentService) {
+  constructor(private activatedRoute: ActivatedRoute, private apartmentService: ApartmentService, private reportService: ReportsService) {
     this.apartmentForm = this.createForm();
   }
 
@@ -122,5 +123,28 @@ export class EditApartmentFormComponent implements OnInit {
         }
       })
     }
+  }
+
+  printReportUsage(){
+    Swal.fire({
+      title: 'Would you like to print a usage report?',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#DAD2BC',
+      cancelButtonColor: '#69747C',
+      confirmButtonText: 'Yes'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const id = this.activatedRoute.snapshot.params['id'];
+        this.reportService.getApartmwntUsage(id);
+        Swal.fire(
+          'Done!',
+          'Your report has been printed correctly.',
+          'success'
+        ).then(function () {
+          window.location.href = 'admin-home';
+        })
+      }
+    })
   }
 }

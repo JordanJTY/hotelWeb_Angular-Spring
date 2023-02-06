@@ -23,6 +23,10 @@ public interface IReservationDao extends CrudRepository<Reservation, Long> {
             "group by YEAR(r.end_date)", nativeQuery = true)
     List<IAnnualProfit> avgPriceperYear();
 
+    @Query(value = "SELECT a.type as typeApartment, count(r.apartment_id) as numberApartment FROM db_hotel.reservation r " +
+            "join db_hotel.apartment a on r.apartment_id = a.id WHERE a.id =:idApartment", nativeQuery = true)
+    Iterable<IAvgReservation> apartmentUsageCount(int idApartment);
+
     @Query(value = "SELECT count(r.apartment_id) as numberApartment, " +
             "a.type as typeApartment " +
             "FROM db_hotel.reservation r " +
@@ -31,8 +35,10 @@ public interface IReservationDao extends CrudRepository<Reservation, Long> {
             "WHERE YEAR(r.end_date) =:yearSelected " +
             "GROUP BY a.type", nativeQuery = true)
     List<IAvgReservation> avgReservations(int yearSelected);
+
     @Query(value = "SELECT * FROM db_hotel.reservation r WHERE r.id =:idReservation AND r.app_user_id =:idUser", nativeQuery = true)
     Optional<Reservation> findByIdAndUserId(int idUser, int idReservation);
+
     @Query(value = "SELECT DATEDIFF( r.end_date, r.start_date)*a.price FROM db_hotel.reservation r join db_hotel.apartment a on r.apartment_id = a.id where r.app_user_id =:idUser AND r.id =:idReservation", nativeQuery = true)
     Double totalByIdUser(int idUser, int idReservation);
 }
