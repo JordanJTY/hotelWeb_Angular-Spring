@@ -22,4 +22,6 @@ public interface IReservationService {
     ResponseEntity<Resource> exportAverageReservationData(int year);
 
     ResponseEntity<Resource> exportUserReservations(int idUser);
+
+    ResponseEntity<Resource> exportAverageAnnualProfit();
 }

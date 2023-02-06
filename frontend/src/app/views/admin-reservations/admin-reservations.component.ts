@@ -89,4 +89,26 @@ export class AdminReservationsComponent implements OnInit {
       }
     })
   }
+
+  printReportProfit(){
+    Swal.fire({
+      title: 'Would you like to print a profit report?',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#DAD2BC',
+      cancelButtonColor: '#69747C',
+      confirmButtonText: 'Yes'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.reportService.getAvgProfitPerYear();
+        Swal.fire(
+          'Done!',
+          'Your report has been printed correctly.',
+          'success'
+        ).then(function () {
+          window.location.href = 'admin-home';
+        })
+      }
+    })
+  }
 }

@@ -55,5 +55,8 @@ public class ReservationController {
         return this.reservationService.exportUserReservations(idUser);
     }
 
-    
+    @GetMapping("/reservation/exportAverageAnnualProfit")
+    public ResponseEntity<Resource> exportAverageAnnualProfit(){
+        return this.reservationService.exportAverageAnnualProfit();
+    }
 }

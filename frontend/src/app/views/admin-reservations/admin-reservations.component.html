@@ -3,6 +3,7 @@
     <h2>All reservations</h2>
     <button class="btn-send" (click)="printReportReservations()">Print data about reservations</button>
     <button class="btn-send" (click)="printReportUserReservations()">Print data about user</button>
+    <button class="btn-send" (click)="printReportProfit()">Print data about profits</button>
 </div>
 <div class="container">
     <app-reservation-card *ngFor="let r of reservations" [startDate]="r.startDate" [endDate]="r.endDate"
