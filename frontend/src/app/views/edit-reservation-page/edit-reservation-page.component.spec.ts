@@ -1,4 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { EditOrderFormComponent } from 'src/app/components/edit-order-form/edit-order-form.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NgxPermissionsModule } from 'ngx-permissions';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AppRoutingModule } from '../../app-routing.module';
+import { HeaderComponent } from '../../components/header/header.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { EditReservationPageComponent } from './edit-reservation-page.component';
 
@@ -8,7 +15,8 @@ describe('EditReservationPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditReservationPageComponent ]
+      imports: [ HttpClientModule, AppRoutingModule, MatSlideToggleModule, NgxPermissionsModule.forRoot(), FormsModule, ReactiveFormsModule],
+      declarations: [ HeaderComponent, EditReservationPageComponent, EditOrderFormComponent ]
     })
     .compileComponents();
 

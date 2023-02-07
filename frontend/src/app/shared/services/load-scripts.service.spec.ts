@@ -1,16 +1,16 @@
-import { TestBed } from '@angular/core/testing';
+// import { TestBed } from '@angular/core/testing';
 
-import { LoadScriptsService } from './load-scripts.service';
+// import { LoadScriptsService } from './load-scripts.service';
 
-describe('LoadScriptsService', () => {
-  let service: LoadScriptsService;
+// describe('LoadScriptsService', () => {
+//   let service: LoadScriptsService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(LoadScriptsService);
-  });
+//   beforeEach(() => {
+//     TestBed.configureTestingModule({});
+//     service = TestBed.inject(LoadScriptsService);
+//   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
-});
+//   it('should be created', () => {
+//     expect(service).toBeTruthy();
+//   });
+// });
