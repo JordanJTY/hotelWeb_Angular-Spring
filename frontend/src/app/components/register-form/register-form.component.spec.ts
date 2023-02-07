@@ -54,9 +54,9 @@ describe('RegisterFormComponent', () => {
     const email = component.registerForm.controls['email']
     const password = component.registerForm.controls['password']
     const dateBirth = component.registerForm.controls['dateBirth']
-    name.setValue('Jordancio');
+    name.setValue('Jordan Jared');
     email.setValue('xdwdawd@gmail.com')
-    password.setValue('123456');
+    password.setValue('1234567');
     dateBirth.setValue(new Date('2003-03-02'));
     expect(form.valid).toBeTruthy();
   });
