@@ -37,8 +37,6 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
     @Autowired
     UserDetailsServiceImpl userDetailsService;
 
-    private final ObjectMapper mapper
-
     @Autowired
     private AuthEntryPointJwt unauthorizedHandler;
 
@@ -105,7 +103,7 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
                 .oauth2ResourceServer()
                 .jwt();
 
-        http.authorizeRequests()
+       /* http.authorizeRequests()
                 .antMatchers("/oauth2/**", "/login").permitAll()
                 .anyRequest().authenticated()
                 .and()
@@ -116,7 +114,7 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
                 .successHandler(this::successHandler)
                 .and()
                 .exceptionHandling()
-                .authenticationEntryPoint(this::authenticationEntryPoint);
+                .authenticationEntryPoint(this::authenticationEntryPoint);*/
 
         http.authenticationProvider(authenticationProvider());
 
@@ -125,12 +123,12 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
         return http.build();
     }
 
-    private void authenticationEntryPoint(HttpServletRequest request, HttpServletResponse response, AuthenticationException e) throws IOException {
+    /*private void authenticationEntryPoint(HttpServletRequest request, HttpServletResponse response, AuthenticationException e) throws IOException {
         response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
         response.getWriter().write(mapper.writeValueAsString(Collections.singletonMap("error", "unauthenticated")));
-    }
+    }*/
 
-    private void successHandler(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
-    }
+    /*private void successHandler(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
+    }*/
 
 }
