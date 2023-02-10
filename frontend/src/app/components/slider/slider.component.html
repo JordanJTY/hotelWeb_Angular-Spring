@@ -1,22 +1,22 @@
 <div  class="slideshow-container">
     <div class="mySlides fade">
-        <img src="assets/images/slider1.png" style="width:100%">
+        <img src="assets/images/slider1.png" >
     </div>
 
     <div class="mySlides fade">
-        <img src="assets/images/slider2.png" style="width:100%">
+        <img src="assets/images/slider2.png" >
     </div>
 
     <div class="mySlides fade">
-        <img src="assets/images/slider3.png" style="width:100%">
+        <img src="assets/images/slider3.png">
     </div>
 
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <a class="prev" (click)="plusSlides(-1)">&#10094;</a>
+    <a class="next" (click)="plusSlides(1)">&#10095;</a>
     <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" (click)="currentSlide(1)"></span>
+        <span class="dot" (click)="currentSlide(2)"></span>
+        <span class="dot" (click)="currentSlide(3)"></span>
     </div>
 </div>
 <br>
