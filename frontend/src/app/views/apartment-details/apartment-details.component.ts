@@ -3,6 +3,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Apartment } from 'src/app/shared/models/apartment';
 import { ApartmentService } from 'src/app/shared/services/apartment.service';
+// Or use es6 import
+import { PanoViewer } from "@egjs/view360";
 
 @Component({
   selector: 'app-apartment-details',
@@ -13,9 +15,16 @@ export class ApartmentDetailsComponent {
 
   apartment: Apartment = { amount: 0, type: '', image: '', description: '', price: 0 };
   id: any;
+  panoViewer = new PanoViewer(
+    document.getElementById("myPanoViewer")!,
+    {
+      image: "/path/to/image/image.jpg"
+    }
+  );
 
   constructor(@Inject(MAT_DIALOG_DATA) data: any, private dialogRef: MatDialogRef<ApartmentDetailsComponent>, private apartmentService: ApartmentService, private router: Router) {
     this.id = data.id;
+
   }
 
   goLogin() {

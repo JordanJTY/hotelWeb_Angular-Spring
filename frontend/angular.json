@@ -99,6 +99,7 @@
               "src/favicon.ico",
               "src/assets"
             ],
+            "codeCoverage": true,
             "styles": [
               "src/styles.scss"
             ],
