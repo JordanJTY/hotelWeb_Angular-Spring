@@ -1,7 +1,5 @@
 package com.jordan.hotelako.security;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jordan.hotelako.security.jwt.AuthEntryPointJwt;
 import com.jordan.hotelako.security.jwt.AuthTokenFilter;
 import com.jordan.hotelako.security.services.impl.UserDetailsServiceImpl;
@@ -15,17 +13,10 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.Collections;
 
 @Configuration
 @EnableWebSecurity
@@ -66,7 +57,6 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
 //    return super.authenticationManagerBean();
 //  }
 
-
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
         return authConfig.getAuthenticationManager();
@@ -98,23 +88,7 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
                 .antMatchers("/apartment/**").permitAll()
                 .antMatchers("/user/**").permitAll()
                 .antMatchers("/reservation/**").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .oauth2ResourceServer()
-                .jwt();
-
-       /* http.authorizeRequests()
-                .antMatchers("/oauth2/**", "/login").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .oauth2Login()
-                .authorizationEndpoint()
-                .authorizationRequestRepository(new InMemoryRequestRepository())
-                .and()
-                .successHandler(this::successHandler)
-                .and()
-                .exceptionHandling()
-                .authenticationEntryPoint(this::authenticationEntryPoint);*/
+                .anyRequest().authenticated();
 
         http.authenticationProvider(authenticationProvider());
 
@@ -122,13 +96,4 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
 
         return http.build();
     }
-
-    /*private void authenticationEntryPoint(HttpServletRequest request, HttpServletResponse response, AuthenticationException e) throws IOException {
-        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-        response.getWriter().write(mapper.writeValueAsString(Collections.singletonMap("error", "unauthenticated")));
-    }*/
-
-    /*private void successHandler(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
-    }*/
-
 }
