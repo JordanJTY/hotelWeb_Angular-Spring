@@ -144,7 +144,7 @@ Relational Model:
 #### Interfaces:
 
 - **I1**. The application has two main interface where you can see all types of apartments.
-- **I2**. In the first main interface, you can navigate between help, login or apartment details and there is slider.
+- **I2**. In the first main interface, you can navigate between help, login or apartment details, a searchbar and there is a slider.
   - **I2.1**. In the help interface, you will find cards with some places to go.
     - **I2.1.1**. The first card you will find is the help system.
     - **I2.1.2**. The second card you will fin is the application information.
@@ -159,17 +159,20 @@ Relational Model:
   - **I3.2**. You will be able to book an apartment.
   - **I3.3**. You will be able to see all the reservations you have made.
     - **I3.3.1**. You will be able to delete or edit your reservations depending on whether you have your reservation that day or not.
+    - **I3.3.2**. You will also be able to get an invoice of that reservation with the calculated price.
   - **I3.4**. You will be able to log out.
 - **I4**. As a administrator, you will be able to see the second main interface.
   - **I4.1**. You will be able to add new types of apartments.
   - **I4.2**. You will be able to edit or delete existing apartment types.
   - **I4.3**. You will be able to see all the reservations of all users.
     -**I4.3.1**. You will be able to delete user reservations.
+  - **I4.4** You will be able to click one of the three buttons to get a report for that case.
 
 #### Actions:
 
 - **A1**. User actions will be accompanied by comments and notifications when they are performed.
 - **A2**. When entering data in the form, it is validated that the information is entered correctly, notifying the user if there is an error.
+- **A3**. User Actions will be supported sometimes with a sound when it's needed.
 
 #### Validations:
 
