@@ -5,6 +5,7 @@ import { Apartment } from 'src/app/shared/models/apartment';
 import { ApartmentService } from 'src/app/shared/services/apartment.service';
 import 'aframe'
 import { DbService } from 'src/app/shared/services/db.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-apartment-details',
@@ -17,9 +18,8 @@ export class ApartmentDetailsComponent {
   id: any;
   panoViewer: any;
 
-  constructor(@Inject(MAT_DIALOG_DATA) data: any, private db: DbService, private dialogRef: MatDialogRef<ApartmentDetailsComponent>, private apartmentService: ApartmentService, private router: Router) {
+  constructor(@Inject(MAT_DIALOG_DATA) data: any, private db: DbService, private dialogRef: MatDialogRef<ApartmentDetailsComponent>, private sanitizer: DomSanitizer, private router: Router) {
     this.id = data.id;
-
   }
 
   goLogin() {
@@ -36,6 +36,7 @@ export class ApartmentDetailsComponent {
     this.db.table('myStore1').get(this.id).then(data => {
       console.log(data)
       this.apartment = new Apartment(data.type, data.img, data.typeImg, data.description, data.price, data.amount, data.id)
+      console.log(this.apartment);
     })
   }
 }
