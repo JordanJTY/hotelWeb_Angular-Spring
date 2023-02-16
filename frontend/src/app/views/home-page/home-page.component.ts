@@ -31,6 +31,18 @@ export class HomePageComponent {
 
   getAllApartment() {
     this.apartmentService.getAllApartments().subscribe(data => {
+
+      for(let i = 0 ; i <= data.length-1 ; i++){
+        this.db.table('myStore1').get(data[i].id!).then(data => {
+          if(data == undefined) console.log("Do nothing")
+          else{
+            this.db.table('myStore1').delete(data[i].id!).then(data => {
+              console.log("Deleted")
+            })
+          }
+        })
+      }
+
       data.forEach(element => {
         this.db.table('myStore1').add({
           id: element.id,
@@ -43,11 +55,14 @@ export class HomePageComponent {
           }
         )
       });
-      for(let i = 1 ; i <= data.length ; i++){
-        this.db.table('myStore1').get(i).then(data => {
+
+      for(let i = 0 ; i <= data.length-1 ; i++){
+        this.db.table('myStore1').get(data[i].id!).then(data => {
           this.apartment.push(new Apartment(data.type, data.img, data.typeImg, data.description, data.price, data.amount, data.id)) 
         })
       }
+
     })
   }
+
 }
