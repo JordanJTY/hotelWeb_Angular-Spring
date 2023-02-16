@@ -3,6 +3,6 @@
 <div class="searchbar">
     <input type="text" id="searchBar" placeholder="Search..." [(ngModel)]="name">
 </div>
-<div class="container" >
+<div class="container">
     <app-apartment-card *ngFor="let a of apartment | filter: name" (click)="openDetails(a.id)" [type]="a.type" [description]="a.description" [image]="a.image" [typeImg]="a.typeImg!"></app-apartment-card>
 </div>

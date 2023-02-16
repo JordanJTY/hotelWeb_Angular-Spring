@@ -14,7 +14,6 @@ export class ApartmentCardComponent implements OnInit {
   @Input() description: string;
   @Input() typeImg:string;
 
-
   constructor(private sanitizer: DomSanitizer) {
     this.id = 0;
     this.type = '';

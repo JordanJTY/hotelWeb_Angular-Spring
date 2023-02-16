@@ -9,12 +9,13 @@ export class Apartment {
     description: string;
     price: number;
 
-    constructor(type: string, image: SafeResourceUrl, typeImg:string,  description: string, price: number, amount: number) {
+    constructor(type: string, image: SafeResourceUrl, typeImg:string,  description: string, price: number, amount: number, id?:number ) {
         this.type = type;
         this.description = description;
         this.price = price;
         this.amount = amount;
         this.image = image;
         this.typeImg = typeImg;
+        this.id = id
     }
 }

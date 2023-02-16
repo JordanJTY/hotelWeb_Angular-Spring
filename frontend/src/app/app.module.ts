@@ -47,6 +47,7 @@ import { ReservationsPageComponent } from './views/reservations-page/reservation
 import { EditReservationPageComponent } from './views/edit-reservation-page/edit-reservation-page.component';
 import { EditOrderFormComponent } from './components/edit-order-form/edit-order-form.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -94,7 +95,7 @@ import { EditOrderFormComponent } from './components/edit-order-form/edit-order-
     NgxPermissionsModule.forRoot(),
     MatDialogModule,
     MatSlideToggleModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
   ],
   entryComponents: [ApartmentDetailsComponent],
   providers: [authInterceptorProviders],
