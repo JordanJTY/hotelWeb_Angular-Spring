@@ -46,6 +46,7 @@ import { ReservationFormComponent } from './components/reservation-form/reservat
 import { ReservationsPageComponent } from './views/reservations-page/reservations-page.component';
 import { EditReservationPageComponent } from './views/edit-reservation-page/edit-reservation-page.component';
 import { EditOrderFormComponent } from './components/edit-order-form/edit-order-form.component';
+import { HelperPageComponent } from './components/helper-page/helper-page.component';
 
 
 @NgModule({
@@ -81,6 +82,7 @@ import { EditOrderFormComponent } from './components/edit-order-form/edit-order-
     ReservationsPageComponent,
     EditReservationPageComponent,
     EditOrderFormComponent,
+    HelperPageComponent,
   ],
   imports: [
     BrowserModule,
