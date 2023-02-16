@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser'
-import "aframe";
+import * as THREE from 'three';
 
 @Component({
   selector: 'app-apartment-card',

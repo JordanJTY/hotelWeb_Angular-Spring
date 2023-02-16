@@ -1,11 +1,7 @@
 <div class="container">
     <mat-card class="example-card">
-        <!-- <img id="img" mat-card-image src="{{'data:{{apartment.typeImg}};base64,' + apartment.image}}" alt=""> -->
-        <div class="my360" style="width: 400px; height: 200px;">
-            <a-scene embedded>
-                <a-sky id="image-360"
-                    src="assets/images/360_F_322882600_y6JbONLD7YLdRrU5LFQReuq8YUwasfgg.jpg"></a-sky>
-            </a-scene>
+        <div class="my360">
+            <canvas id="canvas"></canvas>
         </div>
         <mat-card-content>
             <h3>{{apartment.type}}</h3>
