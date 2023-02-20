@@ -67,7 +67,7 @@ export class EditApartmentFormComponent implements OnInit {
       let base64 = base64Data[1].split(',')
       this.image = base64[1];
       this.typeImg = typeImage[1];
-      // console.log(this.typeImg + ' --- ' + this.image)
+
     };
   }
 

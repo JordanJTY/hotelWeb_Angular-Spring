@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Reservations } from 'src/app/shared/models/reservations';
+import { DbService } from 'src/app/shared/services/db.service';
 import { ReportsService } from 'src/app/shared/services/reports.service';
 import { ReservationsService } from 'src/app/shared/services/reservations.service';
 import Swal from 'sweetalert2';
@@ -14,14 +15,42 @@ export class AdminReservationsComponent implements OnInit {
 
   reservations: Array<Reservations> = [];
 
-  constructor(private reservationsServices: ReservationsService, private router: Router, private reportService: ReportsService) { }
+  constructor(private reservationsServices: ReservationsService, private router: Router, private reportService: ReportsService, private db: DbService) { }
 
   ngOnInit() {
     this.reservationsServices.getAllReservations().subscribe(
       data => {
-        this.reservations = data;
-      },
-    );
+        if(data != undefined){
+          this.db.table('myStore2').clear()
+        }
+  
+        data.forEach(element => {
+          this.db.table('myStore2').add({
+            id: element.id,
+            endDate: element.endDate,
+            startDate: element.startDate,
+            apartment:element.apartment, 
+            user: element.appUser,
+            }
+          )
+
+          this.db.table("myStore2").toArray().then(data => {
+            for(let i = 0 ; i <= data.length ; i++){
+              this.db.table('myStore2').get(data[i].id!).then(data => {
+                this.reservations.push(new Reservations(data.endDate, data.startDate, data.apartment, data.user, data.id)) 
+              })
+            }
+          })
+        });
+      }, error  => {
+        this.db.table("myStore2").toArray().then(data => {
+          for(let i = 0 ; i <= data.length ; i++){
+            this.db.table('myStore2').get(data[i].id!).then(data => {
+              this.reservations.push(new Reservations(data.endDate, data.startDate, data.apartment, data.user, data.id)) 
+            })
+          }
+        })
+      });
   }
 
   goToDetails(id: number) {

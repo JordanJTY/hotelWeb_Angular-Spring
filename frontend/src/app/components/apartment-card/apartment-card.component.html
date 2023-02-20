@@ -1,7 +1,5 @@
 <mat-card *ngxPermissionsOnly="['ROLE_ADMIN']" class="example-card" routerLink="/edit-apartment/{{id}}">
-    <div class="my360">
-        <canvas id="canvas"></canvas>
-    </div>
+    <img mat-card-image src="{{'data:{{typeImg}};base64,' + image}}" alt="">
     <mat-card-content>
         <h3>{{type}}</h3>
         <hr>

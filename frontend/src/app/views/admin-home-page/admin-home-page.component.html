@@ -5,6 +5,5 @@
   </button>
 </div>
 <div class="container">
-  <app-apartment-card *ngFor="let a of apartment" [id]="a.id!" [type]="a.type"
-    [description]="a.description" [image]="a.image" [typeImg]="a.typeImg!"></app-apartment-card>
+  <app-apartment-card *ngFor="let a of apartment" [type]="a.type" [description]="a.description" [image]="a.image" [typeImg]="a.typeImg!" [id]="a.id!"></app-apartment-card>
 </div>

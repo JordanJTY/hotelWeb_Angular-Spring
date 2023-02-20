@@ -60,7 +60,6 @@ export class AddApartmentFormComponent {
 
   submit() {
     if (this.apartmentForm.valid) {
-      // console.log(this.amount + ' - ' + this.type + ' - ' + this.description + ' - ' + this.price)
       let apartmentData: Apartment = { type: this.type, amount: this.amount, description: this.description, price: this.price, image: '' }
       Swal.fire({
         title: 'Are you sure?',

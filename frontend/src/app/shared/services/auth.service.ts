@@ -25,7 +25,6 @@ export class AuthService {
   }
 
   register(user: User){
-    console.log(user.email + ' - ' + user.dateBirth + ' - ' + user.username + ' - ' + user.password)
     this.http.post<User>(this.endpoint + 'signup', user, httpOptions).subscribe();
   }
 

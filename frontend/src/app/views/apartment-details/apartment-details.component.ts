@@ -32,9 +32,7 @@ export class ApartmentDetailsComponent {
 
   ngOnInit() {
     this.db.table('myStore1').get(this.id).then(data => {
-      console.log(data)
       this.apartment = new Apartment(data.type, data.img, data.typeImg, data.description, data.price, data.amount, data.id)
-      console.log(this.apartment);
     }).then(() => {
       const canvas = document.querySelector('#canvas') as HTMLCanvasElement;
       const renderer = new THREE.WebGLRenderer({ canvas });
