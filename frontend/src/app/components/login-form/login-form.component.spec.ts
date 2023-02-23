@@ -26,4 +26,29 @@ describe('LoginFormComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should return form invalid', () => {
+    fixture = TestBed.createComponent(LoginFormComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+
+    const form = component.loginForm;
+    const name = component.loginForm.controls['name']
+    name.setValue('Jordancio');
+
+    expect(form.invalid).toBeTruthy();
+  });
+
+  it('should return form valid', () => {
+    fixture = TestBed.createComponent(LoginFormComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+
+    const form = component.loginForm;
+    const name = component.loginForm.controls['name']
+    const password = component.loginForm.controls['password']
+    name.setValue('Jordan Jared');
+    password.setValue('1234567');
+    expect(form.valid).toBeTruthy();
+  });
 });
