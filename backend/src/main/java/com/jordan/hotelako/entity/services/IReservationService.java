@@ -7,17 +7,23 @@ import org.springframework.http.ResponseEntity;
 import java.util.List;
 
 public interface IReservationService {
-    public Reservation get(long id);
+    Reservation get(long id);
 
-    public List<Reservation> getAll();
+    List<Reservation> getAll();
 
-    public void post(Reservation reservation);
+    void post(Reservation reservation);
 
-    public void put(Reservation reservation, long id);
+    void put(Reservation reservation, long id);
 
-    public void delete(long id);
+    void delete(long id);
 
     ResponseEntity<Resource> exportInvoice(int idUser, int idReservation);
 
-    ResponseEntity<Resource> exportData(int year);
+    ResponseEntity<Resource> exportAverageReservationData(int year);
+
+    ResponseEntity<Resource> exportUserReservations(int idUser);
+
+    ResponseEntity<Resource> exportAverageAnnualProfit();
+
+    ResponseEntity<Resource> exportApartmentUsage(int idApartment);
 }

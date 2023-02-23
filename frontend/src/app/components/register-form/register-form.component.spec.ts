@@ -14,6 +14,7 @@ describe('RegisterFormComponent', () => {
       imports: [
         NgxPermissionsModule.forRoot(),
         HttpClientModule,
+        ReactiveFormsModule
       ],
 
       declarations: [ RegisterFormComponent ]
@@ -53,11 +54,10 @@ describe('RegisterFormComponent', () => {
     const email = component.registerForm.controls['email']
     const password = component.registerForm.controls['password']
     const dateBirth = component.registerForm.controls['dateBirth']
-    name.setValue('Jordancio');
-    email.setValue('xd')
-    password.setValue('123456');
+    name.setValue('Jordan Jared');
+    email.setValue('xdwdawd@gmail.com')
+    password.setValue('1234567');
     dateBirth.setValue(new Date('2003-03-02'));
-
     expect(form.valid).toBeTruthy();
   });
 });

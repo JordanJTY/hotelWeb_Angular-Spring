@@ -21,6 +21,5 @@ export class AppComponent {
       const perm: any[] = [this.roles];
       this.permissionsService.loadPermissions(perm);
     }
-    // console.log(this.storage.getToken())
   }
 }

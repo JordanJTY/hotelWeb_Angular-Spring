@@ -29,7 +29,6 @@ public class UserController {
         return userService.getAll();
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/user/{id}")
     public User getOne(@PathVariable(value = "id") Long id) {
         return userService.get(id);
@@ -53,7 +52,6 @@ public class UserController {
         userService.put(appUser, id);
     }
 
-    @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
     @DeleteMapping("/user/{id}")
     public void delete(@PathVariable(value = "id") Long id) {
         userService.delete(id);

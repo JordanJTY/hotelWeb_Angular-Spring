@@ -65,6 +65,10 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+          "options": {
+            "sslKey": "src/assets/.cert/hotelAko.key",
+            "sslCert": "src/assets/.cert/hotelAko.crt"
+          },
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
@@ -95,6 +99,7 @@
               "src/favicon.ico",
               "src/assets"
             ],
+            "codeCoverage": true,
             "styles": [
               "src/styles.scss"
             ],
@@ -103,5 +108,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { MatCardModule } from '@angular/material/card';
@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxPermissionsModule } from 'ngx-permissions';
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -44,6 +46,8 @@ import { ReservationFormComponent } from './components/reservation-form/reservat
 import { ReservationsPageComponent } from './views/reservations-page/reservations-page.component';
 import { EditReservationPageComponent } from './views/edit-reservation-page/edit-reservation-page.component';
 import { EditOrderFormComponent } from './components/edit-order-form/edit-order-form.component';
+import { HelperPageComponent } from './components/helper-page/helper-page.component';
+
 
 @NgModule({
   declarations: [
@@ -78,6 +82,7 @@ import { EditOrderFormComponent } from './components/edit-order-form/edit-order-
     ReservationsPageComponent,
     EditReservationPageComponent,
     EditOrderFormComponent,
+    HelperPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -91,10 +96,12 @@ import { EditOrderFormComponent } from './components/edit-order-form/edit-order-
     MatIconModule,
     NgxPermissionsModule.forRoot(),
     MatDialogModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    Ng2SearchPipeModule,
   ],
   entryComponents: [ApartmentDetailsComponent],
   providers: [authInterceptorProviders],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

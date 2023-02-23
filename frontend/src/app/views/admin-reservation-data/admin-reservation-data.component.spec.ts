@@ -1,6 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientModule } from '@angular/common/http';
+import { NgxPermissionsModule } from 'ngx-permissions';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AppRoutingModule } from '../../app-routing.module';
+import { HeaderComponent } from '../../components/header/header.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { AdminReservationDataComponent } from './admin-reservation-data.component';
+import { ReservationDetailsComponent } from '../../components/reservation-details/reservation-details.component';
 
 describe('AdminReservationDataComponent', () => {
   let component: AdminReservationDataComponent;
@@ -8,7 +14,8 @@ describe('AdminReservationDataComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdminReservationDataComponent ]
+      imports: [ HttpClientModule, AppRoutingModule, MatSlideToggleModule, NgxPermissionsModule.forRoot(), FormsModule, ReactiveFormsModule],
+      declarations: [ AdminReservationDataComponent, HeaderComponent, ReservationDetailsComponent ]
     })
     .compileComponents();
 

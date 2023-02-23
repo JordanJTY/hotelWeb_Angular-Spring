@@ -18,11 +18,11 @@
             <li *ngxPermissionsOnly="['ROLE_ADMIN']" class="nav-item"><a href="allReservations"
                     class="nav-link">Reservations</a></li>
             <li class="nav-item"><a href="help" class="nav-link">Help</a></li>
-            <li class="nav-item"><mat-slide-toggle [checked]="darkMode$ | async" (change)="onToggle()" >Dark Mode</mat-slide-toggle>
+            <li class="nav-item"><mat-slide-toggle [checked]="darkMode$ | async" (click)="playSound()"  (change)="onToggle()" >Dark Mode</mat-slide-toggle>
             </li>
         </ul>
 
-        <button id="btn" (click)="setActive()">
+        <button id="btn" (click)="setActive(); playSound()">
             <img *ngxPermissionsExcept="['ROLE_ADMIN', 'ROLE_USER']" id="userImg" src="assets/images/withinLogin.png" />
             <img *ngxPermissionsOnly="['ROLE_USER']" id="userImg" src="assets/images/userPlaceholder.png" />
             <img *ngxPermissionsOnly="['ROLE_ADMIN']" id="userImg" src="assets/images/adminIcon.png" />

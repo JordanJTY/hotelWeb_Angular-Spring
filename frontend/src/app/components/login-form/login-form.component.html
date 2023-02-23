@@ -6,7 +6,7 @@
                 <input type="text" formControlName="name" placeholder="Full name">
                 <input type="password" formControlName="password" placeholder="Password">
                 <div class="alert-danger"
-                    *ngIf="password?.invalid && (password?.dirty || password?.touched) && name?.invalid && (name?.dirty || name?.touched)">
+                    *ngIf="(password?.invalid && (password?.dirty || password?.touched)) || (name?.invalid && (name?.dirty || name?.touched))">
                     Name or password are incorrect.
                 </div>
                 <div class="form-group">

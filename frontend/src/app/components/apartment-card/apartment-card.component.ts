@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser'
+import * as THREE from 'three';
 
 @Component({
   selector: 'app-apartment-card',
@@ -13,7 +14,6 @@ export class ApartmentCardComponent implements OnInit {
   @Input() image: SafeResourceUrl;
   @Input() description: string;
   @Input() typeImg:string;
-
 
   constructor(private sanitizer: DomSanitizer) {
     this.id = 0;

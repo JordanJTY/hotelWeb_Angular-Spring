@@ -3,6 +3,6 @@
     <h2>Reservations</h2>
 </div>
 <div class="container">
-    <app-reservation-card (click)="checkOrder(r.id!, i)" *ngFor="let r of reservations, index as i"
+    <app-reservation-card *ngFor="let r of reservations, index as i" (click)="checkOrder(r.id!, i)"
         [startDate]="r.startDate" [endDate]="r.endDate" [apartment]="r.apartment"></app-reservation-card>
 </div>
