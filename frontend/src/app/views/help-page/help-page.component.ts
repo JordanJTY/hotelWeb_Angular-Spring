@@ -24,7 +24,7 @@ export class HelpPageComponent {
       {
         image: 'docTerms',
         title: 'Help system',
-        href: ''
+        href: 'http://localhost:8080/Welcome.html'
       },
       {
         image: 'infoAplicactionIcon',

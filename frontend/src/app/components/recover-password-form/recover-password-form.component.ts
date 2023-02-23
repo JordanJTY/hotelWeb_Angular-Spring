@@ -13,6 +13,7 @@ import Swal from 'sweetalert2';
 export class RecoverPasswordFormComponent {
 
   public loginForm: FormGroup;
+  private usernamePattern: any = /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/;
   match: boolean
 
   constructor(private formBuilder: FormBuilder, private userService: UserService, private storage: StorageService) {
@@ -29,9 +30,9 @@ export class RecoverPasswordFormComponent {
 
   createForm() {
     return new FormGroup({
-      name: new FormControl('', [Validators.required]),
+      name: new FormControl('', [Validators.required, Validators.minLength(5), Validators.pattern(this.usernamePattern)]),
       password: new FormControl('', [Validators.required, Validators.minLength(5)]),
-      newPassword: new FormControl('', [Validators.required])
+      newPassword: new FormControl('', [Validators.required, Validators.minLength(5)]),
     });
   }
 

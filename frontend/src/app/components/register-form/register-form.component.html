@@ -24,6 +24,9 @@
                     <div class="container-error-message" *ngIf="name?.errors?.['minlength']">
                         Name must have more than 5 characters.
                     </div>
+                    <div class="container-error-message" *ngIf="name?.errors?.['pattern']">
+                        Name must be a real name.
+                    </div>
                 </div>
                 <input type="password" formControlName="password" placeholder="Password">
                 <div class="alert-danger" *ngIf="password?.invalid && (password?.dirty || password?.touched)">

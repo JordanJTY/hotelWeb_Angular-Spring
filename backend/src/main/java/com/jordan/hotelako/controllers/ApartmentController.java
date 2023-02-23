@@ -57,8 +57,6 @@ public class ApartmentController {
         }
 
     }
-
-    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/apartment")
     public void post(Apartment apartment, @RequestParam("file") MultipartFile image) throws IOException {
         String randomID = UUID.randomUUID().toString();
@@ -70,7 +68,6 @@ public class ApartmentController {
         apartmentService.post(apartment);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/apartment/{id}")
     public void put(@PathVariable(value = "id") Long id, Apartment apartment, @RequestParam(value = "file", required = false) MultipartFile image) throws IOException {
         if (image != null) {
@@ -88,7 +85,6 @@ public class ApartmentController {
         apartmentService.put(apartment, id);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/apartment/{id}")
     public void delete(@PathVariable(value = "id") Long id) {
         apartmentService.delete(id);

@@ -36,7 +36,7 @@ export class AddApartmentFormComponent {
       type: new FormControl('', [Validators.required, Validators.minLength(5)]),
       file: new FormControl('', [Validators.required]),
       description: new FormControl('', [Validators.required, Validators.minLength(5)]),
-      price: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(6), Validators.pattern('^[0-9,]*$')]),
+      price: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(6), Validators.pattern('^-?[0-9]\\d*(\\.\\d{1,2})?$')]),
       amount: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(3), Validators.pattern('^[0-9]*$')]),
     });
   }
@@ -60,7 +60,6 @@ export class AddApartmentFormComponent {
 
   submit() {
     if (this.apartmentForm.valid) {
-      // console.log(this.amount + ' - ' + this.type + ' - ' + this.description + ' - ' + this.price)
       let apartmentData: Apartment = { type: this.type, amount: this.amount, description: this.description, price: this.price, image: '' }
       Swal.fire({
         title: 'Are you sure?',

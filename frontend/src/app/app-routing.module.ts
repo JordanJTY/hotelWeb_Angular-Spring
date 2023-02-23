@@ -18,6 +18,7 @@ import { OrderPageComponent } from './views/order-page/order-page.component';
 import { ReservationsPageComponent } from './views/reservations-page/reservations-page.component';
 import { EditOrderFormComponent } from './components/edit-order-form/edit-order-form.component';
 import { EditReservationPageComponent } from './views/edit-reservation-page/edit-reservation-page.component';
+import { HelperPageComponent } from './components/helper-page/helper-page.component';
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'register', component: RegisterPageComponent },
+  { path: 'helper', component: HelperPageComponent },
   { path: 'recover-password', component: RecoverPasswordPageComponent },
   {
     path: 'admin-home', component: AdminHomePageComponent, canActivate: [AuthGuard],

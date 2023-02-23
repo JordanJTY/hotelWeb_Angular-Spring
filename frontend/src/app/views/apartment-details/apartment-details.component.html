@@ -1,6 +1,8 @@
 <div class="container">
     <mat-card class="example-card">
-        <img id="img" mat-card-image src="{{'data:{{apartment.typeImg}};base64,' + apartment.image}}" alt="">
+        <div class="my360">
+            <canvas id="canvas"></canvas>
+        </div>
         <mat-card-content>
             <h3>{{apartment.type}}</h3>
             <hr>

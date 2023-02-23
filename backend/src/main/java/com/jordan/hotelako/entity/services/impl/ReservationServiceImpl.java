@@ -3,7 +3,6 @@ package com.jordan.hotelako.entity.services.impl;
 import com.jordan.hotelako.entity.dao.IReservationDao;
 import com.jordan.hotelako.entity.models.Reservation;
 import com.jordan.hotelako.entity.services.IReservationService;
-import com.jordan.hotelako.tools.EmailSender;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.engine.util.JRLoader;
@@ -27,9 +26,6 @@ public class ReservationServiceImpl implements IReservationService {
 
     @Autowired
     private IReservationDao reservationDao;
-
-    @Autowired
-    private EmailSender emailSender;
 
     @Override
     public Reservation get(long id) {
@@ -104,7 +100,7 @@ public class ReservationServiceImpl implements IReservationService {
     }
 
     @Override
-    public ResponseEntity<Resource> exportData(int year) {
+    public ResponseEntity<Resource> exportAverageReservationData(int year) {
         try {
             final File file = ResourceUtils.getFile("classpath:templates/exportDataReservations.jasper");
             final File imgLogo = ResourceUtils.getFile("classpath:images/logoAkoWithBackground.jpg");
@@ -115,6 +111,115 @@ public class ReservationServiceImpl implements IReservationService {
             parameters.put("year", year);
 
             JasperPrint jasperPrint = JasperFillManager.fillReport(report, parameters, new JRBeanCollectionDataSource(this.reservationDao.avgReservations(year)));
+            byte[] reporte = JasperExportManager.exportReportToPdf(jasperPrint);
+            String sdf = new SimpleDateFormat("dd/MM/YYYY").format(new Date());
+            StringBuilder stringBuilder = new StringBuilder().append("ReservationPDF:");
+            ContentDisposition contentDisposition = ContentDisposition.builder("attachment")
+                    .filename(stringBuilder.append(Math.random() * 120)
+                            .append("generateDate:")
+                            .append(sdf)
+                            .append(".pdf")
+                            .toString())
+                    .build();
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentDisposition(contentDisposition);
+            return ResponseEntity.ok().contentLength((long) reporte.length)
+                    .contentType(MediaType.APPLICATION_PDF)
+                    .headers(headers)
+                    .body(new ByteArrayResource(reporte));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public ResponseEntity<Resource> exportUserReservations(int idUser) {
+        Iterable<Reservation> reservations = this.reservationDao.findByUser(idUser);
+        String username = "";
+        if (reservations.iterator().hasNext()) {
+            username = reservations.iterator().next().getAppUser().getUsername();
+            try {
+                final File file = ResourceUtils.getFile("classpath:templates/exportUserReservations.jasper");
+                final File imgLogo = ResourceUtils.getFile("classpath:images/logoAkoWithBackground.jpg");
+                final JasperReport report = (JasperReport) JRLoader.loadObject(file);
+
+                final HashMap<String, Object> parameters = new HashMap<>();
+                parameters.put("nombreCliente", username);
+                parameters.put("imgLogo", new FileInputStream(imgLogo));
+                parameters.put("dsInvoice", new JRBeanCollectionDataSource((Collection<?>) reservations));
+
+                JasperPrint jasperPrint = JasperFillManager.fillReport(report, parameters, new JREmptyDataSource());
+                byte[] reporte = JasperExportManager.exportReportToPdf(jasperPrint);
+                String sdf = new SimpleDateFormat("dd/MM/YYYY").format(new Date());
+                StringBuilder stringBuilder = new StringBuilder().append("ReservationPDF:");
+                ContentDisposition contentDisposition = ContentDisposition.builder("attachment")
+                        .filename(stringBuilder.append(reservations.iterator().next().getId())
+                                .append("generateDate:")
+                                .append(sdf)
+                                .append(".pdf")
+                                .toString())
+                        .build();
+                HttpHeaders headers = new HttpHeaders();
+                headers.setContentDisposition(contentDisposition);
+                return ResponseEntity.ok().contentLength((long) reporte.length)
+                        .contentType(MediaType.APPLICATION_PDF)
+                        .headers(headers)
+                        .body(new ByteArrayResource(reporte));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            return ResponseEntity.noContent().build();
+        }
+        return null;
+    }
+
+    @Override
+    public ResponseEntity<Resource> exportAverageAnnualProfit() {
+        try {
+            final File file = ResourceUtils.getFile("classpath:templates/exportAnnualProfit.jasper");
+            final File imgLogo = ResourceUtils.getFile("classpath:images/logoAkoWithBackground.jpg");
+            final JasperReport report = (JasperReport) JRLoader.loadObject(file);
+
+            final HashMap<String, Object> parameters = new HashMap<>();
+            parameters.put("imgLogo", new FileInputStream(imgLogo));
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(report, parameters, new JRBeanCollectionDataSource(this.reservationDao.avgPriceperYear()));
+            byte[] reporte = JasperExportManager.exportReportToPdf(jasperPrint);
+            String sdf = new SimpleDateFormat("dd/MM/YYYY").format(new Date());
+            StringBuilder stringBuilder = new StringBuilder().append("ReservationPDF:");
+            ContentDisposition contentDisposition = ContentDisposition.builder("attachment")
+                    .filename(stringBuilder.append(Math.random() * 120)
+                            .append("generateDate:")
+                            .append(sdf)
+                            .append(".pdf")
+                            .toString())
+                    .build();
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentDisposition(contentDisposition);
+            return ResponseEntity.ok().contentLength((long) reporte.length)
+                    .contentType(MediaType.APPLICATION_PDF)
+                    .headers(headers)
+                    .body(new ByteArrayResource(reporte));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public ResponseEntity<Resource> exportApartmentUsage(int idApartment) {
+        try {
+            final File file = ResourceUtils.getFile("classpath:templates/exportApartmentUsage.jasper");
+            final File imgLogo = ResourceUtils.getFile("classpath:images/logoAkoWithBackground.jpg");
+            final JasperReport report = (JasperReport) JRLoader.loadObject(file);
+
+            final HashMap<String, Object> parameters = new HashMap<>();
+            parameters.put("imgLogo", new FileInputStream(imgLogo));
+            parameters.put("dsInvoice", new JRBeanCollectionDataSource((Collection<?>) this.reservationDao.apartmentUsageCount(idApartment)));
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(report, parameters, new JREmptyDataSource());
             byte[] reporte = JasperExportManager.exportReportToPdf(jasperPrint);
             String sdf = new SimpleDateFormat("dd/MM/YYYY").format(new Date());
             StringBuilder stringBuilder = new StringBuilder().append("ReservationPDF:");
