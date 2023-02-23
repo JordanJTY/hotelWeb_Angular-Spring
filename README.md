@@ -130,6 +130,7 @@ Relational Model:
 #### Platform:
 - **P1**. This application comes as a website that you can use wherever you want.
 - **P2**. You can use it on mobile devices or tablets because it is a responsive application.
+- **P3**. You can also use it when you don't have connection to the backend if you have previously loaded the data via indexedDB.
 
 #### Access:
 - **A1**. The app has a guest screen that can be accessed without being logged in.
