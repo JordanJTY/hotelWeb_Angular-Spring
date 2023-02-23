@@ -22,4 +22,35 @@ describe('ContactFormComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should return form invalid', () => {
+    fixture = TestBed.createComponent(ContactFormComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+
+    const form = component.contactForm;
+    const name = component.contactForm.controls['name']
+    const email = component.contactForm.controls['email']
+    const message = component.contactForm.controls['message']
+    name.setValue('Sergio');
+    email.setValue('sergiojordan');
+    message.setValue('Un buen mensaje');
+
+    expect(form.invalid).toBeTruthy();
+  });
+
+  it('should return form valid', () => {
+    fixture = TestBed.createComponent(ContactFormComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+
+    const form = component.contactForm;
+    const name = component.contactForm.controls['name']
+    const email = component.contactForm.controls['email']
+    const message = component.contactForm.controls['message']
+    name.setValue('Sergio Tejera');
+    email.setValue('sergiojordan@gmail.com');
+    message.setValue('Un buen mensaje');
+    expect(form.valid).toBeTruthy();
+  });
 });
