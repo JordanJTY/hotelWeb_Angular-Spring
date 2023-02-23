@@ -3,7 +3,6 @@ package com.jordan.hotelako.entity.services.impl;
 import com.jordan.hotelako.entity.dao.IReservationDao;
 import com.jordan.hotelako.entity.models.Reservation;
 import com.jordan.hotelako.entity.services.IReservationService;
-import com.jordan.hotelako.tools.EmailSender;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.engine.util.JRLoader;
@@ -27,9 +26,6 @@ public class ReservationServiceImpl implements IReservationService {
 
     @Autowired
     private IReservationDao reservationDao;
-
-    @Autowired
-    private EmailSender emailSender;
 
     @Override
     public Reservation get(long id) {

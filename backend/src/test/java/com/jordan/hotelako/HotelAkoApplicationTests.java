@@ -108,36 +108,6 @@ class HotelAkoApplicationTests {
                         .content(asJsonString(reservation)))
                 .andExpect(status().isOk());
     }
-
-    /*@Test
-    void testPutUser() throws Exception {
-        User user = new User();
-        user.setId(1L);
-        Long id = user.getId();
-        user.setUsername("Person");
-        user.setEmail("damaiss@gmail.com");
-        user.setDateBirth(new Date(2022, 02,02));
-
-        doNothing().when(userService).put(user, id);
-
-        this.mvc.perform(put("/user/{id}", id)
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
-    }*/
-    /*@Test
-    void testPutApartment() throws Exception {
-        Apartment apartment = new Apartment();
-        apartment.setId(1L);
-        Long id = apartment.getId();
-        apartment.setType("Single Aparment");
-        apartment.setDescription("Very good aparment");
-
-        doNothing().when(apartmentService).put(apartment, id);
-
-        this.mvc.perform(put("/apartment/{id}", id)
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
-    }*/
     @Test
     void testPutReservation() throws Exception {
         Reservation reservation = new Reservation();
